@@ -5,20 +5,21 @@
         <hr />
 
         <div class="row viewing-habits" v-if="!loadingData">
-            <div class="col-md-3 col-lg-3" v-for="video in videos">
+            <div class="col-md-3 col-lg-3" v-for="video in videos" v-if="video.title">
                 <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="video.url">
                     <div class="well well-custom tutorial">
                         <h4 class="title" id="title"><span v-bind:title="video.title">{{ video.title }}</span></h4>
                         <div class="intro-image-container" style="position: relative;">
-                            <img class="tutorial-intro-image image youtube" id="track-image" src="https://img.youtube.com/vi/tqmlLQAKWik/0.jpg">
-                            <img class="intro-image-origin" src="//cdn.jwelford.co.uk/images/youtube-play.svg">
+                            <img class="tutorial-intro-image image youtube" id="track-image" v-bind:src="video.image">
+                            <img class="intro-image-origin" src="//cdn.jwelford.co.uk/images/youtube-play.svg" v-if="video.tag == 'youtube'">
+                            <img class="intro-image-origin" src="//cdn.jwelford.co.uk/images/netflix-n.svg" style="width: 145px;" v-else>
                         </div>
                     </div>
                 </a>
             </div>
         </div>
 
-        <div class="row loading-row">
+        <div class="row loading-row" v-else>
             <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></h1>
         </div>
     </div>
@@ -38,7 +39,7 @@
         firebase() {
             return {
                 videos: {
-                    source: db.ref("videos").limitToLast(25),
+                    source: db.ref("videos").limitToLast(52),
                     asObject: true,
                     readyCallback: function () {
                         this.loadingData = false;

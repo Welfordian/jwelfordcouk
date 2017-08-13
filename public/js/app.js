@@ -60116,6 +60116,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -60128,7 +60129,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     firebase: function firebase() {
         return {
             videos: {
-                source: __WEBPACK_IMPORTED_MODULE_0__FirebaseDB__["a" /* db */].ref("videos").limitToLast(25),
+                source: __WEBPACK_IMPORTED_MODULE_0__FirebaseDB__["a" /* db */].ref("videos").limitToLast(52),
                 asObject: true,
                 readyCallback: function readyCallback() {
                     this.loadingData = false;
@@ -72183,7 +72184,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', [_vm._m(0), _vm._v(" "), _c('hr'), _vm._v(" "), (!_vm.loadingData) ? _c('div', {
     staticClass: "row viewing-habits"
   }, _vm._l((_vm.videos), function(video) {
-    return _c('div', {
+    return (video.title) ? _c('div', {
       staticClass: "col-md-3 col-lg-3"
     }, [_c('a', {
       staticClass: "tutorial-link",
@@ -72203,8 +72204,39 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "title": video.title
       }
-    }, [_vm._v(_vm._s(video.title))])]), _vm._v(" "), _vm._m(1, true)])])])
-  })) : _vm._e(), _vm._v(" "), _vm._m(2)])
+    }, [_vm._v(_vm._s(video.title))])]), _vm._v(" "), _c('div', {
+      staticClass: "intro-image-container",
+      staticStyle: {
+        "position": "relative"
+      }
+    }, [_c('img', {
+      staticClass: "tutorial-intro-image image youtube",
+      attrs: {
+        "id": "track-image",
+        "src": video.image
+      }
+    }), _vm._v(" "), (video.tag == 'youtube') ? _c('img', {
+      staticClass: "intro-image-origin",
+      attrs: {
+        "src": "//cdn.jwelford.co.uk/images/youtube-play.svg"
+      }
+    }) : _c('img', {
+      staticClass: "intro-image-origin",
+      staticStyle: {
+        "width": "145px"
+      },
+      attrs: {
+        "src": "//cdn.jwelford.co.uk/images/netflix-n.svg"
+      }
+    })])])])]) : _vm._e()
+  })) : _c('div', {
+    staticClass: "row loading-row"
+  }, [_c('i', {
+    staticClass: "fa fa-circle-o-notch fa-spin",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('h1', [_c('i', {
     staticClass: "fa fa-youtube-play",
@@ -72212,33 +72244,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "color": "#e52d27"
     }
   }), _vm._v(" What I've been watching lately...")])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "intro-image-container",
-    staticStyle: {
-      "position": "relative"
-    }
-  }, [_c('img', {
-    staticClass: "tutorial-intro-image image youtube",
-    attrs: {
-      "id": "track-image",
-      "src": "https://img.youtube.com/vi/tqmlLQAKWik/0.jpg"
-    }
-  }), _vm._v(" "), _c('img', {
-    staticClass: "intro-image-origin",
-    attrs: {
-      "src": "//cdn.jwelford.co.uk/images/youtube-play.svg"
-    }
-  })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "row loading-row"
-  }, [_c('i', {
-    staticClass: "fa fa-circle-o-notch fa-spin",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  })])
 }]}
 module.exports.render._withStripped = true
 if (false) {
