@@ -3,7 +3,7 @@ import { Store } from './stores/SharedStore';
 import { Events } from './EventBus';
 
 const Http = axios.create({
-    baseURL: 'http://178.62.79.137:3002/api'
+    baseURL: '/api'
 });
 
 Http.interceptors.request.use(function (config) {

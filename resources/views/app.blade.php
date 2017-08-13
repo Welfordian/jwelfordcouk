@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="csrf-token" content="{{csrf_token()}}">
-        <meta name="theme-color" value="#2c3e50" />
+        <meta name="theme-color" value="#2c3e50">
         <link rel="manifest" href="manifest.json">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
