@@ -102,7 +102,7 @@
 .tutorial .title {
 	padding: 0 0 4px 8px;
 	font-weight: bold;
-	text-align: center;
+	text-align: left;
 	max-width: 98%;
 	width: 98%;
 	overflow: hidden;

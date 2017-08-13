@@ -18,7 +18,7 @@
                     </template>
 
                     <template slot="right-links">
-                        <auth-button login="/login" logout="/logout"></auth-button>
+                        <auth-button></auth-button>
                         <language-selector></language-selector>
                     </template>
                 </navbar>
