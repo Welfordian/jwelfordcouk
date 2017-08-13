@@ -1,13 +1,15 @@
 // Imports
 import * as bootstrap from './bootstrap';
+import * as Vue from 'vue';
+import * as VueFire from 'vuefire';
 import { i18n } from './i18n';
 import { Store } from './stores/SharedStore';
+import { _http } from './Http';
 import router from './routes';
-import * as Vue from 'vue';
 import VueRouter from 'vue-router';
-import { _http } from './Http'
 
 Vue.use(VueRouter);
+Vue.use(VueFire);
 
 // Components
 Vue.component('panel', require('./components/Panel.vue'));
@@ -30,6 +32,7 @@ Vue.component('create-post', require('./components/CreatePost.vue'));
 const Events = new Vue();
 
 // App
+
 const app = new Vue({
     el: '#app',
 
