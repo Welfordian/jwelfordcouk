@@ -1,0 +1,17 @@
+{
+"name": "Joshua Welford",
+"short_name": "JW",
+"lang": "en-US",
+"start_url": "/",
+"display": "fullscreen",
+"icons": [
+{
+"src": "icon.png",
+"sizes": "144x144",
+"type": "image/png"
+}
+],
+"gcm_sender_id": "345546294016",
+"background_color": "#2C3E50",
+"theme_color": "#2C3E50"
+}
