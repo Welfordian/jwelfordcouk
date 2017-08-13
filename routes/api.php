@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::post('login', 'AuthenticateController@authenticate');
+Route::post('contact', 'ContactController@create')->middleware('verify.request.origin');
 
 Route::middleware(['jwt.auth', 'jwt.refresh'])->group(function () {
     Route::get('/me', function (Request $request) {

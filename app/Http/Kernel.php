@@ -58,6 +58,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'jwt.auth' => 'Tymon\JWTAuth\Middleware\GetUserFromToken',
 	    'jwt.refresh' => 'Tymon\JWTAuth\Middleware\RefreshToken',
-        'enforce.api.origin' => \App\Http\Middleware\EnforceApiOrigin::class
+        'enforce.api.origin' => \App\Http\Middleware\EnforceApiOrigin::class,
+        'verify.request.origin' => \App\Http\Middleware\VerifyRequestOrigin::class,
+        
     ];
 }

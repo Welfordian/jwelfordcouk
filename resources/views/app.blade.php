@@ -2,7 +2,6 @@
 <html>
     <head>
         <meta name="csrf-token" content="{{csrf_token()}}">
-        <meta name="theme-color" value="#2c3e50">
         <link rel="manifest" href="manifest.json">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -31,6 +30,7 @@
         <meta name="og:description" content="The Home of Joshua Welford" />
         <meta name="robots" content="index,follow" />
         <meta name="DC.title" content="Joshua Welford" />
+        <meta name="theme-color" content="#2C3E50" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/app.css">

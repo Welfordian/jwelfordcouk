@@ -5,6 +5,7 @@ import * as VueFire from 'vuefire';
 import { i18n } from './i18n';
 import { Store } from './stores/SharedStore';
 import { _http } from './Http';
+import { Events } from './EventBus';
 import router from './routes';
 import VueRouter from 'vue-router';
 
@@ -28,9 +29,6 @@ Vue.component('education-set', require('./components/EducationSet.vue'));
 Vue.component('education', require('./components/Education.vue'));
 Vue.component('create-post', require('./components/CreatePost.vue'));
 
-// Events
-const Events = new Vue();
-
 // App
 
 const app = new Vue({
@@ -45,7 +43,7 @@ const app = new Vue({
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js', {scope: '/'})
             .then(function(reg) {
-                // registration worked
+                Events.$emit('service_worker.reg', reg);
                 console.log('Registration succeeded. Scope is ' + reg.scope);
             }).catch(function(error) {
                 // registration failed

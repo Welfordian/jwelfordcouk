@@ -29,7 +29,7 @@ mix.webpackConfig({
             new SWPrecacheWebpackPlugin({
                 cacheId: 'pwa',
                 filename: 'sw.js',
-                staticFileGlobs: ['public/**/*.{css,eot,svg,ttf,woff,woff2,js,html}', ],
+                staticFileGlobs: ['public/**/*.{css,eot,svg,ttf,woff,woff2,js,html}', '/js/idb.js', '/js/store.js'],
                 minify: true,
                 stripPrefix: 'public/',
                 handleFetch: true,
@@ -57,7 +57,8 @@ mix.webpackConfig({
                 ],
                 importScripts: [
                     'js/sw-toolbox/sw-toolbox.js',
-                    'js/sw-toolbox/toolbox.js'
+                    'js/sw-toolbox/toolbox.js',
+                    'js/sw-scripts.js'
                 ]
             }),
     ]

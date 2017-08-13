@@ -21,9 +21,7 @@ Http.interceptors.response.use(function (response) {
 
     return response;
 }, function(error) {
-    if (error.response.status === 401) {
-        Events.$emit('auth.expired', {});
-    }
+    return Promise.reject(error);
 });
 
 export const _http = Http;
