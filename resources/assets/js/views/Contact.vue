@@ -5,7 +5,7 @@
             <div class="col-md-9">
                 <form role="form" v-on:submit.prevent="handleContactSubmit">
                     <div class="input-group"><span class="input-group-addon">Full Name </span>
-                        <input name="name" v-model="form.name" id="prependedtext" class="form-control" placeholder="John Doe..." type="text" value="">
+                        <input name="name" v-model="form.name" id="prependedtext" class="form-control" placeholder="John Doe..." type="text" required="" value="">
                     </div>
                     <div class="input-group"><span class="input-group-addon">Email Address </span>
                         <input name="email" v-model="form.email" id="prependedtext" class="form-control" placeholder="john.doe@example.com" type="email" required="" value="">
@@ -56,6 +56,7 @@
 
 <script>
     import * as idb from 'idb';
+    import Noty from 'noty';
     import { Events } from '../EventBus';
     import { _http } from '../Http';
 
@@ -87,21 +88,27 @@
             handleContactSubmit() {
                 _http.post('/contact', this.form)
                 .then(function(data){
-                    alert("Sent.");
+                    new Noty({
+                        layout   : 'topRight',
+                        theme    : 'bootstrap-v4',
+                        type     : 'success',
+                        timeout  : 5000,
+                        text     : 'Thanks, your message has been sent!'
+                    }).show();
+
                     this.clearForm();
                 }.bind(this)).catch(function(error){
                     if(! error.hasOwnProperty("response") || error.response == undefined)
                     {
-                        // This isn't very useful until PeriodicSync becomes standardised
-
-                        //this.showOfflineModal();
-                        //this.queueMessage();
+                        this.showOfflineModal();
+                        this.queueMessage();
                     }
                     else
                     {
-                        if (error.response.hasOwnProperty("code"))
+                        console.log(error.response);
+                        if (error.response.hasOwnProperty("status"))
                         {
-                            switch (error.response.code)
+                            switch (error.response.status)
                             {
                                 case 422:
                                     this.handleValidationErrors(error.response.data);
@@ -122,11 +129,17 @@
             handleValidationErrors() {
                 // I'll implement properly later, I'm tired now
 
-                alert("Please fill out all fields and try again.");
+                new Noty({
+                    layout   : 'topRight',
+                    theme    : 'bootstrap-v4',
+                    type     : 'error',
+                    timeout  : 5000,
+                    text     : 'Whoops, looks like you might have missed something.'
+                }).show();
             },
 
             requestNotifications() {
-                this.modalMessage = "Sure thing, I'll just need permission to send you notifications.";
+                /*this.modalMessage = "Sure thing, I'll just need permission to send you notifications.";
 
                 Notification.requestPermission().then(function(result) {
                     if (result === 'denied') {
@@ -141,7 +154,9 @@
                     }
 
                     $('#offlineModal').modal("hide");
-                }.bind(this));
+                }.bind(this)); */
+
+                $('#offlineModal').modal("hide");
             },
 
             setNoPermissionText() {

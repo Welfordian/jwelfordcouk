@@ -1,10 +1,10 @@
 <template>
     <div>
-        <h1><i class="fa fa-youtube-play" style="color: #e52d27"></i> What I've been watching lately...</h1>
+        <h1><i class="fa fa-youtube-play" style="color: #e52d27"></i> What I've been watching lately... <i @click="fetchVideos" class="fa fa-refresh" v-bind:class="{ 'fa-spin': !Object.keys(videos).length }"></i></h1>
 
         <hr />
 
-        <div class="row viewing-habits" v-if="!loadingData">
+        <div class="row viewing-habits" v-if="Object.keys(videos).length">
             <div class="col-md-3 col-lg-3" v-for="video in videos" v-if="video.title">
                 <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="video.url">
                     <div class="well well-custom tutorial">
@@ -27,25 +27,27 @@
 </template>
 
 <script>
-    import { db } from '../FirebaseDB';
+    import { _http } from '../Http';
 
     export default {
         data() {
             return {
-                loadingData: true
+                videos: {}
             }
         },
 
-        firebase() {
-            return {
-                videos: {
-                    source: db.ref("videos").limitToLast(52),
-                    asObject: true,
-                    readyCallback: function () {
-                        this.loadingData = false;
-                    }
-                } 
-                
+        mounted() {
+            this.fetchVideos();
+        },
+
+        methods: {
+            fetchVideos() {
+                this.videos = {};
+
+                _http.get('https://welfordian-60215.firebaseio.com/videos.json?limitToLast=50&orderBy=%22$key%22')
+                .then(function(data){
+                    this.videos = data.data;
+                }.bind(this));
             }
         }
     }
@@ -55,6 +57,13 @@
 
 :root {
     --refresh-hover-color: #586b7d;
+}
+.fa-refresh {
+	float: right;
+	cursor: pointer;
+}
+.fa-refresh:hover {
+	color: var(--refresh-hover-color);
 }
 .loading-row {
     text-align: center;

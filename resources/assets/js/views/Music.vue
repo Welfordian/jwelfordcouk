@@ -1,9 +1,9 @@
 <template>
     <div>
-        <h1 id="tracks-title"><i title="via Spotify" class="fa fa-spotify"></i> What I'm listening to these days... <i @click="fetchTracks" class="fa fa-refresh" v-bind:class="{ 'fa-spin': loadingData }"></i></h1>
+        <h1 id="tracks-title"><i title="via Spotify" class="fa fa-spotify"></i> What I'm listening to these days... <i @click="fetchTracks" class="fa fa-refresh" v-bind:class="{ 'fa-spin': !tracks.length }"></i></h1>
         <hr />
 
-        <div id="tracks-container" class="row" v-if="!loadingData">
+        <div id="tracks-container" class="row" v-if="tracks.length">
             <div class="col-md-3" v-for="track in tracks">
                 <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="track.url">
                     <div class="well well-custom tutorial">
@@ -28,7 +28,6 @@
     export default {
         data() {
             return {
-                loadingData: true,
                 tracks: []
             }
         },
@@ -39,12 +38,11 @@
 
         methods: {
             fetchTracks() {
-                this.loadingData = true;
+                this.tracks = [];
 
                 _http.get('https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=welfordian&api_key=6136000ba0899c52db5ebcee77d4be15&format=json')
                 .then(function(data) {
                     this.tracks = data.data.recenttracks.track;
-                    this.loadingData = false;
                 }.bind(this));
             },
 

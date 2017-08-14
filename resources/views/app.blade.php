@@ -6,25 +6,25 @@
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="application-name" content="JW">
-        <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.jwelford.co.uk/icons/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.jwelford.co.uk/icons/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.jwelford.co.uk/icons/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jwelford.co.uk/icons/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.jwelford.co.uk/icons/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.jwelford.co.uk/icons/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.jwelford.co.uk/icons/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.jwelford.co.uk/icons/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jwelford.co.uk/icons/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="https://cdn.jwelford.co.uk/icons/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jwelford.co.uk/icons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.jwelford.co.uk/icons/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jwelford.co.uk/icons/favicon-16x16.png">
-        <meta name="msapplication-TileImage" content="https://cdn.jwelford.co.uk/icons/ms-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.jwelford.co.uk/icons/apple-icon-57x57.png" async deferred>
+        <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.jwelford.co.uk/icons/apple-icon-60x60.png" async deferred>
+        <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.jwelford.co.uk/icons/apple-icon-72x72.png" async deferred>
+        <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jwelford.co.uk/icons/apple-icon-76x76.png" async deferred>
+        <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.jwelford.co.uk/icons/apple-icon-114x114.png" async deferred>
+        <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.jwelford.co.uk/icons/apple-icon-120x120.png" async deferred>
+        <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.jwelford.co.uk/icons/apple-icon-144x144.png" async deferred>
+        <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.jwelford.co.uk/icons/apple-icon-152x152.png" async deferred>
+        <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jwelford.co.uk/icons/apple-icon-180x180.png" async deferred>
+        <link rel="icon" type="image/png" sizes="192x192" href="https://cdn.jwelford.co.uk/icons/android-icon-192x192.png" async deferred>
+        <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jwelford.co.uk/icons/favicon-32x32.png" async deferred>
+        <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.jwelford.co.uk/icons/favicon-96x96.png" async deferred>
+        <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jwelford.co.uk/icons/favicon-16x16.png" async deferred>
+        <meta name="msapplication-TileImage" content="https://cdn.jwelford.co.uk/icons/ms-icon-144x144.png" async deferred>
         <meta name="apple-mobile-web-app-title" content="JW">
         <meta name="msapplication-starturl" content="/">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="og:title" content="Joshua Welford" />
-        <meta name="og:image" content="https://cdn.jwelford.co.uk/images/me.jpg" />
+        <meta name="og:image" content="https://cdn.jwelford.co.uk/images/me.jpg" async deferred />
         <meta name="description" content="The Home of Joshua Welford" />
         <meta name="keywords" content="Joshua Welford, joshua welford, Josh Welford, josh welford, Redcar, redcar, web developer, Web Developer" />
         <meta name="og:description" content="The Home of Joshua Welford" />
@@ -32,8 +32,9 @@
         <meta name="DC.title" content="Joshua Welford" />
         <meta name="theme-color" content="#2C3E50" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/needim/noty/a6cccf80/lib/noty.css" async deffered>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" async deffered>
+        <link rel="stylesheet" href="/css/app.css" async deffered>
         <title>Devsite</title>
     </head>
     <body>
@@ -68,6 +69,6 @@
             </noscript>
         </div>
         
-        <script src="./js/app.js"></script>
+        <script src="./js/app.js" async deferred></script>
     </body>
 </html>

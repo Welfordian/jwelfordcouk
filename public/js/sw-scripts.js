@@ -19,8 +19,6 @@ self.addEventListener('sync', function(event) {
                     return response.json();
                 }).then(function(data) {
                     if (data.hasOwnProperty('id')) {
-                        var notification = new Notification("Your message has been received!");
-
                         return store.outbox('readwrite').then(function(outbox) {
                             return outbox.delete(message.id);
                         });
