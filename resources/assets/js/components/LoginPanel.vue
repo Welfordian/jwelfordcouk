@@ -36,6 +36,7 @@
 </template>
 
 <script>
+    import Noty from 'noty';
     import { i18n } from '../i18n';
     import { Store } from '../stores/SharedStore';
 
@@ -63,17 +64,29 @@
                     this.submitWithAjax(e);
                 }
             },
-            submitWithAjax(e) {
-                let self = this;
 
+            resetForm() {
+                this.email = "";
+                this.password = "";
+            },
+
+            submitWithAjax(e) {
                 this.store.auth.login({
                     email: this.email,
                     password: this.password
                 }).then(function(){
-                    self.$router.push("/dashboard");
-                }).catch(function(){
-                    console.log("Username or password incorrect!");
-                });
+                    this.$router.push("/dashboard");
+                }.bind(this)).catch(function(){
+                    new Noty({
+                        layout   : 'topRight',
+                        theme    : 'bootstrap-v4',
+                        type     : 'error',
+                        timeout  : 5000,
+                        text     : 'Whoops, username or password incorrect.'
+                    }).show();
+
+                    this.resetForm();
+                }.bind(this));
             }
         }
     }

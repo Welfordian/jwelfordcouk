@@ -39,6 +39,7 @@ mix.webpackConfig({
                     '/videos': ['resources/views/app.blade.php'],
                     '/music': ['resources/views/app.blade.php'],
                     '/contact': ['resources/views/app.blade.php'],
+                    '/login': ['resources/views/app.blade.php']
                 },
                 staticFileGlobsIgnorePatterns: [/\.map$/, /mix-manifest\.json$/, /manifest\.json$/, /sw\.js$/],
                 runtimeCaching: [
@@ -53,7 +54,27 @@ mix.webpackConfig({
                     {
                         urlPattern: /^https:\/\/maxcdn\.bootstrapcdn\.com\//,
                         handler: 'cacheFirst'
-                    }
+                    },
+                    {
+                        urlPattern: /^https:\/\/cdn.jwelford.co.uk\//,
+                        handler: 'cacheFirst'
+                    },
+                    {
+                        urlPattern: /^https:\/\/image.tmdb.org\//,
+                        handler: 'cacheFirst'
+                    },
+                    {
+                        urlPattern: /^https:\/\/img.youtube.com\//,
+                        handler: 'cacheFirst'
+                    },
+                    {
+                        urlPattern: /^https:\/\/cdn.rawgit.com\//,
+                        handler: 'cacheFirst'
+                    },
+                    {
+                        urlPatten: /^https:\/\/imadev.site\//,
+                        handler: 'cacheFirst'
+                    },
                 ],
                 importScripts: [
                     'js/sw-toolbox/sw-toolbox.js',
