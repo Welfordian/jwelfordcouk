@@ -48,7 +48,7 @@ mix.webpackConfig({
                         handler: 'cacheFirst'
                     },
                     {
-                        urlPattern: /^https:\/\/jwelford.co.uk\//,
+                        urlPattern: /^https:\/\/jwelford\.co\.uk\//,
                         handler: 'cacheFirst'
                     },
                     {
@@ -56,25 +56,25 @@ mix.webpackConfig({
                         handler: 'cacheFirst'
                     },
                     {
-                        urlPattern: /^https:\/\/cdn.jwelford.co.uk\//,
+                        urlPattern: /^https:\/\/cdn\.jwelford\.co\.uk\//,
                         handler: 'cacheFirst'
                     },
                     {
-                        urlPattern: /^https:\/\/image.tmdb.org\//,
+                        urlPattern: /^https:\/\/image\.tmdb\.org\//,
                         handler: 'cacheFirst'
                     },
                     {
-                        urlPattern: /^https:\/\/img.youtube.com\//,
+                        urlPattern: /^https:\/\/img\.youtube\.com\//,
                         handler: 'cacheFirst'
                     },
                     {
-                        urlPattern: /^https:\/\/cdn.rawgit.com\//,
+                        urlPattern: /^https:\/\/cdn\.rawgit\.com\//,
                         handler: 'cacheFirst'
                     },
                     {
-                        urlPatten: /^https:\/\/imadev.site\//,
+                        urlPattern: /^https:\/\/imadev\.site\//,
                         handler: 'cacheFirst'
-                    },
+                    }
                 ],
                 importScripts: [
                     'js/sw-toolbox/sw-toolbox.js',

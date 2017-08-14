@@ -9,7 +9,7 @@
                     <div class="well well-custom tutorial">
                         <h4 class="title" id="title"><span v-bind:title="getTrackTitle(track)">{{ getTrackTitle(track) }}</span></h4>
                         <div class="intro-image-container">
-                            <img class="tutorial-intro-image image" id="track-image" v-bind:src="'https://jwelford.co.uk/lastFM-Image.php?lfm_url=' + getLargestAlbumImage(track)">
+                            <img class="tutorial-intro-image image" id="track-image" v-bind:src="getLargestAlbumImage(track)">
                         </div>
                     </div>
                 </a>

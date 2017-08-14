@@ -8,3 +8,4 @@ toolbox.router.get(/^https:\/\/fonts.gstatic.com\//, toolbox.cacheFirst);
 toolbox.router.get(/^https:\/\/cdn.jwelford.co.uk\//, toolbox.cacheFirst);
 toolbox.router.get(/^https:\/\/imadev.site\/fonts\//, toolbox.cacheFirst);
 toolbox.router.get(/^https:\/\/imadev.site\/images\//, toolbox.cacheFirst);
+toolbox.router.get(/^https:\/\/lastfm-img2.akamaized.net\//, toolbox.cachFirst);
