@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1><i class="fa fa-youtube-play" style="color: #e52d27"></i> What I've been watching lately... <i @click="fetchVideos" class="fa fa-refresh" v-bind:class="{ 'fa-spin': !Object.keys(videos).length }"></i></h1>
+        <h1><i class="fa fa-youtube-play" style="color: #e52d27"></i> {{ lang.get('videos.title') }} <i @click="fetchVideos" class="fa fa-refresh" v-bind:class="{ 'fa-spin': !Object.keys(videos).length }"></i></h1>
 
         <hr />
 
@@ -10,7 +10,7 @@
                     <div class="well well-custom tutorial">
                         <h4 class="title" id="title"><span v-bind:title="video.title">{{ video.title }}</span></h4>
                         <div class="intro-image-container" style="position: relative;">
-                            <img class="tutorial-intro-image image youtube" id="track-image" v-bind:src="video.image">
+                            <img class="tutorial-intro-image image" v-bind:class="video.tag" id="track-image" v-bind:src="video.image">
                             <img class="intro-image-origin" src="//cdn.jwelford.co.uk/images/youtube-play.svg" v-if="video.tag == 'youtube'">
                             <img class="intro-image-origin" src="//cdn.jwelford.co.uk/images/netflix-n.svg" style="width: 145px;" v-else>
                         </div>
@@ -27,11 +27,13 @@
 </template>
 
 <script>
+    import { i18n } from '../i18n';
     import { _http } from '../Http';
 
     export default {
         data() {
             return {
+                lang: i18n,
                 videos: {}
             }
         },

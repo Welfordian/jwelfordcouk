@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 id="tracks-title"><i title="via Spotify" class="fa fa-spotify"></i> What I'm listening to these days... <i @click="fetchTracks" class="fa fa-refresh" v-bind:class="{ 'fa-spin': !tracks.length }"></i></h1>
+        <h1 id="tracks-title"><i title="via Spotify" class="fa fa-spotify"></i> {{ lang.get('music.title') }} <i @click="fetchTracks" class="fa fa-refresh" v-bind:class="{ 'fa-spin': !tracks.length }"></i></h1>
         <hr />
 
         <div id="tracks-container" class="row" v-if="tracks.length">
@@ -23,11 +23,13 @@
 </template>
 
 <script>
+	import { i18n } from '../i18n';
     import { _http } from '../Http';
 
     export default {
         data() {
             return {
+				lang: i18n,
                 tracks: []
             }
         },

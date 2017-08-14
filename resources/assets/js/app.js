@@ -7,6 +7,7 @@ import { _http } from './Http';
 import { Events } from './EventBus';
 import router from './routes';
 import VueRouter from 'vue-router';
+import Noty from 'noty';
 
 Vue.use(VueRouter);
 
@@ -28,7 +29,6 @@ const app = new Vue({
             navigator.serviceWorker.register('/sw.js', {scope: '/'})
             .then(function(reg) {
                 Events.$emit('service_worker.reg', reg);
-                console.log('Registration succeeded. Scope is ' + reg.scope);
             }).catch(function(error) {
                 // registration failed
                 console.log('Registration failed with ' + error);

@@ -50,7 +50,7 @@
 
                     <template slot="right-links">
                         <auth-button></auth-button>
-                        <!-- <language-selector></language-selector> -->
+                        <language-selector></language-selector>
                     </template>
                 </navbar>
                 
