@@ -15,7 +15,7 @@ class VerifyRequestOrigin
      */
     public function handle($request, Closure $next)
     {
-        $whitelist_domains = array('https://imadev.site');
+        $whitelist_domains = array('https://imadev.site', 'https://jwelford.co.uk');
 
         if (! in_array($request->header("Origin"), $whitelist_domains))
         {

@@ -1,6 +1,10 @@
 <template>
     <div>
-        <h1><i style="margin-left: 8px;" class="fa fa-envelope"></i> {{ lang.get('contact.title') }}</h1>
+        <h1>
+            <i style="margin-left: 8px; margin-right: 6px;" class="fa fa-envelope" v-if="!loading"></i>
+            <i style="margin-left: 8px; margin-right: 6px;" class="fa fa-refresh fa-spin" v-else></i>
+            {{ lang.get('contact.title') }}
+        </h1>
         <div class="row">
             <div class="col-md-9">
                 <form role="form" v-on:submit.prevent="handleContactSubmit">
@@ -72,6 +76,7 @@
         data() {
             return {
                 lang: i18n,
+                loading: false,
                 sw: false,
                 modalMessage: "It looks like there was a problem sending your message, but don't worry... I'll keep trying to resend it for you. You can click the button below to be notified when it has successfully sent.",
                 form: {
@@ -137,7 +142,7 @@
             },
 
             requestNotifications() {
-                /*this.modalMessage = "Sure thing, I'll just need permission to send you notifications.";
+                this.modalMessage = "Sure thing, I'll just need permission to send you notifications.";
 
                 Notification.requestPermission().then(function(result) {
                     if (result === 'denied') {
@@ -152,9 +157,7 @@
                     }
 
                     $('#offlineModal').modal("hide");
-                }.bind(this)); */
-
-                $('#offlineModal').modal("hide");
+                }.bind(this));
             },
 
             setNoPermissionText() {

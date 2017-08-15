@@ -4,6 +4,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					{{ lang.get("navbar.login") }}
+                    <i class="fa fa-refresh fa-spin" v-if="loading" style="float: right; font-size: 22px;"></i>
 				</div>
 				<div class="panel-body">
 					<form class="form-horizontal" method="post" v-on:submit="handleSubmit">
@@ -22,7 +23,8 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-sign-in"></i> {{ lang.get('navbar.login') }}
+                                    <i class="fa fa-refresh fa-spin margin--right" v-if="loading"></i>
+                                    <i class="fa fa-btn fa-sign-in margin--right" v-else></i> {{ lang.get('navbar.login') }}
                                 </button>
 
                                 <a class="btn btn-link" href="https://jwelford.co.uk/password/reset">{{ lang.get('password_forgot') }}</a>
@@ -51,6 +53,7 @@
             return {
                 lang: i18n,
                 store: Store,
+                loading: false,
                 email: "",
                 password: ""
             }
@@ -71,11 +74,14 @@
             },
 
             submitWithAjax(e) {
+                this.loading = true;
+
                 this.store.auth.login({
                     email: this.email,
                     password: this.password
                 }).then(function(){
                     this.$router.push("/dashboard");
+                    this.loading = false;
                 }.bind(this)).catch(function(){
                     new Noty({
                         layout   : 'topRight',
@@ -86,8 +92,15 @@
                     }).show();
 
                     this.resetForm();
+                    this.loading = false;
                 }.bind(this));
             }
         }
     }
 </script>
+
+<style scoped>
+.margin--right {
+    margin-right: 6px;
+}
+</style>

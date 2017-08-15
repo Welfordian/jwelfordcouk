@@ -11,7 +11,7 @@
         beforeRouteEnter(to, from, next) {
             if (Store.auth.authenticated) {
                 next((vm) => {
-                   vm.$router.push('/dashboard');
+                   vm.$router.push(to.fullPath);
                 });
             }else{
                 next((vm) => {

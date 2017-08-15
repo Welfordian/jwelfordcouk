@@ -15,7 +15,8 @@ self.addEventListener('sync', function(event) {
                         'X-Requested-With': 'XMLHttpRequest',
                         'Content-Type': 'application/json'
                     }
-                }).then(function(response) {  
+                }).then(function(response) {
+                    registration.showNotification("Your contact message has been sent!");  
                     return response.json();
                 }).then(function(data) {
                     if (data.hasOwnProperty('id')) {

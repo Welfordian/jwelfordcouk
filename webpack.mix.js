@@ -48,15 +48,7 @@ mix.webpackConfig({
                         handler: 'cacheFirst'
                     },
                     {
-                        urlPattern: /^https:\/\/jwelford\.co\.uk\//,
-                        handler: 'cacheFirst'
-                    },
-                    {
                         urlPattern: /^https:\/\/maxcdn\.bootstrapcdn\.com\//,
-                        handler: 'cacheFirst'
-                    },
-                    {
-                        urlPattern: /^https:\/\/cdn\.jwelford\.co\.uk\//,
                         handler: 'cacheFirst'
                     },
                     {
@@ -69,10 +61,6 @@ mix.webpackConfig({
                     },
                     {
                         urlPattern: /^https:\/\/cdn\.rawgit\.com\//,
-                        handler: 'cacheFirst'
-                    },
-                    {
-                        urlPattern: /^https:\/\/imadev\.site\//,
                         handler: 'cacheFirst'
                     }
                 ],

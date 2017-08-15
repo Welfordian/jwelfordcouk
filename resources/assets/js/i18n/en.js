@@ -13,7 +13,7 @@ export const EN = {
     'navbar.login': 'Login',
     'navbar.logout': 'Logout',
     'summary.title': 'Summary',
-    'summary': "I am a Web Developer who speciailizes in PHP, SQL, HTML &amp; Javascript. I also have familiarity with .NET, Ruby &amp; Python. but am looking to expand my knowledge in those areas. I have experience in creating CMS' and mainly write in the OOP aspect. I have also used many REST API's and so, in turn, am frequently using JSON and XML. I am also getting quite familiar with AngularJS & SASS.",
+    'summary': "I am a Web Developer who speciailizes in PHP, SQL, HTML & Javascript. I also have familiarity with .NET, Ruby & Python. but am looking to expand my knowledge in those areas. I have experience in creating CMS' and mainly write in the OOP aspect. I have also used many REST API's and so, in turn, am frequently using JSON and XML. I am also getting quite familiar with AngularJS & SASS.",
     'languages.title': 'Main Skillset',
     'languages.html': "I believe knowledge of HTML is crucial in Web Development and would say my understanding of it is up to current standards.",
     'languages.php': "I can easily create interactive and dynamic websites using PHP alongside MySQL(i). I prefer the OOP aspect of PHP.",

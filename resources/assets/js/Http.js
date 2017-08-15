@@ -8,7 +8,9 @@ const Http = axios.create({
 
 Http.interceptors.request.use(function (config) {
     if (localStorage.getItem("auth_token") !== null) {
-        config.headers['Authorization'] = 'Bearer ' + localStorage.getItem('auth_token').replace("Bearer ", "");
+        if (/\/api\//.test(config.url)) {
+            config.headers['Authorization'] = 'Bearer ' + localStorage.getItem('auth_token').replace("Bearer ", "");
+        }
     }
 
     return config;

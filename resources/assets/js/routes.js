@@ -30,6 +30,10 @@ const routes = [
         component: require('./views/Dashboard.vue')
     },
     {
+        path: '/messages',
+        component: require('./views/Messages.vue')
+    },
+    {
         path: '*',
         component: require('./views/NotFound.vue')
     }
