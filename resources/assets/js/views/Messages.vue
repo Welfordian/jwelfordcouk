@@ -6,8 +6,6 @@
 
 <script>
     export default {
-        mounted() {
-            console.log("Eat a fatty");
-        }
+        // Need some logic
     }
 </script>

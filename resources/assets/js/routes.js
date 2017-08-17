@@ -1,4 +1,5 @@
 import VueRouter from 'vue-router';
+import { Store } from './stores/SharedStore';
 
 const routes = [
     {
@@ -27,17 +28,27 @@ const routes = [
     },
     {
         path: '/dashboard',
-        component: require('./views/Dashboard.vue')
+        component: require('./views/Dashboard.vue'),
+        beforeEnter: isAuthenticated
     },
     {
         path: '/messages',
-        component: require('./views/Messages.vue')
+        component: require('./views/Messages.vue'),
+        beforeEnter: isAuthenticated
     },
     {
         path: '*',
         component: require('./views/NotFound.vue')
     }
 ];
+
+function isAuthenticated(to, from, next) {
+    if (Store.auth.authenticated) {
+        next();
+    }else{
+        next('/login');
+    }
+}
 
 export default new VueRouter({
     mode: 'history',

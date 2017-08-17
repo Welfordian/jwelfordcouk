@@ -8,16 +8,6 @@
     import { Store } from '../stores/SharedStore';
 
     export default {
-        beforeRouteEnter(to, from, next) {
-            if (Store.auth.authenticated) {
-                next((vm) => {
-                   vm.$router.push(to.fullPath);
-                });
-            }else{
-                next((vm) => {
-                   vm.$router.push('/login');
-                });
-            }
-        }
+        // Need some logic
     }
 </script>  

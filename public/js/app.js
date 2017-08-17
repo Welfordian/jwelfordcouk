@@ -11074,6 +11074,8 @@ var Events = new __WEBPACK_IMPORTED_MODULE_0_vue__();
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__stores_SharedStore__ = __webpack_require__(3);
+
 
 
 var routes = [{
@@ -11096,14 +11098,24 @@ var routes = [{
     component: __webpack_require__(70)
 }, {
     path: '/dashboard',
-    component: __webpack_require__(73)
+    component: __webpack_require__(73),
+    beforeEnter: isAuthenticated
 }, {
     path: '/messages',
-    component: __webpack_require__(76)
+    component: __webpack_require__(76),
+    beforeEnter: isAuthenticated
 }, {
     path: '*',
     component: __webpack_require__(79)
 }];
+
+function isAuthenticated(to, from, next) {
+    if (__WEBPACK_IMPORTED_MODULE_1__stores_SharedStore__["a" /* Store */].auth.authenticated) {
+        next();
+    } else {
+        next('/login');
+    }
+}
 
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
     mode: 'history',
@@ -49870,17 +49882,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    beforeRouteEnter: function beforeRouteEnter(to, from, next) {
-        if (__WEBPACK_IMPORTED_MODULE_0__stores_SharedStore__["a" /* Store */].auth.authenticated) {
-            next(function (vm) {
-                vm.$router.push(to.fullPath);
-            });
-        } else {
-            next(function (vm) {
-                vm.$router.push('/login');
-            });
-        }
-    }
+    // Need some logic
 });
 
 /***/ }),
@@ -49952,9 +49954,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log("Eat a fatty");
-    }
+    // Need some logic
 });
 
 /***/ }),
