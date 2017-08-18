@@ -11,13 +11,13 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label" for="email">{{ lang.get('email_address') }}</label>
 							<div class="col-md-6">
-								<input autofocus="" class="form-control" id="email" name="email" required="" type="email" v-model="email">
+								<input autofocus="" class="form-control" id="email" name="email" required="" placeholder="Email..." type="email" v-model="email">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-md-4 control-label" for="password">{{ lang.get('password') }}</label>
 							<div class="col-md-6">
-								<input class="form-control" id="password" name="password" required="" type="password" v-model="password">
+								<input class="form-control" id="password" name="password" required="" placeholder="Password..." type="password" v-model="password">
 							</div>
 						</div>
                         <div class="form-group">
@@ -82,7 +82,8 @@
                 }).then(function(){
                     this.$router.push("/dashboard");
                     this.loading = false;
-                }.bind(this)).catch(function(){
+                }.bind(this)).catch(function(e){
+                    console.log(e);
                     new Noty({
                         layout   : 'topRight',
                         theme    : 'bootstrap-v4',

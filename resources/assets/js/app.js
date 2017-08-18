@@ -8,9 +8,10 @@ import { Events } from './EventBus';
 import router from './routes';
 import VueRouter from 'vue-router';
 import Noty from 'noty';
+import { PopupAuth } from './PopupAuth';
 
 Vue.use(VueRouter);
-
+window.popupAuth = PopupAuth;
 // Components
 require('./components');
 
@@ -24,7 +25,7 @@ const app = new Vue({
         store: Store
     },
 
-    beforeCreate() {
+    beforeCreate() {    
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js', {scope: '/'})
             .then(function(reg) {

@@ -5,6 +5,8 @@
 </template>
 
 <script>
+    import { Store } from '../stores/SharedStore';
+    
     export default {
         // Need some logic
     }

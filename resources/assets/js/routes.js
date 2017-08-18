@@ -45,7 +45,10 @@ const routes = [
 function isAuthenticated(to, from, next) {
     if (Store.auth.authenticated) {
         next();
-    }else{
+        if (Store.auth.shouldShowPopup) {
+            Store.auth.showPopupAuth();
+        }
+    }else{  
         next('/login');
     }
 }

@@ -26,4 +26,15 @@ class AuthenticateController extends Controller
         // all good so return the token
         return response()->json(compact('token'));
     }
+    
+    public function refreshToken(Request $request)
+    {
+        try {
+            $token = JWTAuth::refresh($request->expiredToken);
+            sleep(2);
+            return response()->json(compact('token'));
+        } catch (JWTException $e) {
+            return response()->json(['error' => 'could_not_refresh_token'], 500);
+        }
+    }
 }

@@ -1,7 +1,7 @@
 <template>
     <navbar-link href="/login" icon="log-in" v-if="!store.auth.authenticated">{{ lang.get('navbar.login') }}</navbar-link>
     <li class="dropdown" v-else>
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user"></i> {{ store.user.get('name') }} <span class="caret"></span></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user"></i> {{ store.user.get('name') }} <span class="caret"></span></a>       
         <ul class="dropdown-menu">
             <li><router-link to="/dashboard"><i class="glyphicon glyphicon-flash"></i> Dashboard</router-link></li>
             <li role="separator" class="divider"></li>
