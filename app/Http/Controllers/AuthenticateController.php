@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use JWTAuth;
+use Pusher;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Exceptions\JWTException;
 
 class AuthenticateController extends Controller
 {
+    public function __construct()
+    {
+        $this->pusher = new Pusher(config('broadcasting.connections.pusher.key'), config('broadcasting.connections.pusher.secret'), config('broadcasting.connections.pusher.app_id'));
+    }
+
     public function authenticate(Request $request)
     {
         // grab credentials from the request
@@ -36,6 +42,13 @@ class AuthenticateController extends Controller
         } catch (JWTException $e) {
             return response()->json(['error' => 'could_not_refresh_token'], 500);
         }
+    }
+
+    public function pusher(Request $request)
+    {
+        $presence_data = [];
+        
+        return $this->pusher->presence_auth($request->get('channel_name'), $request->get('socket_id'), uniqid(), $presence_data);
     }
 
     public function createRole(Request $request)

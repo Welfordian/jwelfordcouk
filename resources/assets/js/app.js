@@ -6,10 +6,21 @@ import { Events } from './EventBus';
 import { filters } from './Filters';
 import router from './routes';
 import VueRouter from 'vue-router';
+import _Pusher from 'pusher-js';
+
+const Pusher = new _Pusher("a1f8612b24a71f55b7c3", {
+    cluster: 'mt1',
+    authEndpoint: '/api/pusher/auth',
+    encrypted: true
+});
+
+const AnalyticsChannel = Pusher.subscribe("presence-analytics");
 
 Vue.use(VueRouter);
 
 require('./components');
+
+Vue.prototype.$analytics = AnalyticsChannel;
 
 const app = new Vue({
     el: '#app',

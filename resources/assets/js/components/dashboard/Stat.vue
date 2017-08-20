@@ -52,6 +52,17 @@
         text-decoration: none;
     }
 
+    .well {
+        transition: all .2s;
+        -webkit-transition: all .2s;
+    }
+
+    .well:hover {
+        background: #eaeaea;
+        -webkit-box-shadow: inset 2px 2px 5px 2px #69DCFF;
+        box-shadow: inset 0px 0px 7px 1px #e0e0e0;
+    }
+
     span.count {
         display: inline-block;
         min-width: 10px;

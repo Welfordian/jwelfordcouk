@@ -14,7 +14,8 @@ use Illuminate\Http\Request;
 */
 
 Route::post('login', 'AuthenticateController@authenticate');
-Route::get('/token/refresh', 'AuthenticateController@refreshToken');
+Route::post('pusher/auth', 'AuthenticateController@pusher');
+Route::get('token/refresh', 'AuthenticateController@refreshToken');
 Route::post('contact', 'ContactController@create')->middleware('verify.request.origin');
 
 Route::group(['middleware' => ['jwt.auth']], function(){
@@ -34,7 +35,8 @@ Route::group(['middleware' => ['jwt.auth']], function(){
         return [
             'users' => \App\User::count(),
             'posts' => \App\Post::count(),
-            'messages' => \App\ContactMessage::count()
+            'messages' => \App\ContactMessage::count(),
+            'files' => 0
         ];
     });
 });

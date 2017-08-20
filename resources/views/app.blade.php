@@ -53,8 +53,10 @@
                         <language-selector></language-selector>
                     </template>
                 </navbar>
-                
-                <router-view></router-view>
+
+                <transition name="fade">
+                    <router-view></router-view>
+                </transition>
             </div>
 
             <noscript>
