@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/503', function () {
-    return view('errors.503');
-});
-
 Route::get('{any?}', function () {
     return view('app');
 })->where('any', '.*');
