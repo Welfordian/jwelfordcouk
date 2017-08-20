@@ -1,21 +1,15 @@
-// Imports
 import * as bootstrap from './bootstrap';
 import * as Vue from 'vue';
 import { i18n } from './i18n';
 import { Store } from './stores/SharedStore';
-import { _http } from './Http';
 import { Events } from './EventBus';
+import { filters } from './Filters';
 import router from './routes';
 import VueRouter from 'vue-router';
-import Noty from 'noty';
-import { PopupAuth } from './PopupAuth';
 
 Vue.use(VueRouter);
-window.popupAuth = PopupAuth;
-// Components
-require('./components');
 
-// App
+require('./components');
 
 const app = new Vue({
     el: '#app',
@@ -36,6 +30,6 @@ const app = new Vue({
             });
         }
     },
-
+    
     router
 });

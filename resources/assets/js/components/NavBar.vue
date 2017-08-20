@@ -24,3 +24,9 @@
         mounted(){}
     }
 </script>
+
+<style scoped>
+    a .fa {
+        margin-right: 6px;
+    }
+</style>

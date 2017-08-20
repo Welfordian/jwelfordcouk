@@ -17,21 +17,25 @@ Route::post('login', 'AuthenticateController@authenticate');
 Route::get('/token/refresh', 'AuthenticateController@refreshToken');
 Route::post('contact', 'ContactController@create')->middleware('verify.request.origin');
 
-Route::middleware(['jwt.auth'])->group(function () {
+Route::group(['middleware' => ['jwt.auth']], function(){
     Route::get('/me', function (Request $request) {
+        // This needs moving to a controller
         return $request->user();
     });
 
-    Route::post('/posts', function (Request $request) {
-        $title = $request->title;
-        $content = $request->content;
+    Route::get('/users', function(Request $request) {
+        // This needs moving to a controller
+        return \App\User::all();
+    });
 
-        $post = new \App\Post();
-        $post->title = $title;
-        $post->content = $content;
-        $post->save();
+    Route::get('/dashboard/stats', function(Request $request){
+        // You guessed it, this needs moving to a controller
 
-        return $post;
+        return [
+            'users' => \App\User::count(),
+            'posts' => \App\Post::count(),
+            'messages' => \App\ContactMessage::count()
+        ];
     });
 });
 

@@ -69,6 +69,6 @@
             </noscript>
         </div>
         
-        <script src="./js/app.js" async deferred></script>
+        <script src="/js/app.js" async deferred></script>
     </body>
 </html>

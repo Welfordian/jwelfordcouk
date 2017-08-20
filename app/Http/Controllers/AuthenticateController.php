@@ -37,4 +37,24 @@ class AuthenticateController extends Controller
             return response()->json(['error' => 'could_not_refresh_token'], 500);
         }
     }
+
+    public function createRole(Request $request)
+    {
+        // TODO
+    }
+
+    public function attachRole(Request $request)
+    {
+        // TODO
+    }
+
+    public function createPermission(Request $request)
+    {
+        // TODO
+    }
+
+    public function attachPermission(Request $request)
+    {
+        // TODO
+    }
 }

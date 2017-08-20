@@ -14,3 +14,4 @@ Vue.component('experience', require('./components/Experience.vue'));
 Vue.component('education-set', require('./components/EducationSet.vue'));
 Vue.component('education', require('./components/Education.vue'));
 Vue.component('create-post', require('./components/CreatePost.vue'));
+Vue.component('dashboard-stat', require('./components/dashboard/Stat'));

@@ -32,9 +32,12 @@ const routes = [
         beforeEnter: isAuthenticated
     },
     {
-        path: '/messages',
-        component: require('./views/Messages.vue'),
-        beforeEnter: isAuthenticated
+        path: '/dashboard/users',
+        component: require('./views/dashboard/Users.vue'),
+        beforeEnter: isAuthenticated,
+        meta: {
+            showCreateUserDialog: true
+        }
     },
     {
         path: '*',
