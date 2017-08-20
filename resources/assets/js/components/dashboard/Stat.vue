@@ -2,7 +2,11 @@
     <div :class="_size">
         <router-link :to="link">
             <div class="well">
-                <h1>{{ title }} <span class="count">{{ data }}</span></h1>
+                <h1>
+                    {{ title }}
+                    <span class="count" v-if="data === false"><i class="fa fa-spinner fa-spin"></i></span>
+                    <span class="count" v-else>{{ data }}</span>
+                </h1>
                 <p>This is the stat for {{ title }}</p>
                 <i :class="_icon" aria-hidden="true"></i>
             </div>

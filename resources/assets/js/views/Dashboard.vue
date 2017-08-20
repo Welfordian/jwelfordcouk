@@ -16,20 +16,20 @@
             return {
                 store: Store,
                 stats: {
-                    users: 0,
-                    posts: 0,
-                    messages: 0
+                    users: false,
+                    posts: false,
+                    messages: false
                 }
             }
         },
 
         beforeMount() {
             _http.get('/dashboard/stats')
-                .then(function(response){
-                    this.stats = response.data;
-                }.bind(this)).catch(function(error){
-                    console.error("Couldn't fetch stats", error);
-                });
+            .then(function(response){
+                this.stats = response.data;
+            }.bind(this)).catch(function(error){
+                console.error("Couldn't fetch stats", error);
+            });
         },
     }
 </script>
