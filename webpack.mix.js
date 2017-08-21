@@ -22,6 +22,9 @@ mix.webpackConfig({
                 }
             ],
         },
+        output: {
+            publicPath: '/'
+        },
         resolve: {
             extensions: ['*', '.js', '.jsx', '.vue', '.ts', '.tsx'],
         },

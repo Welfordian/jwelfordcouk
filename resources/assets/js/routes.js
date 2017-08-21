@@ -1,6 +1,16 @@
 import VueRouter from 'vue-router';
 import { Store } from './stores/SharedStore';
 
+const About = () => import( /* webpackChunkName: "AboutView" */ './views/About');
+const Videos = () => import( /* webpackChunkName: "VideosView" */ './views/Videos');
+const Music = () => import( /* webpackChunkName: "MusicView" */ './views/Music');
+const Contact = () => import( /* webpackChunkName: "ContactView" */ './views/Contact');
+const Login = () => import ( /* webpackChunkName: "LoginView" */ './views/Login');
+const Dashboard = () => import( /* webpackChunkName: "DashboardView" */ './views/Dashboard');
+const DashboardUsers = () => import( /* webpackChunkName: "DashboardUsersView" */ './views/dashboard/Users');
+const DashboardAnalytics = () => import( /* webpackChunkName: "DashboardAnalyticsView" */ './views/dashboard/Analytics');
+const NotFound = () => import( /* webpackChunkName: "NotFoundView" */ './views/NotFound');
+
 const routes = [
     {
         path: '/',
@@ -8,40 +18,42 @@ const routes = [
     },
     {
         path: '/about',
-        component: require('./views/About.vue')
+        component: About
     },
     {
         path: '/videos',
-        component: require('./views/Videos.vue')
+        component: Videos
     },
     {
         path: '/music',
-        component: require('./views/Music.vue')
+        component: Music
     },
     {
         path: '/contact',
-        component: require('./views/Contact.vue')
+        component: Contact
     },
     {
         path: '/login',
-        component: require('./views/Login.vue')
+        component: Login
     },
     {
         path: '/dashboard',
-        component: require('./views/Dashboard.vue'),
+        component: Dashboard,
         beforeEnter: isAuthenticated
     },
     {
         path: '/dashboard/users',
-        component: require('./views/dashboard/Users.vue'),
-        beforeEnter: isAuthenticated,
-        meta: {
-            showCreateUserDialog: true
-        }
+        component: DashboardUsers,
+        beforeEnter: isAuthenticated
+    },
+    {
+        path: '/dashboard/analytics',
+        component: DashboardAnalytics,
+        beforeEnter: isAuthenticated
     },
     {
         path: '*',
-        component: require('./views/NotFound.vue')
+        component: NotFound
     }
 ];
 

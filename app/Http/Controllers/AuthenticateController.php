@@ -46,7 +46,9 @@ class AuthenticateController extends Controller
 
     public function pusher(Request $request)
     {
-        $presence_data = [];
+        $presence_data = [
+            'ip' => $_SERVER['REMOTE_ADDR']
+        ];
         
         return $this->pusher->presence_auth($request->get('channel_name'), $request->get('socket_id'), uniqid(), $presence_data);
     }

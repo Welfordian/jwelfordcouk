@@ -32,9 +32,9 @@
         <meta name="DC.title" content="Joshua Welford" />
         <meta name="theme-color" content="#2C3E50" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="stylesheet" href="https://cdn.rawgit.com/needim/noty/a6cccf80/lib/noty.css" async deffered>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" async deffered>
-        <link rel="stylesheet" href="/css/app.css" async deffered>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/needim/noty/a6cccf80/lib/noty.css" async deferred>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" async deferred>
+        <link rel="stylesheet" href="/css/app.css" async deferred>
         <title>Joshua Welford</title>
     </head>
     <body>

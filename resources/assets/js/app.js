@@ -30,7 +30,7 @@ const app = new Vue({
         store: Store
     },
 
-    beforeCreate() {    
+    beforeCreate() {
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js', {scope: '/'})
             .then(function(reg) {
@@ -39,6 +39,33 @@ const app = new Vue({
                 // registration failed
                 console.log('Registration failed with ' + error);
             });
+        }
+    },
+
+    mounted() {
+        this.$analytics.bind('pusher:subscription_succeeded', function(){
+            this.handleAnalytics();
+        }.bind(this));
+    },
+
+    methods: {
+        handleAnalytics(bind = true) {
+            this.$analytics.trigger("client-route-navigate", {
+                route: this.$route.path,
+                client: this.$analytics.members.me
+            });
+
+            if (bind) {
+                this.$analytics.bind('client-analytics-refresh', function(data){
+                    this.handleAnalytics(false);
+                }.bind(this));
+            }
+        }
+    },
+
+    watch: {
+        '$route': function(){
+            this.handleAnalytics();
         }
     },
     

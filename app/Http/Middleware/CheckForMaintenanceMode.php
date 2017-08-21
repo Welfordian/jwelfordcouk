@@ -12,7 +12,10 @@ class CheckForMaintenanceMode
     public function __construct(Application $app)
     {
         $this->app = $app;
-        $this->whitelist = ['82.24.63.240'];
+        $this->whitelist = [
+            '82.24.63.240',
+            '81.105.22.239'
+        ];
     }
 
     public function handle($request, Closure $next)

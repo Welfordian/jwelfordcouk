@@ -27,6 +27,12 @@
             }
         },
 
+        mounted() {
+            this.analytics.bind('client-route-navigate', function(){
+                console.log(arguments);
+            })
+        },
+
         beforeMount() {
             _http.get('/dashboard/stats')
             .then(function(response){
