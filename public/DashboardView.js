@@ -104,7 +104,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -118,14 +117,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 posts: false,
                 messages: false,
                 files: false
-            },
-            analytics: this.$analytics
+            }
         };
-    },
-    mounted: function mounted() {
-        this.analytics.bind('client-route-navigate', function () {
-            console.log(arguments);
-        });
     },
     beforeMount: function beforeMount() {
         __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* _http */].get('/dashboard/stats').then(function (response) {
@@ -152,7 +145,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "link": "/dashboard/users",
       "title": "Users",
       "icon": "users",
-      "size": "6"
+      "size": "4"
     }
   }), _vm._v(" "), _c('dashboard-stat', {
     attrs: {
@@ -160,14 +153,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "link": "/dashboard/posts",
       "title": "Posts",
       "icon": "newspaper-o",
-      "size": "6"
-    }
-  }), _vm._v(" "), _c('dashboard-stat', {
-    attrs: {
-      "data": _vm.stats.messages,
-      "link": "/dashboard/messages",
-      "title": "Emails",
-      "icon": "envelope",
       "size": "4"
     }
   }), _vm._v(" "), _c('dashboard-stat', {
@@ -180,11 +165,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('dashboard-stat', {
     attrs: {
-      "data": _vm.analytics.members.count,
-      "link": "/dashboard/analytics",
-      "title": "Analytics",
-      "icon": "line-chart",
-      "size": "4"
+      "data": _vm.stats.messages,
+      "link": "/dashboard/messages",
+      "title": "Emails",
+      "icon": "envelope",
+      "size": "12"
     }
   })], 1)
 },staticRenderFns: []}

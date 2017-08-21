@@ -1,11 +1,10 @@
 <template>
     <div class="row">
         <h1 class="title">Welcome {{ store.user.get('name') }}</h1>
-        <dashboard-stat v-bind:data="stats.users" link="/dashboard/users" title="Users" icon="users" size="6"></dashboard-stat>
-        <dashboard-stat v-bind:data="stats.posts" link="/dashboard/posts" title="Posts" icon="newspaper-o" size="6"></dashboard-stat>
-        <dashboard-stat v-bind:data="stats.messages" link="/dashboard/messages" title="Emails" icon="envelope" size="4"></dashboard-stat>
-        <dashboard-stat v-bind:data="stats.files" link="/dashboard/files" title="Files" icon="file" size="4"></dashboard-stat>
-        <dashboard-stat v-bind:data="analytics.members.count" link="/dashboard/analytics" title="Analytics" icon="line-chart" size="4"></dashboard-stat>
+        <dashboard-stat v-bind:data="stats.users" link="/dashboard/users" title="Users" icon="users" size="4"></dashboard-stat>
+        <dashboard-stat v-bind:data="stats.posts" link="/dashboard/posts" title="Posts" icon="newspaper-o" size="4"></dashboard-stat>
+        <dashboard-stat v-bind:data="stats.files" link="/dashboard/files" title="Files" icon="file" size="4"></dashboard-stat> 
+        <dashboard-stat v-bind:data="stats.messages" link="/dashboard/messages" title="Emails" icon="envelope" size="12"></dashboard-stat> 
     </div>
 </template>
 
@@ -22,15 +21,8 @@
                     posts: false,
                     messages: false,
                     files: false
-                },
-                analytics: this.$analytics
+                }
             }
-        },
-
-        mounted() {
-            this.analytics.bind('client-route-navigate', function(){
-                console.log(arguments);
-            })
         },
 
         beforeMount() {

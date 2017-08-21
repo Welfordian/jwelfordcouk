@@ -8,7 +8,6 @@ const Contact = () => import( /* webpackChunkName: "ContactView" */ './views/Con
 const Login = () => import ( /* webpackChunkName: "LoginView" */ './views/Login');
 const Dashboard = () => import( /* webpackChunkName: "DashboardView" */ './views/Dashboard');
 const DashboardUsers = () => import( /* webpackChunkName: "DashboardUsersView" */ './views/dashboard/Users');
-const DashboardAnalytics = () => import( /* webpackChunkName: "DashboardAnalyticsView" */ './views/dashboard/Analytics');
 const NotFound = () => import( /* webpackChunkName: "NotFoundView" */ './views/NotFound');
 
 const routes = [
@@ -44,11 +43,6 @@ const routes = [
     {
         path: '/dashboard/users',
         component: DashboardUsers,
-        beforeEnter: isAuthenticated
-    },
-    {
-        path: '/dashboard/analytics',
-        component: DashboardAnalytics,
         beforeEnter: isAuthenticated
     },
     {
