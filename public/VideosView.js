@@ -1,26 +1,32 @@
-webpackJsonp([3],{
+webpackJsonp([2],{
 
-/***/ 229:
+/***/ 337:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(239)
+  __webpack_require__(346)
 }
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(241),
-  /* template */
-  __webpack_require__(242),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-4107e0ee",
-  /* moduleIdentifier (server only) */
-  null
+var normalizeComponent = __webpack_require__(5)
+/* script */
+var __vue_script__ = __webpack_require__(348)
+/* template */
+var __vue_template__ = __webpack_require__(349)
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-39b77a1d"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
 )
-Component.options.__file = "/var/www/dev.site/resources/assets/js/views/Videos.vue"
+Component.options.__file = "resources/assets/js/views/Videos.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Videos.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -31,9 +37,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4107e0ee", Component.options)
+    hotAPI.createRecord("data-v-39b77a1d", Component.options)
   } else {
-    hotAPI.reload("data-v-4107e0ee", Component.options)
+    hotAPI.reload("data-v-39b77a1d", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45,23 +51,23 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 239:
+/***/ 346:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(240);
+var content = __webpack_require__(347);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(6)("ca210fd0", content, false);
+var update = __webpack_require__(35)("32a2c2be", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4107e0ee\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Videos.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4107e0ee\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Videos.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-39b77a1d\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Videos.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-39b77a1d\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Videos.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -72,28 +78,28 @@ if(false) {
 
 /***/ }),
 
-/***/ 240:
+/***/ 347:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(undefined);
+exports = module.exports = __webpack_require__(34)(undefined);
 // imports
 
 
 // module
-exports.push([module.i, "\n[data-v-4107e0ee]:root {\r\n    --refresh-hover-color: #586b7d;\n}\n.fa-refresh[data-v-4107e0ee] {\r\n\tfloat: right;\r\n\tcursor: pointer;\n}\n.fa-refresh[data-v-4107e0ee]:hover {\r\n\tcolor: var(--refresh-hover-color);\n}\n.loading-row[data-v-4107e0ee] {\r\n    text-align: center;\r\n    font-size: 5em;\r\n    color: #2c3e50;\n}\n.tutorial[data-v-4107e0ee] {\r\n    transition: all .3s;\n}\n.tutorial-link[data-v-4107e0ee],\r\n.tutorial-link[data-v-4107e0ee]:hover,\r\n.tutorial-link[data-v-4107e0ee]:active {\r\n    text-decoration: none;\r\ncolor: #FFFFF !important;\n}\n.tutorial[data-v-4107e0ee]:hover {\r\n    -webkit-transform: scale(1.03);\r\n    -ms-transform: scale(1.03);\r\n    transform: scale(1.03);\r\n    box-shadow: 0 0 13px #CCC;\r\n    z-index: 3;\n}\n.tutorial .title[data-v-4107e0ee] {\r\n    padding: 0 0 4px 8px;\r\n    font-weight: bold;\r\n    text-align: left;\r\n    max-width: 98%;\r\n    width: 98%;\r\n    overflow: hidden;\r\n    white-space: nowrap;\n}\n.intro-image-container[data-v-4107e0ee] {\r\n    overflow: hidden;\r\nposition: relative;\r\nheight: 148px;\n}\n.tutorial-intro-image[data-v-4107e0ee] {\r\n    -webkit-transition: -webkit-transform .3s;\r\n    transition: transform .3s;\r\n    -webkit-transform: scale(1.3);\r\n    -ms-transform: scale(1.3);\r\n    transform: scale(1.3);\r\nposition: absolute;\r\nheight: auto !important;\n}\n.tutorial-intro-image.youtube[data-v-4107e0ee]{\r\ntop: -25px;\n}\n.tutorial-intro-image[data-v-4107e0ee],\r\n.intro-image-container[data-v-4107e0ee] {\r\n    width: 100%;\r\n    min-width: 100%;\r\n    max-width: 100%;\n}\n.tutorial:hover .tutorial-intro-image[data-v-4107e0ee] {\r\n    -webkit-transform: scale(1);\r\n    -ms-transform: scale(1);\r\n    transform: scale(1)\n}\n.well-custom[data-v-4107e0ee] {\r\n    padding: 0;\r\n    background-color: #2c3e50;\r\n    color: #ffffff;\n}\n#tracks-title .fa-spotify[data-v-4107e0ee] {\r\n    color: #1DB954;\n}\r\n/* Make it a marquee */\n.marquee[data-v-4107e0ee] {\r\n    width: 450px;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    box-sizing: border-box;\n}\n.marquee span[data-v-4107e0ee] {\r\n    display: inline-block;\r\n    padding-left: 100%;\r\n    text-indent: 0;\r\n    animation: marquee-data-v-4107e0ee 5s linear infinite;\n}\n.marquee span[data-v-4107e0ee]:hover {\r\n    animation-play-state: paused\n}\r\n/* Make it move */\n@keyframes marquee-data-v-4107e0ee {\n0% {\r\n        transform: translate(0, 0);\n}\n100% {\r\n        transform: translate(-100%, 0);\n}\n}\r\n/* Make it pretty */\n.microsoft[data-v-4107e0ee] {\r\n    padding-left: 1.5em;\r\n    position: relative;\n}\r\n/* ::before was :before before ::before was ::before - kthx */\n.microsoft[data-v-4107e0ee]:before,\r\n.microsoft[data-v-4107e0ee]::before {\r\n    z-index: 2;\r\n    content: '';\r\n    position: absolute;\r\n    top: -1em;\r\n    left: -1em;\r\n    width: .5em;\r\n    height: .5em;\r\n    box-shadow: 1.0em 1.25em 0 #F65314, 1.6em 1.25em 0 #7CBB00, 1.0em 1.85em 0 #00A1F1, 1.6em 1.85em 0 #FFBB00;\n}\n.microsoft[data-v-4107e0ee]:after,\r\n.microsoft[data-v-4107e0ee]::after {\r\n    z-index: 1;\r\n    content: '';\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 2em;\r\n    height: 2em;\r\n    background-image: linear-gradient(90deg, white 70%, rgba(255, 255, 255, 0));\n}\r\n/* Style the links */\n.vanity[data-v-4107e0ee] {\r\n    color: #333;\r\n    text-align: center;\n}\n.vanity a[data-v-4107e0ee],\r\n.microsoft a[data-v-4107e0ee] {\r\n    color: #1570A6;\r\n    transition: color .5s;\r\n    text-decoration: none;\n}\n.vanity a[data-v-4107e0ee]:hover,\r\n.microsoft a[data-v-4107e0ee]:hover {\r\n    color: #F65314;\n}\r\n/* Style toggle button */\n.toggle[data-v-4107e0ee] {\r\n    display: block;\r\n    margin: 2em auto;\n}\n#tracks-title .fa-refresh[data-v-4107e0ee] {\r\n    float: right;\r\n    cursor: pointer;\n}\n#tracks-title .fa-refresh[data-v-4107e0ee]:hover {\r\n    color: var(--refresh-hover-color);\n}\n.intro-image-origin[data-v-4107e0ee]{\r\nposition: absolute;\r\nbottom: 5px;\r\nleft: 5px;\r\nwidth: 45px;\n}\n.tooltip-inner[data-v-4107e0ee]{\r\nmax-width: 245px !important;\r\npadding: 8px;\n}\r\n", ""]);
+exports.push([module.i, "\n[data-v-39b77a1d]:root {\n    --refresh-hover-color: #586b7d;\n}\n.fa-refresh[data-v-39b77a1d] {\n\tfloat: right;\n\tcursor: pointer;\n}\n.fa-refresh[data-v-39b77a1d]:hover {\n\tcolor: var(--refresh-hover-color);\n}\n.loading-row[data-v-39b77a1d] {\n    text-align: center;\n    font-size: 5em;\n    color: #2c3e50;\n}\n.tutorial[data-v-39b77a1d] {\n    -webkit-transition: all .3s;\n    transition: all .3s;\n}\n.tutorial-link[data-v-39b77a1d],\n.tutorial-link[data-v-39b77a1d]:hover,\n.tutorial-link[data-v-39b77a1d]:active {\n    text-decoration: none;\ncolor: #FFFFF !important;\n}\n.tutorial[data-v-39b77a1d]:hover {\n    -webkit-transform: scale(1.03);\n    transform: scale(1.03);\n    -webkit-box-shadow: 0 0 13px #CCC;\n            box-shadow: 0 0 13px #CCC;\n    z-index: 3;\n}\n.tutorial .title[data-v-39b77a1d] {\n    padding: 0 0 4px 8px;\n    font-weight: bold;\n    text-align: left;\n    max-width: 98%;\n    width: 98%;\n    overflow: hidden;\n    white-space: nowrap;\n}\n.intro-image-container[data-v-39b77a1d] {\n    overflow: hidden;\nposition: relative;\nheight: 148px;\n}\n.tutorial-intro-image[data-v-39b77a1d] {\n    -webkit-transition: -webkit-transform .3s;\n    transition: -webkit-transform .3s;\n    transition: transform .3s;\n    transition: transform .3s, -webkit-transform .3s;\n    -webkit-transform: scale(1.3);\n    transform: scale(1.3);\nposition: absolute;\nheight: auto !important;\n}\n.tutorial-intro-image.youtube[data-v-39b77a1d]{\ntop: -25px;\n}\n.tutorial-intro-image[data-v-39b77a1d],\n.intro-image-container[data-v-39b77a1d] {\n    width: 100%;\n    min-width: 100%;\n    max-width: 100%;\n}\n.tutorial:hover .tutorial-intro-image[data-v-39b77a1d] {\n    -webkit-transform: scale(1);\n    transform: scale(1)\n}\n.well-custom[data-v-39b77a1d] {\n    padding: 0;\n    background-color: #2c3e50;\n    color: #ffffff;\n}\n#tracks-title .fa-spotify[data-v-39b77a1d] {\n    color: #1DB954;\n}\n/* Make it a marquee */\n.marquee[data-v-39b77a1d] {\n    width: 450px;\n    white-space: nowrap;\n    overflow: hidden;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n}\n.marquee span[data-v-39b77a1d] {\n    display: inline-block;\n    padding-left: 100%;\n    text-indent: 0;\n    -webkit-animation: marquee-data-v-39b77a1d 5s linear infinite;\n            animation: marquee-data-v-39b77a1d 5s linear infinite;\n}\n.marquee span[data-v-39b77a1d]:hover {\n    -webkit-animation-play-state: paused;\n            animation-play-state: paused\n}\n/* Make it move */\n@-webkit-keyframes marquee-data-v-39b77a1d {\n0% {\n        -webkit-transform: translate(0, 0);\n                transform: translate(0, 0);\n}\n100% {\n        -webkit-transform: translate(-100%, 0);\n                transform: translate(-100%, 0);\n}\n}\n@keyframes marquee-data-v-39b77a1d {\n0% {\n        -webkit-transform: translate(0, 0);\n                transform: translate(0, 0);\n}\n100% {\n        -webkit-transform: translate(-100%, 0);\n                transform: translate(-100%, 0);\n}\n}\n/* Make it pretty */\n.microsoft[data-v-39b77a1d] {\n    padding-left: 1.5em;\n    position: relative;\n}\n/* ::before was :before before ::before was ::before - kthx */\n.microsoft[data-v-39b77a1d]:before,\n.microsoft[data-v-39b77a1d]::before {\n    z-index: 2;\n    content: '';\n    position: absolute;\n    top: -1em;\n    left: -1em;\n    width: .5em;\n    height: .5em;\n    -webkit-box-shadow: 1.0em 1.25em 0 #F65314, 1.6em 1.25em 0 #7CBB00, 1.0em 1.85em 0 #00A1F1, 1.6em 1.85em 0 #FFBB00;\n            box-shadow: 1.0em 1.25em 0 #F65314, 1.6em 1.25em 0 #7CBB00, 1.0em 1.85em 0 #00A1F1, 1.6em 1.85em 0 #FFBB00;\n}\n.microsoft[data-v-39b77a1d]:after,\n.microsoft[data-v-39b77a1d]::after {\n    z-index: 1;\n    content: '';\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 2em;\n    height: 2em;\n    background-image: -webkit-gradient(linear, left top, right top, color-stop(70%, white), to(rgba(255, 255, 255, 0)));\n    background-image: linear-gradient(90deg, white 70%, rgba(255, 255, 255, 0));\n}\n/* Style the links */\n.vanity[data-v-39b77a1d] {\n    color: #333;\n    text-align: center;\n}\n.vanity a[data-v-39b77a1d],\n.microsoft a[data-v-39b77a1d] {\n    color: #1570A6;\n    -webkit-transition: color .5s;\n    transition: color .5s;\n    text-decoration: none;\n}\n.vanity a[data-v-39b77a1d]:hover,\n.microsoft a[data-v-39b77a1d]:hover {\n    color: #F65314;\n}\n/* Style toggle button */\n.toggle[data-v-39b77a1d] {\n    display: block;\n    margin: 2em auto;\n}\n#tracks-title .fa-refresh[data-v-39b77a1d] {\n    float: right;\n    cursor: pointer;\n}\n#tracks-title .fa-refresh[data-v-39b77a1d]:hover {\n    color: var(--refresh-hover-color);\n}\n.intro-image-origin[data-v-39b77a1d]{\nposition: absolute;\nbottom: 5px;\nleft: 5px;\nwidth: 45px;\n}\n.tooltip-inner[data-v-39b77a1d]{\nmax-width: 245px !important;\npadding: 8px;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 241:
+/***/ 348:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__i18n__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Http__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__i18n__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Http__ = __webpack_require__(42);
 //
 //
 //
@@ -151,86 +157,111 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 242:
+/***/ 349:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h1', [_c('i', {
-    staticClass: "fa fa-youtube-play",
-    staticStyle: {
-      "color": "#e52d27"
-    }
-  }), _vm._v(" " + _vm._s(_vm.lang.get('videos.title')) + " "), _c('i', {
-    staticClass: "fa fa-refresh",
-    class: {
-      'fa-spin': !Object.keys(_vm.videos).length
-    },
-    on: {
-      "click": _vm.fetchVideos
-    }
-  })]), _vm._v(" "), _c('hr'), _vm._v(" "), (Object.keys(_vm.videos).length) ? _c('div', {
-    staticClass: "row viewing-habits"
-  }, _vm._l((_vm.videos), function(video) {
-    return (video.title) ? _c('div', {
-      staticClass: "col-md-3 col-lg-3"
-    }, [_c('a', {
-      staticClass: "tutorial-link",
-      attrs: {
-        "target": "_blank",
-        "rel": "noreferrer noopener",
-        "href": video.url
-      }
-    }, [_c('div', {
-      staticClass: "well well-custom tutorial"
-    }, [_c('h4', {
-      staticClass: "title",
-      attrs: {
-        "id": "title"
-      }
-    }, [_c('span', {
-      attrs: {
-        "title": video.title
-      }
-    }, [_vm._v(_vm._s(video.title))])]), _vm._v(" "), _c('div', {
-      staticClass: "intro-image-container",
-      staticStyle: {
-        "position": "relative"
-      }
-    }, [_c('img', {
-      staticClass: "tutorial-intro-image image",
-      class: video.tag,
-      attrs: {
-        "id": "track-image",
-        "src": video.image
-      }
-    }), _vm._v(" "), (video.tag == 'youtube') ? _c('img', {
-      staticClass: "intro-image-origin",
-      attrs: {
-        "src": "//cdn.jwelford.co.uk/images/youtube-play.svg"
-      }
-    }) : _c('img', {
-      staticClass: "intro-image-origin",
-      staticStyle: {
-        "width": "145px"
-      },
-      attrs: {
-        "src": "//cdn.jwelford.co.uk/images/netflix-n.svg"
-      }
-    })])])])]) : _vm._e()
-  })) : _c('div', {
-    staticClass: "row loading-row"
-  }, [_c('i', {
-    staticClass: "fa fa-circle-o-notch fa-spin",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  })])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("h1", [
+      _c("i", {
+        staticClass: "fa fa-youtube-play",
+        staticStyle: { color: "#e52d27" }
+      }),
+      _vm._v(" " + _vm._s(_vm.lang.get("videos.title")) + " "),
+      _c("i", {
+        staticClass: "fa fa-refresh",
+        class: { "fa-spin": !Object.keys(_vm.videos).length },
+        on: { click: _vm.fetchVideos }
+      })
+    ]),
+    _vm._v(" "),
+    _c("hr"),
+    _vm._v(" "),
+    Object.keys(_vm.videos).length
+      ? _c(
+          "div",
+          { staticClass: "row viewing-habits" },
+          _vm._l(_vm.videos, function(video) {
+            return video.title
+              ? _c("div", { staticClass: "col-md-3 col-lg-3" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "tutorial-link",
+                      attrs: {
+                        target: "_blank",
+                        rel: "noreferrer noopener",
+                        href: video.url
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "well well-custom tutorial" }, [
+                        _c(
+                          "h4",
+                          { staticClass: "title", attrs: { id: "title" } },
+                          [
+                            _c("span", { attrs: { title: video.title } }, [
+                              _vm._v(_vm._s(video.title))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "intro-image-container",
+                            staticStyle: { position: "relative" }
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "tutorial-intro-image image",
+                              class: video.tag,
+                              attrs: { id: "track-image", src: video.image }
+                            }),
+                            _vm._v(" "),
+                            video.tag == "youtube"
+                              ? _c("img", {
+                                  staticClass: "intro-image-origin",
+                                  attrs: {
+                                    src:
+                                      "//cdn.jwelford.co.uk/images/youtube-play.svg"
+                                  }
+                                })
+                              : _c("img", {
+                                  staticClass: "intro-image-origin",
+                                  staticStyle: { width: "145px" },
+                                  attrs: {
+                                    src:
+                                      "//cdn.jwelford.co.uk/images/netflix-n.svg"
+                                  }
+                                })
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ])
+              : _vm._e()
+          })
+        )
+      : _c("div", { staticClass: "row loading-row" }, [
+          _c("i", {
+            staticClass: "fa fa-circle-o-notch fa-spin",
+            attrs: { "aria-hidden": "true" }
+          })
+        ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-4107e0ee", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-39b77a1d", module.exports)
   }
 }
 
