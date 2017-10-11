@@ -1,26 +1,32 @@
 webpackJsonp([0],{
 
-/***/ 231:
+/***/ 339:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(247)
+  __webpack_require__(354)
 }
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(249),
-  /* template */
-  __webpack_require__(251),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-7166877a",
-  /* moduleIdentifier (server only) */
-  null
+var normalizeComponent = __webpack_require__(5)
+/* script */
+var __vue_script__ = __webpack_require__(356)
+/* template */
+var __vue_template__ = __webpack_require__(358)
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-e2abd7aa"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
 )
-Component.options.__file = "/var/www/dev.site/resources/assets/js/views/Contact.vue"
+Component.options.__file = "resources/assets/js/views/Contact.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Contact.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -31,9 +37,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7166877a", Component.options)
+    hotAPI.createRecord("data-v-e2abd7aa", Component.options)
   } else {
-    hotAPI.reload("data-v-7166877a", Component.options)
+    hotAPI.reload("data-v-e2abd7aa", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45,23 +51,23 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 247:
+/***/ 354:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(248);
+var content = __webpack_require__(355);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(6)("f4926420", content, false);
+var update = __webpack_require__(35)("bc9eb8dc", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7166877a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Contact.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7166877a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Contact.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e2abd7aa\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Contact.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e2abd7aa\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Contact.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -72,33 +78,33 @@ if(false) {
 
 /***/ }),
 
-/***/ 248:
+/***/ 355:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(undefined);
+exports = module.exports = __webpack_require__(34)(undefined);
 // imports
 
 
 // module
-exports.push([module.i, "\n.input-group-addon[data-v-7166877a] {\r\n    min-width: 130px;\r\n    text-align: right;\n}\n.input-group[data-v-7166877a] {\r\n    margin: 8px;\n}\n.error[data-v-7166877a] {\r\n    background: rgba(214, 44, 26, 0.77);\r\n    color: white;\n}\n._fade[data-v-7166877a] {\r\n    transform: scale(0.5);\r\n    opacity: 0;\r\n    transition: all .2s linear;\n}\n._fade.in[data-v-7166877a] {\r\n    opacity: 1;\r\n    transform: scale(1);\n}\r\n", ""]);
+exports.push([module.i, "\n.input-group-addon[data-v-e2abd7aa] {\n    min-width: 130px;\n    text-align: right;\n}\n.input-group[data-v-e2abd7aa] {\n    margin: 8px;\n}\n.error[data-v-e2abd7aa] {\n    background: rgba(214, 44, 26, 0.77);\n    color: white;\n}\n._fade[data-v-e2abd7aa] {\n    -webkit-transform: scale(0.5);\n            transform: scale(0.5);\n    opacity: 0;\n    -webkit-transition: all .2s linear;\n    transition: all .2s linear;\n}\n._fade.in[data-v-e2abd7aa] {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 249:
+/***/ 356:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_idb__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_idb__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_idb___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_idb__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_noty__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_noty__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_noty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_noty__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__EventBus__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__i18n__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Http__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__EventBus__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__i18n__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Http__ = __webpack_require__(42);
 //
 //
 //
@@ -279,7 +285,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 250:
+/***/ 357:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -598,274 +604,339 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 251:
+/***/ 358:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h1', [(!_vm.loading) ? _c('i', {
-    staticClass: "fa fa-envelope",
-    staticStyle: {
-      "margin-left": "8px",
-      "margin-right": "6px"
-    }
-  }) : _c('i', {
-    staticClass: "fa fa-refresh fa-spin",
-    staticStyle: {
-      "margin-left": "8px",
-      "margin-right": "6px"
-    }
-  }), _vm._v("\n        " + _vm._s(_vm.lang.get('contact.title')) + "\n    ")]), _vm._v(" "), _c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-9"
-  }, [_c('form', {
-    attrs: {
-      "role": "form"
-    },
-    on: {
-      "submit": function($event) {
-        $event.preventDefault();
-        _vm.handleContactSubmit($event)
-      }
-    }
-  }, [_c('div', {
-    staticClass: "input-group"
-  }, [_c('span', {
-    staticClass: "input-group-addon"
-  }, [_vm._v(_vm._s(_vm.lang.get('full_name')) + " ")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.form.name),
-      expression: "form.name"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "name": "name",
-      "id": "prependedtext",
-      "placeholder": "John Doe...",
-      "type": "text",
-      "required": "",
-      "value": ""
-    },
-    domProps: {
-      "value": (_vm.form.name)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.form.name = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "input-group"
-  }, [_c('span', {
-    staticClass: "input-group-addon"
-  }, [_vm._v(_vm._s(_vm.lang.get('email_address')) + " ")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.form.email),
-      expression: "form.email"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "name": "email",
-      "id": "prependedtext",
-      "placeholder": "john.doe@example.com",
-      "type": "email",
-      "required": "",
-      "value": ""
-    },
-    domProps: {
-      "value": (_vm.form.email)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.form.email = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "input-group"
-  }, [_c('span', {
-    staticClass: "input-group-addon"
-  }, [_vm._v(_vm._s(_vm.lang.get('subject')) + " ")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.form.subject),
-      expression: "form.subject"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "name": "subject",
-      "id": "prependedtext",
-      "placeholder": _vm.lang.get('subject.placeholder'),
-      "type": "text",
-      "required": "",
-      "value": ""
-    },
-    domProps: {
-      "value": (_vm.form.subject)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.form.subject = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "input-group"
-  }, [_c('span', {
-    staticClass: "input-group-addon"
-  }, [_vm._v(_vm._s(_vm.lang.get('message')) + " ")]), _vm._v(" "), _c('textarea', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.form.message),
-      expression: "form.message"
-    }],
-    staticClass: "form-control",
-    staticStyle: {
-      "resize": "none"
-    },
-    attrs: {
-      "name": "message",
-      "placeholder": _vm.lang.get('message.placeholder'),
-      "required": ""
-    },
-    domProps: {
-      "value": (_vm.form.message)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.form.message = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6",
-    staticStyle: {
-      "padding": "5px"
-    }
-  }, [_c('button', {
-    staticClass: "btn btn-success",
-    staticStyle: {
-      "width": "100%"
-    }
-  }, [_vm._v(_vm._s(_vm.lang.get('send_message')))])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6",
-    staticStyle: {
-      "padding": "5px"
-    }
-  }, [_c('a', {
-    staticClass: "btn btn-danger",
-    staticStyle: {
-      "width": "100%"
-    },
-    on: {
-      "click": _vm.clearForm
-    }
-  }, [_vm._v(_vm._s(_vm.lang.get('clear_form')))])])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-3"
-  }, [_c('a', {
-    staticClass: "btn btn-block btn-social btn-twitter",
-    staticStyle: {
-      "margin-top": "7px"
-    },
-    attrs: {
-      "href": "https://twitter.com/welfordian",
-      "target": "_blank"
-    }
-  }, [_c('i', {
-    staticClass: "fa fa-twitter",
-    staticStyle: {
-      "margin-top": "3px"
-    }
-  }), _vm._v(_vm._s(_vm.lang.get('find_me_on')) + " Twitter")]), _vm._v(" "), _c('a', {
-    staticClass: "btn btn-block btn-social btn-github",
-    staticStyle: {
-      "margin-top": "7px"
-    },
-    attrs: {
-      "href": "https://github.com/welfordian",
-      "target": "_blank"
-    }
-  }, [_c('i', {
-    staticClass: "fa fa-github",
-    staticStyle: {
-      "margin-top": "3px"
-    }
-  }), _vm._v(_vm._s(_vm.lang.get('find_me_on')) + " GitHub")]), _vm._v(" "), _c('a', {
-    staticClass: "btn btn-block btn-social btn-linkedin",
-    staticStyle: {
-      "margin-top": "7px"
-    },
-    attrs: {
-      "href": "https://www.linkedin.com/in/josh-welford-1432777a/",
-      "target": "_blank"
-    }
-  }, [_c('i', {
-    staticClass: "fa fa-linkedin",
-    staticStyle: {
-      "margin-top": "3px"
-    }
-  }), _vm._v(_vm._s(_vm.lang.get('find_me_on')) + " LinkedIn")])])]), _vm._v(" "), _c('div', {
-    staticClass: "modal _fade",
-    attrs: {
-      "tabindex": "-1",
-      "role": "dialog",
-      "id": "offlineModal"
-    }
-  }, [_c('div', {
-    staticClass: "modal-dialog",
-    attrs: {
-      "role": "document"
-    }
-  }, [_c('div', {
-    staticClass: "modal-content"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
-    staticClass: "modal-body"
-  }, [_c('p', [_vm._v(_vm._s(_vm.modalMessage))])]), _vm._v(" "), _c('div', {
-    staticClass: "modal-footer"
-  }, [_c('button', {
-    staticClass: "btn btn-default",
-    attrs: {
-      "type": "button",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Close")]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-primary",
-    attrs: {
-      "type": "button"
-    },
-    on: {
-      "click": _vm.requestNotifications
-    }
-  }, [_vm._v("Notify Me When Sent")])])])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "modal-header"
-  }, [_c('button', {
-    staticClass: "close",
-    attrs: {
-      "type": "button",
-      "aria-label": "Close"
-    }
-  }, [_c('span', {
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("×")])]), _vm._v(" "), _c('h4', {
-    staticClass: "modal-title"
-  }, [_vm._v("Seems there was a problem...")])])
-}]}
-module.exports.render._withStripped = true
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("h1", [
+      !_vm.loading
+        ? _c("i", {
+            staticClass: "fa fa-envelope",
+            staticStyle: { "margin-left": "8px", "margin-right": "6px" }
+          })
+        : _c("i", {
+            staticClass: "fa fa-refresh fa-spin",
+            staticStyle: { "margin-left": "8px", "margin-right": "6px" }
+          }),
+      _vm._v("\n        " + _vm._s(_vm.lang.get("contact.title")) + "\n    ")
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-9" }, [
+        _c(
+          "form",
+          {
+            attrs: { role: "form" },
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                _vm.handleContactSubmit($event)
+              }
+            }
+          },
+          [
+            _c("div", { staticClass: "input-group" }, [
+              _c("span", { staticClass: "input-group-addon" }, [
+                _vm._v(_vm._s(_vm.lang.get("full_name")) + " ")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.name,
+                    expression: "form.name"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  name: "name",
+                  id: "prependedtext",
+                  placeholder: "John Doe...",
+                  type: "text",
+                  required: "",
+                  value: ""
+                },
+                domProps: { value: _vm.form.name },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.form.name = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "input-group" }, [
+              _c("span", { staticClass: "input-group-addon" }, [
+                _vm._v(_vm._s(_vm.lang.get("email_address")) + " ")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.email,
+                    expression: "form.email"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  name: "email",
+                  id: "prependedtext",
+                  placeholder: "john.doe@example.com",
+                  type: "email",
+                  required: "",
+                  value: ""
+                },
+                domProps: { value: _vm.form.email },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.form.email = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "input-group" }, [
+              _c("span", { staticClass: "input-group-addon" }, [
+                _vm._v(_vm._s(_vm.lang.get("subject")) + " ")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.subject,
+                    expression: "form.subject"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  name: "subject",
+                  id: "prependedtext",
+                  placeholder: _vm.lang.get("subject.placeholder"),
+                  type: "text",
+                  required: "",
+                  value: ""
+                },
+                domProps: { value: _vm.form.subject },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.form.subject = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "input-group" }, [
+              _c("span", { staticClass: "input-group-addon" }, [
+                _vm._v(_vm._s(_vm.lang.get("message")) + " ")
+              ]),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.message,
+                    expression: "form.message"
+                  }
+                ],
+                staticClass: "form-control",
+                staticStyle: { resize: "none" },
+                attrs: {
+                  name: "message",
+                  placeholder: _vm.lang.get("message.placeholder"),
+                  required: ""
+                },
+                domProps: { value: _vm.form.message },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.form.message = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-md-6", staticStyle: { padding: "5px" } },
+              [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-success",
+                    staticStyle: { width: "100%" }
+                  },
+                  [_vm._v(_vm._s(_vm.lang.get("send_message")))]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-md-6", staticStyle: { padding: "5px" } },
+              [
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-danger",
+                    staticStyle: { width: "100%" },
+                    on: { click: _vm.clearForm }
+                  },
+                  [_vm._v(_vm._s(_vm.lang.get("clear_form")))]
+                )
+              ]
+            )
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-3" }, [
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-block btn-social btn-twitter",
+            staticStyle: { "margin-top": "7px" },
+            attrs: { href: "https://twitter.com/welfordian", target: "_blank" }
+          },
+          [
+            _c("i", {
+              staticClass: "fa fa-twitter",
+              staticStyle: { "margin-top": "3px" }
+            }),
+            _vm._v(_vm._s(_vm.lang.get("find_me_on")) + " Twitter")
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-block btn-social btn-github",
+            staticStyle: { "margin-top": "7px" },
+            attrs: { href: "https://github.com/welfordian", target: "_blank" }
+          },
+          [
+            _c("i", {
+              staticClass: "fa fa-github",
+              staticStyle: { "margin-top": "3px" }
+            }),
+            _vm._v(_vm._s(_vm.lang.get("find_me_on")) + " GitHub")
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-block btn-social btn-linkedin",
+            staticStyle: { "margin-top": "7px" },
+            attrs: {
+              href: "https://www.linkedin.com/in/josh-welford-1432777a/",
+              target: "_blank"
+            }
+          },
+          [
+            _c("i", {
+              staticClass: "fa fa-linkedin",
+              staticStyle: { "margin-top": "3px" }
+            }),
+            _vm._v(_vm._s(_vm.lang.get("find_me_on")) + " LinkedIn")
+          ]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal _fade",
+        attrs: { tabindex: "-1", role: "dialog", id: "offlineModal" }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "modal-dialog", attrs: { role: "document" } },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }, [
+                _c("p", [_vm._v(_vm._s(_vm.modalMessage))])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-footer" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-default",
+                    attrs: { type: "button", "data-dismiss": "modal" }
+                  },
+                  [_vm._v("Close")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    attrs: { type: "button" },
+                    on: { click: _vm.requestNotifications }
+                  },
+                  [_vm._v("Notify Me When Sent")]
+                )
+              ])
+            ])
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: { type: "button", "aria-label": "Close" }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      ),
+      _vm._v(" "),
+      _c("h4", { staticClass: "modal-title" }, [
+        _vm._v("Seems there was a problem...")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-7166877a", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-e2abd7aa", module.exports)
   }
 }
 
