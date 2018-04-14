@@ -32,7 +32,7 @@ mix.webpackConfig({
             new SWPrecacheWebpackPlugin({
                 cacheId: 'pwa',
                 filename: 'sw.js',
-                staticFileGlobs: ['public/**/*.{css,eot,svg,ttf,woff,woff2,js,html}', '/js/idb.js', '/js/store.js'],
+                staticFileGlobs: ['public/**/*.{css,eot,svg,ttf,woff,woff2,js,html}', '/js/idb.js', '/js/store.js', '/images/me-min.jpg', '/fonts/vendor/bootstrap-sass/bootstrap/glyphicons-halflings-regular.woff2'],
                 minify: true,
                 stripPrefix: 'public/',
                 handleFetch: true,
