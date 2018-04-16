@@ -10,7 +10,7 @@ const Http = axios.create({
 
 Http.interceptors.request.use(async function (config) {
     // If we're hitting the API and we're not hitting the login route
-    if (/\/api\//.test(config.url) && /\/api\/login/.test(config.url) === false) {
+    if (/\/api\//.test(config.url) && /\/api\/login/.test(config.url) === false && /\api\/contact/.test(config.url) === false) {
         // If the token isn't valid and we're not already refreshing the token
         if (! Store.auth.tokenValid() && ! Store.auth.refreshingToken)
         {
