@@ -2,7 +2,6 @@ import VueRouter from 'vue-router';
 import { Store } from './stores/SharedStore';
 
 const About = () => import( /* webpackChunkName: "AboutView" */ './views/About');
-const Videos = () => import( /* webpackChunkName: "VideosView" */ './views/Videos');
 const Music = () => import( /* webpackChunkName: "MusicView" */ './views/Music');
 const Contact = () => import( /* webpackChunkName: "ContactView" */ './views/Contact');
 const Login = () => import ( /* webpackChunkName: "LoginView" */ './views/Login');
@@ -18,10 +17,6 @@ const routes = [
     {
         path: '/about',
         component: About
-    },
-    {
-        path: '/videos',
-        component: Videos
     },
     {
         path: '/music',

@@ -23,7 +23,7 @@ const app = new Vue({
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js', {scope: '/'})
             .then(function(reg) {
-                Events.$emit('service_worker.reg', reg);
+                Store.serviceWorker = reg;
             }).catch(function(error) {
                 // registration failed
                 console.log('Registration failed with ' + error);

@@ -61,13 +61,10 @@
     import { Events } from '../EventBus';
     import { i18n } from '../i18n';
     import { _http } from '../Http';
+    import { Store } from '../stores/SharedStore';
 
     export default {
         mounted() {
-            Events.$on('service_worker.reg', function(reg){
-                this.sw = reg;
-            }.bind(this));
-
             $('#offlineModal').on('hidden.bs.modal', function(){
                 this.modalMessage = "It looks like there was a problem sending your message, but don't worry... I'll keep trying to resend it for you. You can click the button below to be notified when it has successfully sent.";
             }.bind(this));
@@ -171,7 +168,7 @@
                     var transaction = db.transaction('outbox', 'readwrite');
                     return transaction.objectStore('outbox').put(this.form);
                 }.bind(this)).then(function() {
-                    this.sw.sync.register('outbox');
+                    Store.serviceWorker.sync.register('outbox');
 
                     this.clearForm();
                 }.bind(this));

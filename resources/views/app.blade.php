@@ -43,7 +43,6 @@
                 <navbar>
                     <template slot="left-links">
                         <navbar-link href="/about" icon="user">@{{ lang.get('navbar.about') }}</navbar-link>
-                        <navbar-link href="/videos" icon="play">@{{ lang.get('navbar.videos') }}</navbar-link>
                         <navbar-link href="/music" icon="music">@{{ lang.get('navbar.music') }}</navbar-link>
                         <navbar-link href="/contact" icon="inbox">@{{ lang.get('navbar.contact') }}</navbar-link>
                     </template>
