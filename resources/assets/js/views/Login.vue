@@ -8,7 +8,7 @@
 
 <script>
     import { Store } from '../stores/SharedStore';
-    import DefaultLayout from "../components/DashboardLayout";
+    import DefaultLayout from "../components/DefaultLayout";
 
     export default {
       components: {DefaultLayout},
