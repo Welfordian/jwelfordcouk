@@ -2,7 +2,7 @@
 <div class="row noselect" :style="backgroundStyle()">
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.46);"></div>
     <div class="col-md-12">
-        <img :style="imageStyle()">
+        <div :style="imageStyle()" alt="Image of myself"></div>
         <h2 style="text-align: center; color: black;">{{ name }}</h2>
     </div>
 </div>

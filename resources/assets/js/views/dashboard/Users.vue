@@ -1,14 +1,15 @@
 <template>
-    <div class="row">
-        <h1>Users <button class="btn btn-primary pull-right">Create</button></h1>
-        <hr />
+    <dashboard-layout>
+        <div class="row">
+            <h1>Users <button class="btn btn-primary pull-right">Create</button></h1>
+            <hr />
 
-        <p class="content-loader" v-if="users.length === 0">
-            <i class="fa fa-refresh fa-spin"></i>
-        </p>
-        
-        <table class="table table-striped" v-else>
-            <thead>
+            <p class="content-loader" v-if="users.length === 0">
+                <i class="fa fa-refresh fa-spin"></i>
+            </p>
+
+            <table class="table table-striped" v-else>
+                <thead>
                 <tr>
                     <th>#</th>
                     <th>Name</th>
@@ -17,8 +18,8 @@
                     <th>Updated</th>
                     <th>Options</th>
                 </tr>
-            </thead>
-            <tbody>
+                </thead>
+                <tbody>
                 <tr v-for="user in users">
                     <td>
                         {{ user.id }}
@@ -53,16 +54,19 @@
                         </div>
                     </td>
                 </tr>
-            </tbody>
-        </table>
-    </div>
+                </tbody>
+            </table>
+        </div>
+    </dashboard-layout>
 </template>
 
 <script>
     import { _http } from '../../Http';
+    import DashboardLayout from "../../components/DashboardLayout";
 
     export default {
-        data() {
+      components: {DashboardLayout},
+      data() {
             return {
                 confirmsDelete: false,
                 users: []

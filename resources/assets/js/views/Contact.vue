@@ -1,58 +1,60 @@
 <template>
-    <div>
-        <h1>
-            <i style="margin-left: 8px; margin-right: 6px;" class="fa fa-envelope" v-if="!loading"></i>
-            <i style="margin-left: 8px; margin-right: 6px;" class="fa fa-refresh fa-spin" v-else></i>
-            {{ lang.get('contact.title') }}
-        </h1>
-        <div class="row">
-            <div class="col-md-9">
-                <form role="form" v-on:submit.prevent="handleContactSubmit">
-                    <div class="input-group"><span class="input-group-addon">{{ lang.get('full_name') }} </span>
-                        <input name="name" v-model="form.name" id="prependedtext" class="form-control" placeholder="John Doe..." type="text" required="" value="">
-                    </div>
-                    <div class="input-group"><span class="input-group-addon">{{ lang.get('email_address') }} </span>
-                        <input name="email" v-model="form.email" id="prependedtext" class="form-control" placeholder="john.doe@example.com" type="email" required="" value="">
-                    </div>
-                    <div class="input-group"><span class="input-group-addon">{{ lang.get('subject') }} </span>
-                        <input name="subject" v-model="form.subject" id="prependedtext" class="form-control" v-bind:placeholder="lang.get('subject.placeholder')" type="text" required="" value="">
-                    </div>
-                    <div class="input-group"><span class="input-group-addon">{{ lang.get('message') }} </span>
-                        <textarea name="message" v-model="form.message" style="resize: none;" class="form-control" v-bind:placeholder="lang.get('message.placeholder')" required=""></textarea>
-                    </div>
-                    <div class="col-md-6" style="padding: 5px;">
-                        <button style="width: 100%;" class="btn btn-success">{{ lang.get('send_message') }}</button>
-                    </div>
-                    <div style="padding: 5px;" class="col-md-6">
-                        <a @click="clearForm" style="width: 100%;" class="btn btn-danger">{{ lang.get('clear_form') }}</a>
-                    </div>
-                </form>
+    <default-layout>
+        <div>
+            <h1>
+                <i style="margin-left: 8px; margin-right: 6px;" class="fa fa-envelope" v-if="!loading"></i>
+                <i style="margin-left: 8px; margin-right: 6px;" class="fa fa-refresh fa-spin" v-else></i>
+                {{ lang.get('contact.title') }}
+            </h1>
+            <div class="row">
+                <div class="col-md-9">
+                    <form role="form" v-on:submit.prevent="handleContactSubmit">
+                        <div class="input-group"><span class="input-group-addon">{{ lang.get('full_name') }} </span>
+                            <input name="name" v-model="form.name" id="prependedtext" class="form-control" placeholder="John Doe..." type="text" required="" value="">
+                        </div>
+                        <div class="input-group"><span class="input-group-addon">{{ lang.get('email_address') }} </span>
+                            <input name="email" v-model="form.email" id="prependedtext" class="form-control" placeholder="john.doe@example.com" type="email" required="" value="">
+                        </div>
+                        <div class="input-group"><span class="input-group-addon">{{ lang.get('subject') }} </span>
+                            <input name="subject" v-model="form.subject" id="prependedtext" class="form-control" v-bind:placeholder="lang.get('subject.placeholder')" type="text" required="" value="">
+                        </div>
+                        <div class="input-group"><span class="input-group-addon">{{ lang.get('message') }} </span>
+                            <textarea name="message" v-model="form.message" style="resize: none;" class="form-control" v-bind:placeholder="lang.get('message.placeholder')" required=""></textarea>
+                        </div>
+                        <div class="col-md-6" style="padding: 5px;">
+                            <button style="width: 100%;" class="btn btn-success">{{ lang.get('send_message') }}</button>
+                        </div>
+                        <div style="padding: 5px;" class="col-md-6">
+                            <a @click="clearForm" style="width: 100%;" class="btn btn-danger">{{ lang.get('clear_form') }}</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <a href="https://twitter.com/welfordian" target="_blank" style="margin-top: 7px;" class="btn btn-block btn-social btn-twitter"><i style="margin-top: 3px;" class="fa fa-twitter"></i>{{ lang.get('find_me_on') }} Twitter</a>
+                    <a href="https://github.com/welfordian" target="_blank" style="margin-top: 7px;" class="btn btn-block btn-social btn-github"><i style="margin-top: 3px;" class="fa fa-github"></i>{{ lang.get('find_me_on') }} GitHub</a>
+                    <a href="https://www.linkedin.com/in/josh-welford-1432777a/" target="_blank" style="margin-top: 7px;" class="btn btn-block btn-social btn-linkedin"><i style="margin-top: 3px;" class="fa fa-linkedin"></i>{{ lang.get('find_me_on') }} LinkedIn</a>
+                </div>
             </div>
-            <div class="col-md-3">
-                <a href="https://twitter.com/welfordian" target="_blank" style="margin-top: 7px;" class="btn btn-block btn-social btn-twitter"><i style="margin-top: 3px;" class="fa fa-twitter"></i>{{ lang.get('find_me_on') }} Twitter</a>
-                <a href="https://github.com/welfordian" target="_blank" style="margin-top: 7px;" class="btn btn-block btn-social btn-github"><i style="margin-top: 3px;" class="fa fa-github"></i>{{ lang.get('find_me_on') }} GitHub</a>
-                <a href="https://www.linkedin.com/in/josh-welford-1432777a/" target="_blank" style="margin-top: 7px;" class="btn btn-block btn-social btn-linkedin"><i style="margin-top: 3px;" class="fa fa-linkedin"></i>{{ lang.get('find_me_on') }} LinkedIn</a>
-            </div>
-        </div>
 
-        <div class="modal _fade" tabindex="-1" role="dialog" id="offlineModal">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Seems there was a problem...</h4>
-                </div>
-                <div class="modal-body">
-                    <p>{{ modalMessage }}</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" @click="requestNotifications">Notify Me When Sent</button>
-                </div>
+            <div class="modal _fade" tabindex="-1" role="dialog" id="offlineModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Seems there was a problem...</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>{{ modalMessage }}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" @click="requestNotifications">Notify Me When Sent</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </default-layout>
 </template>
 
 <script>
@@ -62,9 +64,11 @@
     import { i18n } from '../i18n';
     import { _http } from '../Http';
     import { Store } from '../stores/SharedStore';
+    import DefaultLayout from "../components/DefaultLayout";
 
     export default {
-        mounted() {
+      components: {DefaultLayout},
+      mounted() {
             $('#offlineModal').on('hidden.bs.modal', function(){
                 this.modalMessage = "It looks like there was a problem sending your message, but don't worry... I'll keep trying to resend it for you. You can click the button below to be notified when it has successfully sent.";
             }.bind(this));

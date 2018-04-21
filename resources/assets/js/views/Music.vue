@@ -1,33 +1,37 @@
 <template>
-    <div>
-        <h1 id="tracks-title"><i title="via Spotify" class="fa fa-spotify"></i> {{ lang.get('music.title') }} <i @click="fetchTracks" class="fa fa-refresh" v-bind:class="{ 'fa-spin': !tracks.length }"></i></h1>
-        <hr />
+    <default-layout>
+        <div>
+            <h1 id="tracks-title"><i title="via Spotify" class="fa fa-spotify"></i> {{ lang.get('music.title') }} <i @click="fetchTracks" class="fa fa-refresh" v-bind:class="{ 'fa-spin': !tracks.length }"></i></h1>
+            <hr />
 
-        <div id="tracks-container" class="row" v-if="tracks.length">
-            <div class="col-md-3" v-for="track in tracks">
-                <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="track.url">
-                    <div class="well well-custom tutorial">
-                        <h4 class="title" id="title"><span v-bind:title="getTrackTitle(track)">{{ getTrackTitle(track) }}</span></h4>
-                        <div class="intro-image-container">
-                            <img class="tutorial-intro-image image" id="track-image" v-bind:src="getLargestAlbumImage(track)">
+            <div id="tracks-container" class="row" v-if="tracks.length">
+                <div class="col-md-3" v-for="track in tracks">
+                    <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="track.url">
+                        <div class="well well-custom tutorial">
+                            <h4 class="title" id="title"><span v-bind:title="getTrackTitle(track)">{{ getTrackTitle(track) }}</span></h4>
+                            <div class="intro-image-container">
+                                <img class="tutorial-intro-image image" id="track-image" v-bind:src="getLargestAlbumImage(track)" alt="Album Art">
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row loading-row" v-else>
+                <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></h1>
             </div>
         </div>
-
-        <div class="row loading-row" v-else>
-            <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></h1>
-        </div>
-    </div>
+    </default-layout>
 </template>
 
 <script>
 	import { i18n } from '../i18n';
     import { _http } from '../Http';
+    import DefaultLayout from "../components/DefaultLayout";
 
     export default {
-        data() {
+      components: {DefaultLayout},
+      data() {
             return {
 				lang: i18n,
                 tracks: []

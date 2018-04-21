@@ -12,7 +12,7 @@
         },
         methods: {
             generateIcon() {
-                return "glyphicon glyphicon-" + this.icon;
+                return "fa fa-" + this.icon;
             }
         },
         data() {

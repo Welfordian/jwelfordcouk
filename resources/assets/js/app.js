@@ -20,16 +20,33 @@ const app = new Vue({
     },
 
     beforeCreate() {
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js', {scope: '/'})
-            .then(function(reg) {
-                Store.serviceWorker = reg;
-            }).catch(function(error) {
-                // registration failed
-                console.log('Registration failed with ' + error);
-            });
-        }
+      const noVues = document.getElementsByClassName('no-vue');
+
+      for(i = 0; i < noVues.length; i++) {
+        noVues[i].className = "no-vue hidden";
+      }
+
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js', {scope: '/'})
+          .then(function(reg) {
+              Store.serviceWorker = reg;
+          }).catch(function(error) {
+              // registration failed
+              console.log('Registration failed with ' + error);
+          });
+      }
     },
     
     router
+});
+
+$(document).ready(function () {
+  $(document).click(function (event) {
+    var clickover = $(event.target);
+    var _opened = $(".navbar-collapse").hasClass("in");
+    console.log(_opened);
+    if (_opened === true && !clickover.hasClass("navbar-toggle")) {
+      $("button.navbar-toggle").click();
+    }
+  });
 });

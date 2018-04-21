@@ -3,9 +3,7 @@
     <li class="dropdown" v-else>
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user"></i> {{ store.user.get('name') }} <span class="caret"></span></a>       
         <ul class="dropdown-menu">
-            <li class="dropdown-submenu">
-                <router-link to="/dashboard"><i class="glyphicon glyphicon-flash"></i> Dashboard</router-link>
-            </li>
+            <slot></slot>
             <li role="separator" class="divider"></li>
             <li><a href="#" @click.prevent="handleLogout"><i class="glyphicon glyphicon-log-out"></i> {{ lang.get('navbar.logout') }}</a></li>
         </ul>

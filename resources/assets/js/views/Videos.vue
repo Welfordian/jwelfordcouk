@@ -1,37 +1,40 @@
 <template>
-    <div>
-        <h1><i class="fa fa-youtube-play" style="color: #e52d27"></i> {{ lang.get('videos.title') }} <i @click="fetchVideos" class="fa fa-refresh" v-bind:class="{ 'fa-spin': !Object.keys(videos).length }"></i></h1>
+    <default-layout>
+        <div>
+            <h1><i class="fa fa-youtube-play" style="color: #e52d27"></i> {{ lang.get('videos.title') }} <i @click="fetchVideos" class="fa fa-refresh" v-bind:class="{ 'fa-spin': !Object.keys(videos).length }"></i></h1>
 
-        <hr />
+            <hr />
 
-        <div class="row viewing-habits" v-if="Object.keys(videos).length">
-            <div class="col-md-3 col-lg-3" v-for="video in videos" v-if="video.title">
-                <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="video.url">
-                    <div class="well well-custom tutorial">
-                        <h4 class="title" id="title"><span v-bind:title="video.title">{{ video.title }}</span></h4>
-                        <div class="intro-image-container" style="position: relative;">
-                            <img class="tutorial-intro-image image" v-bind:class="video.tag" id="track-image" v-bind:src="video.image">
-                            <img class="intro-image-origin" src="//cdn.jwelford.co.uk/images/youtube-play.svg" v-if="video.tag == 'youtube'">
-                            <img class="intro-image-origin" src="//cdn.jwelford.co.uk/images/netflix-n.svg" style="width: 145px;" v-else>
+            <div class="row viewing-habits" v-if="Object.keys(videos).length">
+                <div class="col-md-3 col-lg-3" v-for="video in videos" v-if="video.title">
+                    <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="video.url">
+                        <div class="well well-custom tutorial">
+                            <h4 class="title" id="title"><span v-bind:title="video.title">{{ video.title }}</span></h4>
+                            <div class="intro-image-container" style="position: relative;">
+                                <img class="tutorial-intro-image image" v-bind:class="video.tag" id="track-image" v-bind:src="video.image" alt="Video Thumbnail">
+                                <img class="intro-image-origin" src="//cdn.jwelford.co.uk/images/youtube-play.svg" v-if="video.tag == 'youtube'" alt="YouTube Icon">
+                                <img class="intro-image-origin" src="//cdn.jwelford.co.uk/images/netflix-n.svg" style="width: 145px;" v-else alt="Netflix Icon">
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row loading-row" v-else>
+                <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></h1>
             </div>
         </div>
-
-        <div class="row loading-row" v-else>
-            <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></h1>
-        </div>
-    </div>
-    
+    </default-layout>
 </template>
 
 <script>
     import { i18n } from '../i18n';
     import { _http } from '../Http';
+    import DefaultLayout from "../components/DashboardLayout";
 
     export default {
-        data() {
+      components: {DefaultLayout},
+      data() {
             return {
                 lang: i18n,
                 videos: {}

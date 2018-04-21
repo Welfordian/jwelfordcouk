@@ -1,12 +1,14 @@
 {
     "/ContactView.js": "/ContactView.js",
-    "/DashboardUsersView.js": "/DashboardUsersView.js",
-    "/VideosView.js": "/VideosView.js",
     "/MusicView.js": "/MusicView.js",
+    "/DashboardUsersView.js": "/DashboardUsersView.js",
+    "/DashboardPostsView.js": "/DashboardPostsView.js",
     "/DashboardView.js": "/DashboardView.js",
+    "/AboutView.js": "/AboutView.js",
     "/NotFoundView.js": "/NotFoundView.js",
     "/LoginView.js": "/LoginView.js",
-    "/AboutView.js": "/AboutView.js",
+    "/DashboardFilesView.js": "/DashboardFilesView.js",
+    "/DashboardEmailsView.js": "/DashboardEmailsView.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css"
 }

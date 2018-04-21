@@ -1,6 +1,6 @@
 <template>
-    <div class="row" id="knowledge">
-        <a v-if="showTitle" id="knowledge" name="knowledge"></a>
+    <div class="row">
+        <a v-if="showTitle" name="knowledge"></a>
 
         <h2 v-if="showTitle" class="noselect" style="margin-left: 15px;">{{ lang.get('languages.title') }} <a class="part-link" href="#knowledge"><i class="glyphicon glyphicon-link"></i></a></h2>
         <slot></slot>

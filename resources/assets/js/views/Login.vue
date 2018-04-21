@@ -1,14 +1,18 @@
 <template>
-    <div>
-        <login-panel use-ajax></login-panel>
-    </div>
+    <default-layout>
+        <div>
+            <login-panel use-ajax></login-panel>
+        </div>
+    </default-layout>
 </template>
 
 <script>
     import { Store } from '../stores/SharedStore';
+    import DefaultLayout from "../components/DashboardLayout";
 
     export default {
-        beforeRouteEnter(to, from, next) {
+      components: {DefaultLayout},
+      beforeRouteEnter(to, from, next) {
             if (Store.auth.authenticated) {
                 next((vm) => {
                    vm.$router.push('/dashboard');

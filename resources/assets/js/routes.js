@@ -7,6 +7,9 @@ const Contact = () => import( /* webpackChunkName: "ContactView" */ './views/Con
 const Login = () => import ( /* webpackChunkName: "LoginView" */ './views/Login');
 const Dashboard = () => import( /* webpackChunkName: "DashboardView" */ './views/Dashboard');
 const DashboardUsers = () => import( /* webpackChunkName: "DashboardUsersView" */ './views/dashboard/Users');
+const DashboardPosts = () => import( /* webpackChunkName: "DashboardPostsView" */ './views/dashboard/Posts');
+const Files = () => import( /* webpackChunkName: "DashboardFilesView" */ './views/dashboard/Files');
+const Emails = () => import( /* webpackChunkName: "DashboardEmailsView" */ './views/dashboard/Emails');
 const NotFound = () => import( /* webpackChunkName: "NotFoundView" */ './views/NotFound');
 
 const routes = [
@@ -38,6 +41,11 @@ const routes = [
     {
         path: '/dashboard/users',
         component: DashboardUsers,
+        beforeEnter: isAuthenticated
+    },
+    {
+        path: '/dashboard/posts',
+        component: DashboardPosts,
         beforeEnter: isAuthenticated
     },
     {
