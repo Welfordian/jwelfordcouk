@@ -6,17 +6,25 @@ import { Events } from './EventBus';
 import { filters } from './Filters';
 import router from './routes';
 import VueRouter from 'vue-router';
+import TuiEditor from 'vue-tui-editor';
+import Toasted from 'vue-toasted';
 
 Vue.use(VueRouter);
+Vue.use(TuiEditor);
+Vue.use(Toasted, {
+  iconPack: 'fontawesome'
+});
 
 require('./components');
+require('./mixins');
 
-const app = new Vue({
+export const app = new Vue({
     el: '#app',
 
     data: {
         lang: i18n,
-        store: Store
+        store: Store,
+        toast: false
     },
 
     beforeCreate() {
@@ -25,6 +33,14 @@ const app = new Vue({
       for(i = 0; i < noVues.length; i++) {
         noVues[i].className = "no-vue hidden";
       }
+
+      Events.$on('showLoading', () => {
+        this.toast = this.$toasted.show(`<i class="fa fa-spinner fa-spin"></i> Loading Post Details...`, {
+          theme: "primary",
+          position: "bottom-right",
+          icon: 'spin'
+        });
+      });
 
       if ('serviceWorker' in navigator) {
           navigator.serviceWorker.register('/sw.js', {scope: '/'})
@@ -36,6 +52,12 @@ const app = new Vue({
           });
       }
     },
+
+    beforeMount() {
+      Events.$on('hideLoading', () => {
+        this.toast.goAway();
+      });
+    },
     
     router
 });
@@ -44,7 +66,7 @@ $(document).ready(function () {
   $(document).click(function (event) {
     var clickover = $(event.target);
     var _opened = $(".navbar-collapse").hasClass("in");
-    console.log(_opened);
+
     if (_opened === true && !clickover.hasClass("navbar-toggle")) {
       $("button.navbar-toggle").click();
     }

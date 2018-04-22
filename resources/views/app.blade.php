@@ -470,7 +470,8 @@
         </div>
 
         <div id="app" v-cloak>
-            <router-view></router-view>
+            <loading v-if="$root.loading"></loading>
+            <router-view v-else></router-view>
         </div>
 
         <noscript>

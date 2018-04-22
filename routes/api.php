@@ -12,10 +12,12 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
 Route::post('login', 'AuthenticateController@authenticate');
 Route::post('pusher/auth', 'AuthenticateController@pusher');
 Route::get('token/refresh', 'AuthenticateController@refreshToken');
+Route::get('/posts', 'PostsController@listAll');
+Route::get('/posts/{slug}', 'PostsController@get');
+Route::post('/posts/image/verify_url', 'PostsController@verifyIntroImageUrl')->middleware('verify.request.origin');
 Route::post('contact', 'ContactController@create')->middleware('verify.request.origin');
 
 Route::group(['middleware' => ['jwt.auth']], function(){
@@ -39,5 +41,7 @@ Route::group(['middleware' => ['jwt.auth']], function(){
             'files' => 0
         ];
     });
+    Route::post('/posts', 'PostsController@create');
+    Route::post('/posts/images', 'PostsController@storeImage');
 });
 

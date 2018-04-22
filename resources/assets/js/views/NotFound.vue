@@ -15,8 +15,9 @@
                     <hr />
                     <ul class="pager">
                         <li><router-link to="/about">&larr; About</router-link></li>
+                        <li><router-link to="/posts"> Posts </router-link></li>
                         <li><router-link to="/music"> Music</router-link></li>
-                        <li><router-link to="/contact">&rarr; Contact</router-link></li>
+                        <li><router-link to="/contact">Contact &rarr;</router-link></li>
                     </ul>
                 </div>
             </div>
@@ -25,7 +26,7 @@
 </template>
 
 <script>
-    import DefaultLayout from "../components/DashboardLayout";
+    import DefaultLayout from "../components/DefaultLayout";
 
     export default {
       components: {DefaultLayout}

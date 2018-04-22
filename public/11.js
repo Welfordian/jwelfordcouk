@@ -1,28 +1,35 @@
 webpackJsonp([11],{
 
-/***/ 229:
+/***/ 253:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(238)
+  __webpack_require__(254)
 }
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(240),
-  /* template */
-  __webpack_require__(241),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-4107e0ee",
-  /* moduleIdentifier (server only) */
-  null
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(256)
+/* template */
+var __vue_template__ = __webpack_require__(257)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
 )
-Component.options.__file = "/var/www/dev.site/resources/assets/js/views/Videos.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Videos.vue: functional components are not supported with templates, they should use render functions.")}
+Component.options.__file = "resources/assets/js/components/DashboardLayout.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -31,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4107e0ee", Component.options)
+    hotAPI.createRecord("data-v-4a1dfef7", Component.options)
   } else {
-    hotAPI.reload("data-v-4107e0ee", Component.options)
+    hotAPI.reload("data-v-4a1dfef7", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45,23 +52,23 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 238:
+/***/ 254:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(239);
+var content = __webpack_require__(255);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(6)("ca210fd0", content, false);
+var update = __webpack_require__(6)("5c1a3f27", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4107e0ee\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Videos.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4107e0ee\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Videos.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4a1dfef7\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./DashboardLayout.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4a1dfef7\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./DashboardLayout.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -72,28 +79,27 @@ if(false) {
 
 /***/ }),
 
-/***/ 239:
+/***/ 255:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(undefined);
+exports = module.exports = __webpack_require__(5)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n[data-v-4107e0ee]:root {\r\n    --refresh-hover-color: #586b7d;\n}\n.fa-refresh[data-v-4107e0ee] {\r\n\tfloat: right;\r\n\tcursor: pointer;\n}\n.fa-refresh[data-v-4107e0ee]:hover {\r\n\tcolor: var(--refresh-hover-color);\n}\n.loading-row[data-v-4107e0ee] {\r\n    text-align: center;\r\n    font-size: 5em;\r\n    color: #2c3e50;\n}\n.tutorial[data-v-4107e0ee] {\r\n    transition: all .3s;\n}\n.tutorial-link[data-v-4107e0ee],\r\n.tutorial-link[data-v-4107e0ee]:hover,\r\n.tutorial-link[data-v-4107e0ee]:active {\r\n    text-decoration: none;\r\ncolor: #FFFFF !important;\n}\n.tutorial[data-v-4107e0ee]:hover {\r\n    -webkit-transform: scale(1.03);\r\n    -ms-transform: scale(1.03);\r\n    transform: scale(1.03);\r\n    box-shadow: 0 0 13px #CCC;\r\n    z-index: 3;\n}\n.tutorial .title[data-v-4107e0ee] {\r\n    padding: 0 0 4px 8px;\r\n    font-weight: bold;\r\n    text-align: left;\r\n    max-width: 98%;\r\n    width: 98%;\r\n    overflow: hidden;\r\n    white-space: nowrap;\n}\n.intro-image-container[data-v-4107e0ee] {\r\n    overflow: hidden;\r\nposition: relative;\r\nheight: 148px;\n}\n.tutorial-intro-image[data-v-4107e0ee] {\r\n    -webkit-transition: -webkit-transform .3s;\r\n    transition: transform .3s;\r\n    -webkit-transform: scale(1.3);\r\n    -ms-transform: scale(1.3);\r\n    transform: scale(1.3);\r\nposition: absolute;\r\nheight: auto !important;\n}\n.tutorial-intro-image.youtube[data-v-4107e0ee]{\r\ntop: -25px;\n}\n.tutorial-intro-image[data-v-4107e0ee],\r\n.intro-image-container[data-v-4107e0ee] {\r\n    width: 100%;\r\n    min-width: 100%;\r\n    max-width: 100%;\n}\n.tutorial:hover .tutorial-intro-image[data-v-4107e0ee] {\r\n    -webkit-transform: scale(1);\r\n    -ms-transform: scale(1);\r\n    transform: scale(1)\n}\n.well-custom[data-v-4107e0ee] {\r\n    padding: 0;\r\n    background-color: #2c3e50;\r\n    color: #ffffff;\n}\n#tracks-title .fa-spotify[data-v-4107e0ee] {\r\n    color: #1DB954;\n}\r\n/* Make it a marquee */\n.marquee[data-v-4107e0ee] {\r\n    width: 450px;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    box-sizing: border-box;\n}\n.marquee span[data-v-4107e0ee] {\r\n    display: inline-block;\r\n    padding-left: 100%;\r\n    text-indent: 0;\r\n    animation: marquee-data-v-4107e0ee 5s linear infinite;\n}\n.marquee span[data-v-4107e0ee]:hover {\r\n    animation-play-state: paused\n}\r\n/* Make it move */\n@keyframes marquee-data-v-4107e0ee {\n0% {\r\n        transform: translate(0, 0);\n}\n100% {\r\n        transform: translate(-100%, 0);\n}\n}\r\n/* Make it pretty */\n.microsoft[data-v-4107e0ee] {\r\n    padding-left: 1.5em;\r\n    position: relative;\n}\r\n/* ::before was :before before ::before was ::before - kthx */\n.microsoft[data-v-4107e0ee]:before,\r\n.microsoft[data-v-4107e0ee]::before {\r\n    z-index: 2;\r\n    content: '';\r\n    position: absolute;\r\n    top: -1em;\r\n    left: -1em;\r\n    width: .5em;\r\n    height: .5em;\r\n    box-shadow: 1.0em 1.25em 0 #F65314, 1.6em 1.25em 0 #7CBB00, 1.0em 1.85em 0 #00A1F1, 1.6em 1.85em 0 #FFBB00;\n}\n.microsoft[data-v-4107e0ee]:after,\r\n.microsoft[data-v-4107e0ee]::after {\r\n    z-index: 1;\r\n    content: '';\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 2em;\r\n    height: 2em;\r\n    background-image: linear-gradient(90deg, white 70%, rgba(255, 255, 255, 0));\n}\r\n/* Style the links */\n.vanity[data-v-4107e0ee] {\r\n    color: #333;\r\n    text-align: center;\n}\n.vanity a[data-v-4107e0ee],\r\n.microsoft a[data-v-4107e0ee] {\r\n    color: #1570A6;\r\n    transition: color .5s;\r\n    text-decoration: none;\n}\n.vanity a[data-v-4107e0ee]:hover,\r\n.microsoft a[data-v-4107e0ee]:hover {\r\n    color: #F65314;\n}\r\n/* Style toggle button */\n.toggle[data-v-4107e0ee] {\r\n    display: block;\r\n    margin: 2em auto;\n}\n#tracks-title .fa-refresh[data-v-4107e0ee] {\r\n    float: right;\r\n    cursor: pointer;\n}\n#tracks-title .fa-refresh[data-v-4107e0ee]:hover {\r\n    color: var(--refresh-hover-color);\n}\n.intro-image-origin[data-v-4107e0ee]{\r\nposition: absolute;\r\nbottom: 5px;\r\nleft: 5px;\r\nwidth: 45px;\n}\n.tooltip-inner[data-v-4107e0ee]{\r\nmax-width: 245px !important;\r\npadding: 8px;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 240:
+/***/ 256:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__i18n__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Http__ = __webpack_require__(10);
 //
 //
 //
@@ -122,117 +128,257 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            lang: __WEBPACK_IMPORTED_MODULE_0__i18n__["a" /* i18n */],
-            videos: {}
-        };
-    },
-    mounted: function mounted() {
-        this.fetchVideos();
-    },
-
-
-    methods: {
-        fetchVideos: function fetchVideos() {
-            this.videos = {};
-
-            __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* _http */].get('https://welfordian-60215.firebaseio.com/videos.json?limitToLast=50&orderBy=%22$key%22').then(function (data) {
-                this.videos = data.data;
-            }.bind(this));
-        }
-    }
+  name: 'dashboard-layout',
+  data: function data() {
+    return {
+      lang: __WEBPACK_IMPORTED_MODULE_0__i18n__["a" /* i18n */]
+    };
+  }
 });
 
 /***/ }),
 
-/***/ 241:
+/***/ 257:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h1', [_c('i', {
-    staticClass: "fa fa-youtube-play",
-    staticStyle: {
-      "color": "#e52d27"
-    }
-  }), _vm._v(" " + _vm._s(_vm.lang.get('videos.title')) + " "), _c('i', {
-    staticClass: "fa fa-refresh",
-    class: {
-      'fa-spin': !Object.keys(_vm.videos).length
-    },
-    on: {
-      "click": _vm.fetchVideos
-    }
-  })]), _vm._v(" "), _c('hr'), _vm._v(" "), (Object.keys(_vm.videos).length) ? _c('div', {
-    staticClass: "row viewing-habits"
-  }, _vm._l((_vm.videos), function(video) {
-    return (video.title) ? _c('div', {
-      staticClass: "col-md-3 col-lg-3"
-    }, [_c('a', {
-      staticClass: "tutorial-link",
-      attrs: {
-        "target": "_blank",
-        "rel": "noreferrer noopener",
-        "href": video.url
-      }
-    }, [_c('div', {
-      staticClass: "well well-custom tutorial"
-    }, [_c('h4', {
-      staticClass: "title",
-      attrs: {
-        "id": "title"
-      }
-    }, [_c('span', {
-      attrs: {
-        "title": video.title
-      }
-    }, [_vm._v(_vm._s(video.title))])]), _vm._v(" "), _c('div', {
-      staticClass: "intro-image-container",
-      staticStyle: {
-        "position": "relative"
-      }
-    }, [_c('img', {
-      staticClass: "tutorial-intro-image image",
-      class: video.tag,
-      attrs: {
-        "id": "track-image",
-        "src": video.image
-      }
-    }), _vm._v(" "), (video.tag == 'youtube') ? _c('img', {
-      staticClass: "intro-image-origin",
-      attrs: {
-        "src": "//cdn.jwelford.co.uk/images/youtube-play.svg"
-      }
-    }) : _c('img', {
-      staticClass: "intro-image-origin",
-      staticStyle: {
-        "width": "145px"
-      },
-      attrs: {
-        "src": "//cdn.jwelford.co.uk/images/netflix-n.svg"
-      }
-    })])])])]) : _vm._e()
-  })) : _c('div', {
-    staticClass: "row loading-row"
-  }, [_c('i', {
-    staticClass: "fa fa-circle-o-notch fa-spin",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  })])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "container" },
+      [
+        _c(
+          "navbar",
+          [
+            _c(
+              "template",
+              { slot: "left-links" },
+              [
+                _c(
+                  "navbar-link",
+                  { attrs: { href: "/dashboard/users", icon: "users" } },
+                  [_vm._v("Users")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "navbar-link",
+                  { attrs: { href: "/dashboard/posts", icon: "newspaper-o" } },
+                  [_vm._v("Posts")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "navbar-link",
+                  { attrs: { href: "/dashboard/files", icon: "file" } },
+                  [_vm._v("Files")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "navbar-link",
+                  { attrs: { href: "/dashboard/messages", icon: "envelope" } },
+                  [_vm._v("Messages")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "template",
+              { slot: "right-links" },
+              [
+                _c("auth-button", [
+                  _c(
+                    "li",
+                    { staticClass: "dropdown-submenu" },
+                    [
+                      _c("router-link", { attrs: { to: "/" } }, [
+                        _c("i", { staticClass: "glyphicon glyphicon-flash" }),
+                        _vm._v(" Home")
+                      ])
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("language-selector")
+              ],
+              1
+            )
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c("transition", { attrs: { name: "fade" } }, [_vm._t("default")], 2)
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-4107e0ee", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-4a1dfef7", module.exports)
   }
 }
+
+/***/ }),
+
+/***/ 294:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(296)
+/* template */
+var __vue_template__ = __webpack_require__(295)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/dashboard/posts/Create.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-c2fff334", Component.options)
+  } else {
+    hotAPI.reload("data-v-c2fff334", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 295:
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("dashboard-layout", [
+    _c("div", [
+      _c("div", { staticClass: "row" }, [
+        _c("h1", [_vm._v("Create a post")]),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("div", [
+          _c("div", { staticClass: "input-group" }, [
+            _c(
+              "span",
+              {
+                staticClass: "input-group-addon",
+                attrs: { id: "post-title-addon" }
+              },
+              [_vm._v("Post Title")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                id: "post-title",
+                "aria-describedby": "post-title-addon"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("textarea", { staticClass: "form-control" })
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-c2fff334", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 296:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_DashboardLayout__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_DashboardLayout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_DashboardLayout__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: { DashboardLayout: __WEBPACK_IMPORTED_MODULE_0__components_DashboardLayout___default.a },
+
+  beforeMount: function beforeMount() {
+    var _this = this;
+
+    this.addStyle('https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.0/css/froala_editor.min.css').then(this.addStyle('https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.0/css/froala_style.min.css')).then(function () {
+      _this.addScript('https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.0/js/froala_editor.min.js').then(function () {
+        $('textarea').froalaEditor();
+
+        setInterval(function () {
+          $('a[href="https://www.froala.com/wysiwyg-editor?k=u"]').remove();
+        }, 10);
+      });
+    });
+  }
+});
 
 /***/ })
 

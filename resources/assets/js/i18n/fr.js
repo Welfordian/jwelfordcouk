@@ -3,6 +3,7 @@ export const FR = {
     'fr': 'français',
     'currency': '€',
     'navbar.about': 'Sur',
+    'navbar.blog': 'Blog',
     'navbar.videos': 'Vidéos',
     'navbar.music': 'La musique',
     'navbar.contact': 'Contact',

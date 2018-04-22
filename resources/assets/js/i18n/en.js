@@ -3,6 +3,7 @@ export const EN = {
     'fr': 'French',
     'currency': '£',
     'navbar.about': 'About',
+    'navbar.blog': 'Blog',
     'navbar.videos': 'Videos',
     'navbar.music': 'Music',
     'navbar.contact': 'Contact',

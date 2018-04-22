@@ -4,11 +4,13 @@
     "/DashboardUsersView.js": "/DashboardUsersView.js",
     "/DashboardPostsView.js": "/DashboardPostsView.js",
     "/DashboardView.js": "/DashboardView.js",
+    "/LoginView.js": "/LoginView.js",
     "/AboutView.js": "/AboutView.js",
     "/NotFoundView.js": "/NotFoundView.js",
-    "/LoginView.js": "/LoginView.js",
     "/DashboardFilesView.js": "/DashboardFilesView.js",
     "/DashboardEmailsView.js": "/DashboardEmailsView.js",
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/BlogView.js": "/BlogView.js",
+    "/PostView.js": "/PostView.js"
 }

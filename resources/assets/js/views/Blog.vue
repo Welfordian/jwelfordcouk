@@ -1,58 +1,63 @@
 <template>
-    <dashboard-layout>
+    <default-layout>
         <div class="row">
-            <h1>Posts <router-link to="/dashboard/posts/create" tag="button" class="btn btn-primary pull-right">Create <i style="position: relative; top: 1px; left: 4px;" class="fa fa-plus"></i></router-link></h1>
+            <h1>{{ lang.get('navbar.blog') }}</h1>
             <hr/>
 
-            <p class="content-loader" v-if="posts.length === 0">
-                <i class="fa fa-refresh fa-spin"></i>
-            </p>
+            <div class="row loading-row" v-if="posts.length === 0">
+                <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></h1>
+            </div>
 
             <div id="tracks-container" class="row" v-if="posts.length">
                 <div class="col-md-4" v-for="post in posts">
-                    <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="'edit/' + post.id">
+                    <router-link :to="'posts/' + post.slug" class="tutorial-link">
                         <div class="well well-custom tutorial">
-                            <h4 class="title" id="title">Post Title</h4>
+                            <h4 class="title" id="title">{{ post.title }}</h4>
                             <div class="intro-image-container">
-                                <img class="tutorial-intro-image image" id="track-image" src="https://www.webnode.com/blog/wp-content/uploads/2016/10/Blog-intro.jpg" alt="Post intro image">
+                                <img class="tutorial-intro-image image" id="track-image" v-bind:src="'/storage/' + post.intro_image" alt="Post intro image">
                             </div>
-                            <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel diam nisi. Nam ornare neque ac blandit blandit. Duis tortor eros, elementum facilisis dui ac, bibendum viverra ante.</p>
+                            <p class="intro-text">{{ post.intro_text }}</p>
+                            <button class="read-more btn btn-success">Read More</button>
                         </div>
-                    </a>
+                    </router-link>
                 </div>
             </div>
         </div>
-    </dashboard-layout>
+    </default-layout>
 </template>
 
 <script>
-  import { _http } from '../../Http';
-  import DashboardLayout from "../../components/DashboardLayout";
+
+  import { i18n } from '../i18n';
+  import { _http } from '../Http';
+  import DefaultLayout from "../components/DefaultLayout";
 
   export default {
-    components: {DashboardLayout},
+    components: {DefaultLayout},
     data() {
       return {
-        confirmsDelete: false,
+        lang: i18n,
         posts: []
       }
     },
 
     mounted() {
-      setTimeout(() => {
-        for(let i = 1; i < 4; i++) {
-          this.posts.push({ id: i })
-        };
-      }, 500);
+      this.getPosts().then(response => this.posts = response.data.reverse());
+    },
+
+    methods: {
+      getPosts() {
+        return _http.get('/posts');
+      }
     }
   }
 </script>
 
 <style scoped>
-    .content-loader {
-        font-size: 4em;
+    .loading-row {
         text-align: center;
-        margin-top: 2em;
+        font-size: 5em;
+        color: #2c3e50;
     }
 
     li .fa {
@@ -73,9 +78,9 @@
         color: #fff;
     }
 
-     :root {
-         --refresh-hover-color: #586b7d;
-     }
+    :root {
+        --refresh-hover-color: #586b7d;
+    }
     .loading-row {
         text-align: center;
         font-size: 5em;
@@ -214,5 +219,12 @@
     }
     .intro-text {
         margin: 5px !important;
+    }
+
+    .read-more {
+        width: 95% !important;
+        margin-top: 10px;
+        margin-left: 2.5%;
+        margin-bottom: 10px;
     }
 </style>
