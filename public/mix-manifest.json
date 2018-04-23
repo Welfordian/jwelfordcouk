@@ -9,6 +9,8 @@
     "/NotFoundView.js": "/NotFoundView.js",
     "/LoginView.js": "/LoginView.js",
     "/AboutView.js": "/AboutView.js",
+    "/DashboardMessageSingle.js": "/DashboardMessageSingle.js",
+    "/DashboardMessagesView.js": "/DashboardMessagesView.js",
     "/DashboardFilesView.js": "/DashboardFilesView.js",
     "/DashboardEmailsView.js": "/DashboardEmailsView.js",
     "/js/app.js": "/js/app.js",

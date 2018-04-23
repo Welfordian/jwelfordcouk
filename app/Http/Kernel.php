@@ -60,6 +60,6 @@ class Kernel extends HttpKernel
 	    'jwt.refresh' => 'Tymon\JWTAuth\Middleware\RefreshToken',
         'enforce.api.origin' => \App\Http\Middleware\EnforceApiOrigin::class,
         'verify.request.origin' => \App\Http\Middleware\VerifyRequestOrigin::class,
-        
+        'minhtml' => \HTMLMin\HTMLMin\Http\Middleware\MinifyMiddleware::class,
     ];
 }

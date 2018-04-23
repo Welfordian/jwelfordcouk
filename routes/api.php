@@ -41,6 +41,10 @@ Route::group(['middleware' => ['jwt.auth']], function(){
             'files' => 0
         ];
     });
+
+    Route::get('/messages', 'MessagesController@listAll');
+    Route::get('/messages/{id}', 'MessagesController@single');
+
     Route::post('/posts', 'PostsController@create');
     Route::post('/posts/images', 'PostsController@storeImage');
     Route::patch('/posts/{slug}', 'PostsController@update');

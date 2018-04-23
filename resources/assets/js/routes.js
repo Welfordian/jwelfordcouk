@@ -13,6 +13,8 @@ const Login = () => import ( /* webpackChunkName: "LoginView" */ './views/Login'
 const Dashboard = () => import( /* webpackChunkName: "DashboardView" */ './views/Dashboard');
 const DashboardUsers = () => import( /* webpackChunkName: "DashboardUsersView" */ './views/dashboard/Users');
 const DashboardPosts = () => import( /* webpackChunkName: "DashboardPostsView" */ './views/dashboard/Posts');
+const DashboardMessages = () => import( /* webpackChunkName: "DashboardMessagesView" */ './views/dashboard/Messages');
+const DashboardMessageSingle = () => import( /* webpackChunkName: "DashboardMessageSingle" */ './views/dashboard/messages/View');
 const DashboardPostsCreate = () => import( /* webpackChunkName: "DashboardPostsCreateView */ './views/dashboard/posts/Create');
 const DashboardPostEdit = () => import( /* webpackChunkName: "DashboardPostsEditView */ './views/dashboard/posts/Edit');
 const Files = () => import( /* webpackChunkName: "DashboardFilesView" */ './views/dashboard/Files');
@@ -65,6 +67,16 @@ const routes = [
         beforeEnter: isAuthenticated
     },
     {
+        path: '/dashboard/messages',
+        component: DashboardMessages,
+        beforeEnter: isAuthenticated
+    },
+    {
+        path: '/dashboard/messages/:id',
+        component: DashboardMessageSingle,
+        beforeEnter: messageExists
+    },
+    {
         path: '/dashboard/posts/edit/:slug',
         component: DashboardPostEdit,
         beforeEnter: postExists
@@ -107,6 +119,24 @@ function postExists(to, from, next) {
         Events.$emit('hideLoading', true);
         next()
     }).catch(() => next('/404'));
+}
+
+function messageExists(to, from, next) {
+  let vueInterval = setInterval.prototype;
+
+  vueInterval = setInterval(() => {
+    if (app !== undefined) {
+      Events.$emit('showLoading', true);
+      clearInterval(vueInterval);
+    }
+  }, 100);
+
+  _http.get('/messages/' + to.params.id).then((response) => {
+    to.meta.message = response.data;
+
+    Events.$emit('hideLoading', true);
+    next()
+  }).catch(() => next('/404'));
 }
 
 export default new VueRouter({

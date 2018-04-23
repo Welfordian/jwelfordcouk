@@ -42,7 +42,10 @@ mix.webpackConfig({
                     '/videos': ['resources/views/app.blade.php'],
                     '/music': ['resources/views/app.blade.php'],
                     '/contact': ['resources/views/app.blade.php'],
-                    '/login': ['resources/views/app.blade.php']
+                    '/login': ['resources/views/app.blade.php'],
+                    '/dashboard': ['resources/views/app.blade.php'],
+                    '/dashboard/users': ['resources/views/app.blade.php'],
+                    '/dashboard/messages': ['resources/views/app.blade.php']
                 },
                 staticFileGlobsIgnorePatterns: [/\.map$/, /mix-manifest\.json$/, /manifest\.json$/, /sw\.js$/],
                 runtimeCaching: [
