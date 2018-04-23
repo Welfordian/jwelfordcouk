@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use \Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class PostsController extends Controller
 {
@@ -15,6 +16,13 @@ class PostsController extends Controller
     public function get(Request $request, $slug)
     {
         return Post::findBySlug($slug)->firstOrFail();
+    }
+
+    public function delete(Request $request, $slug)
+    {
+        Post::findBySlug($slug)->delete();
+
+        return ['success' => true];
     }
 
     public function verifyIntroImageUrl(Request $request)
@@ -37,6 +45,15 @@ class PostsController extends Controller
         curl_close($handle);
 
         return ['error' => false];
+    }
+
+    public function update(Request $request, $slug)
+    {
+        $post = Post::findBySlug($slug)->firstOrFail();
+
+        $post->update(Input::only('title', 'intro_image', 'intro_text', 'content'));
+
+        return $post;
     }
 
     public function create(Request $request)

@@ -14,6 +14,7 @@ const Dashboard = () => import( /* webpackChunkName: "DashboardView" */ './views
 const DashboardUsers = () => import( /* webpackChunkName: "DashboardUsersView" */ './views/dashboard/Users');
 const DashboardPosts = () => import( /* webpackChunkName: "DashboardPostsView" */ './views/dashboard/Posts');
 const DashboardPostsCreate = () => import( /* webpackChunkName: "DashboardPostsCreateView */ './views/dashboard/posts/Create');
+const DashboardPostEdit = () => import( /* webpackChunkName: "DashboardPostsEditView */ './views/dashboard/posts/Edit');
 const Files = () => import( /* webpackChunkName: "DashboardFilesView" */ './views/dashboard/Files');
 const Emails = () => import( /* webpackChunkName: "DashboardEmailsView" */ './views/dashboard/Emails');
 const NotFound = () => import( /* webpackChunkName: "NotFoundView" */ './views/NotFound');
@@ -62,6 +63,11 @@ const routes = [
         path: '/dashboard/posts',
         component: DashboardPosts,
         beforeEnter: isAuthenticated
+    },
+    {
+        path: '/dashboard/posts/edit/:slug',
+        component: DashboardPostEdit,
+        beforeEnter: postExists
     },
     {
       path: '/dashboard/posts/create',

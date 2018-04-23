@@ -34,14 +34,6 @@ export const app = new Vue({
         noVues[i].className = "no-vue hidden";
       }
 
-      Events.$on('showLoading', () => {
-        this.toast = this.$toasted.show(`<i class="fa fa-spinner fa-spin"></i> Loading Post Details...`, {
-          theme: "primary",
-          position: "bottom-right",
-          icon: 'spin'
-        });
-      });
-
       if ('serviceWorker' in navigator) {
           navigator.serviceWorker.register('/sw.js', {scope: '/'})
           .then(function(reg) {
@@ -54,8 +46,18 @@ export const app = new Vue({
     },
 
     beforeMount() {
+      Events.$on('showLoading', () => {
+        this.toast = this.$toasted.show(`<i class="fa fa-spinner fa-spin"></i> Loading Post Details...`, {
+          theme: "primary",
+          position: "bottom-right",
+          icon: 'spin'
+        });
+      });
+
       Events.$on('hideLoading', () => {
-        this.toast.goAway();
+        setTimeout(() => {
+          this.toast.goAway();
+        }, 500);
       });
     },
     

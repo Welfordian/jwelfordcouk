@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    protected $fillable = ['title', 'intro_image', 'intro_text', 'content'];
+
     public static function boot()
     {
         parent::boot();

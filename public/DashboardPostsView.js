@@ -1,18 +1,18 @@
-webpackJsonp([3],{
+webpackJsonp([6],{
 
-/***/ 246:
+/***/ 249:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(282)
+  __webpack_require__(293)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(284)
+var __vue_script__ = __webpack_require__(295)
 /* template */
-var __vue_template__ = __webpack_require__(285)
+var __vue_template__ = __webpack_require__(296)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,19 +52,19 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 251:
+/***/ 259:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(252)
+  __webpack_require__(260)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(254)
+var __vue_script__ = __webpack_require__(262)
 /* template */
-var __vue_template__ = __webpack_require__(255)
+var __vue_template__ = __webpack_require__(263)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -104,17 +104,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 252:
+/***/ 260:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(253);
+var content = __webpack_require__(261);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(7)("5c1a3f27", content, false, {});
+var update = __webpack_require__(8)("5c1a3f27", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -131,10 +131,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 253:
+/***/ 261:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)(false);
+exports = module.exports = __webpack_require__(7)(false);
 // imports
 
 
@@ -146,7 +146,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 254:
+/***/ 262:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -194,7 +194,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 255:
+/***/ 263:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -284,17 +284,17 @@ if (false) {
 
 /***/ }),
 
-/***/ 282:
+/***/ 293:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(283);
+var content = __webpack_require__(294);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(7)("72142049", content, false, {});
+var update = __webpack_require__(8)("72142049", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -311,29 +311,30 @@ if(false) {
 
 /***/ }),
 
-/***/ 283:
+/***/ 294:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)(false);
+exports = module.exports = __webpack_require__(7)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n.content-loader[data-v-5670c495] {\n    font-size: 4em;\n    text-align: center;\n    margin-top: 2em;\n}\nli .fa[data-v-5670c495] {\n    margin-left: -5px;\n    margin-right: 5px;\n}\na.primary[data-v-5670c495] {\n    color: #2c3e50;\n}\nli a.danger[data-v-5670c495]{\n    color: #e74c3c;\n}\nli a.danger[data-v-5670c495]:hover, li a.danger[data-v-5670c495]:focus, li a.danger[data-v-5670c495]:active {\n    background-color: #e74c3c;\n    color: #fff;\n}\n[data-v-5670c495]:root {\n     --refresh-hover-color: #586b7d;\n}\n.loading-row[data-v-5670c495] {\n    text-align: center;\n    font-size: 5em;\n    color: #2c3e50;\n}\n.tutorial[data-v-5670c495] {\n    -webkit-transition: all .3s;\n    transition: all .3s;\n}\n.tutorial-link[data-v-5670c495],\n.tutorial-link[data-v-5670c495]:hover,\n.tutorial-link[data-v-5670c495]:active {\n    text-decoration: none;\n}\n.tutorial[data-v-5670c495]:hover {\n    -webkit-transform: scale(1.03);\n    transform: scale(1.03);\n    -webkit-box-shadow: 0 0 13px #CCC;\n            box-shadow: 0 0 13px #CCC;\n    z-index: 3;\n}\n.tutorial .title[data-v-5670c495] {\n    padding: 0 0 4px 8px;\n    font-weight: bold;\n    text-align: left;\n    max-width: 98%;\n    width: 98%;\n    overflow: hidden;\n    white-space: nowrap;\n}\n.intro-image-container[data-v-5670c495] {\n    overflow: hidden;\n}\n.tutorial-intro-image[data-v-5670c495] {\n    -webkit-transition: -webkit-transform .3s;\n    transition: -webkit-transform .3s;\n    transition: transform .3s;\n    transition: transform .3s, -webkit-transform .3s;\n    -webkit-transform: scale(1.3);\n    transform: scale(1.3);\n}\n.tutorial-intro-image[data-v-5670c495],\n.intro-image-container[data-v-5670c495] {\n    width: 100%;\n    min-width: 100%;\n    max-width: 100%;\n}\n.tutorial:hover .tutorial-intro-image[data-v-5670c495] {\n    -webkit-transform: scale(1);\n    transform: scale(1)\n}\n.well-custom[data-v-5670c495] {\n    padding: 0;\n    background-color: #2c3e50;\n    color: #ffffff;\n}\n#tracks-title .fa-spotify[data-v-5670c495] {\n    color: #1DB954;\n}\n.marquee[data-v-5670c495] {\n    width: 450px;\n    white-space: nowrap;\n    overflow: hidden;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n}\n.marquee span[data-v-5670c495] {\n    display: inline-block;\n    padding-left: 100%;\n    text-indent: 0;\n    -webkit-animation: marquee-data-v-5670c495 5s linear infinite;\n            animation: marquee-data-v-5670c495 5s linear infinite;\n}\n.marquee span[data-v-5670c495]:hover {\n    -webkit-animation-play-state: paused;\n            animation-play-state: paused\n}\n@-webkit-keyframes marquee-data-v-5670c495 {\n0% {\n        -webkit-transform: translate(0, 0);\n                transform: translate(0, 0);\n}\n100% {\n        -webkit-transform: translate(-100%, 0);\n                transform: translate(-100%, 0);\n}\n}\n@keyframes marquee-data-v-5670c495 {\n0% {\n        -webkit-transform: translate(0, 0);\n                transform: translate(0, 0);\n}\n100% {\n        -webkit-transform: translate(-100%, 0);\n                transform: translate(-100%, 0);\n}\n}\n.microsoft[data-v-5670c495] {\n    padding-left: 1.5em;\n    position: relative;\n}\n.microsoft[data-v-5670c495]:before,\n.microsoft[data-v-5670c495]::before {\n    z-index: 2;\n    content: '';\n    position: absolute;\n    top: -1em;\n    left: -1em;\n    width: .5em;\n    height: .5em;\n    -webkit-box-shadow: 1.0em 1.25em 0 #F65314, 1.6em 1.25em 0 #7CBB00, 1.0em 1.85em 0 #00A1F1, 1.6em 1.85em 0 #FFBB00;\n            box-shadow: 1.0em 1.25em 0 #F65314, 1.6em 1.25em 0 #7CBB00, 1.0em 1.85em 0 #00A1F1, 1.6em 1.85em 0 #FFBB00;\n}\n.microsoft[data-v-5670c495]:after,\n.microsoft[data-v-5670c495]::after {\n    z-index: 1;\n    content: '';\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 2em;\n    height: 2em;\n    background-image: -webkit-gradient(linear, left top, right top, color-stop(70%, white), to(rgba(255, 255, 255, 0)));\n    background-image: linear-gradient(90deg, white 70%, rgba(255, 255, 255, 0));\n}\n.vanity[data-v-5670c495] {\n    color: #333;\n    text-align: center;\n}\n.vanity a[data-v-5670c495],\n.microsoft a[data-v-5670c495] {\n    color: #1570A6;\n    -webkit-transition: color .5s;\n    transition: color .5s;\n    text-decoration: none;\n}\n.vanity a[data-v-5670c495]:hover,\n.microsoft a[data-v-5670c495]:hover {\n    color: #F65314;\n}\n/* Style toggle button */\n.toggle[data-v-5670c495] {\n    display: block;\n    margin: 2em auto;\n}\n#tracks-title .fa-refresh[data-v-5670c495] {\n    float: right;\n    cursor: pointer;\n}\n#tracks-title .fa-refresh[data-v-5670c495]:hover {\n    color: var(--refresh-hover-color);\n}\n.intro-text[data-v-5670c495] {\n    margin: 5px !important;\n}\n", ""]);
+exports.push([module.i, "\n.loading-row[data-v-5670c495] {\n    text-align: center;\n    font-size: 5em;\n    color: #2c3e50;\n}\nli .fa[data-v-5670c495] {\n    margin-left: -5px;\n    margin-right: 5px;\n}\na.primary[data-v-5670c495] {\n    color: #2c3e50;\n}\nli a.danger[data-v-5670c495]{\n    color: #e74c3c;\n}\nli a.danger[data-v-5670c495]:hover, li a.danger[data-v-5670c495]:focus, li a.danger[data-v-5670c495]:active {\n    background-color: #e74c3c;\n    color: #fff;\n}\n[data-v-5670c495]:root {\n    --refresh-hover-color: #586b7d;\n}\n.loading-row[data-v-5670c495] {\n    text-align: center;\n    font-size: 5em;\n    color: #2c3e50;\n}\n.tutorial[data-v-5670c495] {\n    -webkit-transition: all .3s;\n    transition: all .3s;\n}\n.tutorial-link[data-v-5670c495],\n.tutorial-link[data-v-5670c495]:hover,\n.tutorial-link[data-v-5670c495]:active {\n    text-decoration: none;\n}\n.tutorial[data-v-5670c495]:hover {\n    -webkit-transform: scale(1.03);\n    transform: scale(1.03);\n    -webkit-box-shadow: 0 0 13px #CCC;\n            box-shadow: 0 0 13px #CCC;\n    z-index: 3;\n}\n.tutorial .title[data-v-5670c495] {\n    padding: 0 0 4px 8px;\n    font-weight: bold;\n    text-align: left;\n    max-width: 98%;\n    width: 98%;\n    overflow: hidden;\n    white-space: nowrap;\n}\n.intro-image-container[data-v-5670c495] {\n    overflow: hidden;\n}\n.tutorial-intro-image[data-v-5670c495] {\n    -webkit-transition: -webkit-transform .3s;\n    transition: -webkit-transform .3s;\n    transition: transform .3s;\n    transition: transform .3s, -webkit-transform .3s;\n    -webkit-transform: scale(1.3);\n    transform: scale(1.3);\n}\n.tutorial-intro-image[data-v-5670c495],\n.intro-image-container[data-v-5670c495] {\n    width: 100%;\n    min-width: 100%;\n    max-width: 100%;\n}\n.tutorial:hover .tutorial-intro-image[data-v-5670c495] {\n    -webkit-transform: scale(1);\n    transform: scale(1)\n}\n.well-custom[data-v-5670c495] {\n    padding: 0;\n    background-color: #2c3e50;\n    color: #ffffff;\n}\n#tracks-title .fa-spotify[data-v-5670c495] {\n    color: #1DB954;\n}\n.marquee[data-v-5670c495] {\n    width: 450px;\n    white-space: nowrap;\n    overflow: hidden;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n}\n.marquee span[data-v-5670c495] {\n    display: inline-block;\n    padding-left: 100%;\n    text-indent: 0;\n    -webkit-animation: marquee-data-v-5670c495 5s linear infinite;\n            animation: marquee-data-v-5670c495 5s linear infinite;\n}\n.marquee span[data-v-5670c495]:hover {\n    -webkit-animation-play-state: paused;\n            animation-play-state: paused\n}\n@-webkit-keyframes marquee-data-v-5670c495 {\n0% {\n        -webkit-transform: translate(0, 0);\n                transform: translate(0, 0);\n}\n100% {\n        -webkit-transform: translate(-100%, 0);\n                transform: translate(-100%, 0);\n}\n}\n@keyframes marquee-data-v-5670c495 {\n0% {\n        -webkit-transform: translate(0, 0);\n                transform: translate(0, 0);\n}\n100% {\n        -webkit-transform: translate(-100%, 0);\n                transform: translate(-100%, 0);\n}\n}\n.microsoft[data-v-5670c495] {\n    padding-left: 1.5em;\n    position: relative;\n}\n.microsoft[data-v-5670c495]:before,\n.microsoft[data-v-5670c495]::before {\n    z-index: 2;\n    content: '';\n    position: absolute;\n    top: -1em;\n    left: -1em;\n    width: .5em;\n    height: .5em;\n    -webkit-box-shadow: 1.0em 1.25em 0 #F65314, 1.6em 1.25em 0 #7CBB00, 1.0em 1.85em 0 #00A1F1, 1.6em 1.85em 0 #FFBB00;\n            box-shadow: 1.0em 1.25em 0 #F65314, 1.6em 1.25em 0 #7CBB00, 1.0em 1.85em 0 #00A1F1, 1.6em 1.85em 0 #FFBB00;\n}\n.microsoft[data-v-5670c495]:after,\n.microsoft[data-v-5670c495]::after {\n    z-index: 1;\n    content: '';\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 2em;\n    height: 2em;\n    background-image: -webkit-gradient(linear, left top, right top, color-stop(70%, white), to(rgba(255, 255, 255, 0)));\n    background-image: linear-gradient(90deg, white 70%, rgba(255, 255, 255, 0));\n}\n.vanity[data-v-5670c495] {\n    color: #333;\n    text-align: center;\n}\n.vanity a[data-v-5670c495],\n.microsoft a[data-v-5670c495] {\n    color: #1570A6;\n    -webkit-transition: color .5s;\n    transition: color .5s;\n    text-decoration: none;\n}\n.vanity a[data-v-5670c495]:hover,\n.microsoft a[data-v-5670c495]:hover {\n    color: #F65314;\n}\n/* Style toggle button */\n.toggle[data-v-5670c495] {\n    display: block;\n    margin: 2em auto;\n}\n#tracks-title .fa-refresh[data-v-5670c495] {\n    float: right;\n    cursor: pointer;\n}\n#tracks-title .fa-refresh[data-v-5670c495]:hover {\n    color: var(--refresh-hover-color);\n}\n.intro-text[data-v-5670c495] {\n    margin: 5px !important;\n}\n.read-more[data-v-5670c495] {\n    width: 95% !important;\n    margin-top: 10px;\n    margin-left: 2.5%;\n    margin-bottom: 10px;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 284:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_DashboardLayout__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_DashboardLayout__ = __webpack_require__(259);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_DashboardLayout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_DashboardLayout__);
+//
 //
 //
 //
@@ -376,17 +377,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   mounted: function mounted() {
     var _this = this;
 
-    setTimeout(function () {
-      for (var i = 1; i < 4; i++) {
-        _this.posts.push({ id: i });
-      };
-    }, 500);
+    this.getPosts().then(function (response) {
+      return _this.posts = response.data.reverse();
+    });
+  },
+
+
+  methods: {
+    getPosts: function getPosts() {
+      return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* _http */].get('/posts');
+    }
   }
 });
 
 /***/ }),
 
-/***/ 285:
+/***/ 296:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -430,46 +436,50 @@ var render = function() {
             "div",
             { staticClass: "row", attrs: { id: "tracks-container" } },
             _vm._l(_vm.posts, function(post) {
-              return _c("div", { staticClass: "col-md-4" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "tutorial-link",
-                    attrs: {
-                      target: "_blank",
-                      rel: "noreferrer noopener",
-                      href: "edit/" + post.id
-                    }
-                  },
-                  [
-                    _c("div", { staticClass: "well well-custom tutorial" }, [
-                      _c(
-                        "h4",
-                        { staticClass: "title", attrs: { id: "title" } },
-                        [_vm._v("Post Title")]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "intro-image-container" }, [
-                        _c("img", {
-                          staticClass: "tutorial-intro-image image",
-                          attrs: {
-                            id: "track-image",
-                            src:
-                              "https://www.webnode.com/blog/wp-content/uploads/2016/10/Blog-intro.jpg",
-                            alt: "Post intro image"
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "intro-text" }, [
-                        _vm._v(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel diam nisi. Nam ornare neque ac blandit blandit. Duis tortor eros, elementum facilisis dui ac, bibendum viverra ante."
+              return _c(
+                "div",
+                { staticClass: "col-md-4" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "tutorial-link",
+                      attrs: { to: "posts/edit/" + post.slug }
+                    },
+                    [
+                      _c("div", { staticClass: "well well-custom tutorial" }, [
+                        _c(
+                          "h4",
+                          { staticClass: "title", attrs: { id: "title" } },
+                          [_vm._v(_vm._s(post.title))]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "intro-image-container" }, [
+                          _c("img", {
+                            staticClass: "tutorial-intro-image image",
+                            attrs: {
+                              id: "track-image",
+                              src: "/storage/" + post.intro_image,
+                              alt: "Post intro image"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "intro-text" }, [
+                          _vm._v(_vm._s(post.intro_text))
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          { staticClass: "read-more btn btn-success" },
+                          [_vm._v("Edit Post")]
                         )
                       ])
-                    ])
-                  ]
-                )
-              ])
+                    ]
+                  )
+                ],
+                1
+              )
             })
           )
         : _vm._e()

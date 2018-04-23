@@ -1,6 +1,6 @@
 <template>
     <div v-if="inputType === 'input'">
-        <div ref="fakeInput" contenteditable="true" type="text" class="form-control fakeInput" style="margin-bottom: 10px;" v-on:keyup="checkInput"></div>
+        <div ref="fakeInput" contenteditable="true" type="text" class="form-control fakeInput" style="margin-bottom: 10px;" v-on:keyup="checkInput">{{ inputValue }}</div>
         <input :name="name" type="text" style="display: none;" v-bind:value="inputValue" />
         <p class="text-right" v-if="hasMax">{{ charCount }} / {{ max }}</p>
     </div>
@@ -9,16 +9,20 @@
 <script>
     export default {
       name: 'limited-input',
-      props: ['max', 'type', 'name'],
+      props: ['max', 'type', 'name', 'value'],
 
       data() {
         return {
           charCount: 0,
-          inputValue: "",
         }
       },
 
+      mounted() {
+        this.checkInput();
+      },
+
       beforeMount() {
+        this.inputValue = (this.value === undefined ? "" : this.value)
         this.name = (this.name === undefined ? '' : this.name);
         this.hasMax = this.max;
         this.inputType = (this.type === undefined ? 'input' : this.type);
@@ -47,16 +51,14 @@
           }
         },
 
-        checkInput(e) {
-            if (! e.ctrlKey) {
-              this.inputValue = e.target.innerText;
-              this.charCount = e.target.innerText.length;
+        checkInput() {
+          this.inputValue = this.$refs.fakeInput.innerText;
+          this.charCount = this.$refs.fakeInput.innerText.length;
 
-              $(this.$refs.fakeInput).append(this.highlightBadChars());
-              this.setEndOfContenteditable(this.$refs.fakeInput);
+          $(this.$refs.fakeInput).append(this.highlightBadChars());
+          this.setEndOfContenteditable(this.$refs.fakeInput);
 
-              this.$emit('input', this.$refs.fakeInput.innerText);
-            }
+          this.$emit('input', this.$refs.fakeInput.innerText);
         },
 
         highlightBadChars() {

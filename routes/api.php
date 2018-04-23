@@ -43,5 +43,7 @@ Route::group(['middleware' => ['jwt.auth']], function(){
     });
     Route::post('/posts', 'PostsController@create');
     Route::post('/posts/images', 'PostsController@storeImage');
+    Route::patch('/posts/{slug}', 'PostsController@update');
+    Route::delete('/posts/{slug}', 'PostsController@delete');
 });
 

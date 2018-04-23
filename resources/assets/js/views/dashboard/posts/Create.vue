@@ -64,7 +64,7 @@
 
         createPost() {
             _http.post('/posts', this.post).then((response) => {
-              console.log(response);
+              this.$router.push('/posts/' + response.data.slug);
             });
         },
 
