@@ -16,6 +16,8 @@ class ModificationsController extends Controller
             $subdomain = "/";
         }
 
+        return $subdomain;
+
         return Config::where('domain', '=', $subdomain)->firstOrFail();
     }
 
@@ -33,6 +35,13 @@ class ModificationsController extends Controller
 
     private function hasSubdomain($host) {
         $exploded = explode('.', $host);
-        return (count($exploded) > 2);
+
+        if (count($exploded) > 2) {
+            if ($exploded[0] === 'jwelford') {
+                return false;
+            }
+
+            return true;
+        }
     }
 }
