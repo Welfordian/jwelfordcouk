@@ -139,7 +139,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -180,11 +180,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'dashboard-layout',
+
+  props: ['fullWidth'],
+
+  computed: {
+    containerStyle: function containerStyle() {
+      var style = {};
+
+      if (this.fullWidth) {
+        style.width = '100%';
+        style.marginLeft = '0';
+        style.marginRight = '0';
+      }
+
+      return style;
+    }
+  },
+
   data: function data() {
     return {
       lang: __WEBPACK_IMPORTED_MODULE_0__i18n__["a" /* i18n */]
@@ -204,7 +222,7 @@ var render = function() {
   return _c("div", [
     _c(
       "div",
-      { staticClass: "container" },
+      { staticClass: "container", style: _vm.containerStyle },
       [
         _c(
           "navbar",
@@ -213,6 +231,12 @@ var render = function() {
               "template",
               { slot: "left-links" },
               [
+                _c(
+                  "navbar-link",
+                  { attrs: { href: "/dashboard/editor", icon: "paint-brush" } },
+                  [_vm._v("Editor")]
+                ),
+                _vm._v(" "),
                 _c(
                   "navbar-link",
                   { attrs: { href: "/dashboard/users", icon: "users" } },

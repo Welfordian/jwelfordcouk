@@ -11,6 +11,7 @@ const Music = () => import( /* webpackChunkName: "MusicView" */ './views/Music')
 const Contact = () => import( /* webpackChunkName: "ContactView" */ './views/Contact');
 const Login = () => import ( /* webpackChunkName: "LoginView" */ './views/Login');
 const Dashboard = () => import( /* webpackChunkName: "DashboardView" */ './views/Dashboard');
+const DashboardEditor = () => import( /* webpackChunkName: "DashboardEditorView" */ './views/dashboard/Editor');
 const DashboardUsers = () => import( /* webpackChunkName: "DashboardUsersView" */ './views/dashboard/Users');
 const DashboardPosts = () => import( /* webpackChunkName: "DashboardPostsView" */ './views/dashboard/Posts');
 const DashboardMessages = () => import( /* webpackChunkName: "DashboardMessagesView" */ './views/dashboard/Messages');
@@ -54,6 +55,11 @@ const routes = [
     {
         path: '/dashboard',
         component: Dashboard,
+        beforeEnter: isAuthenticated
+    },
+    {
+        path: '/dashboard/editor',
+        component: DashboardEditor,
         beforeEnter: isAuthenticated
     },
     {

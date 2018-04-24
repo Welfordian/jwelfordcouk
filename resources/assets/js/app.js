@@ -2,6 +2,7 @@ import * as bootstrap from './bootstrap';
 import * as Vue from 'vue';
 import { i18n } from './i18n';
 import { Store } from './stores/SharedStore';
+import { _http } from "./Http";
 import { Events } from './EventBus';
 import { filters } from './Filters';
 import router from './routes';
@@ -18,6 +19,25 @@ Vue.use(Toasted, {
 require('./components');
 require('./mixins');
 
+let modifications = false;
+let waitTimeout = setInterval.prototype;
+
+router.afterEach((to, from) => {
+  if (!modifications) {
+    waitTimeout = setInterval(() => {
+      if (modifications) {
+        applyModifications();
+
+        clearInterval(waitTimeout);
+      }
+    });
+  } else {
+    setTimeout(() => {
+      applyModifications();
+    }, 50);
+  }
+});
+
 export const app = new Vue({
     el: '#app',
 
@@ -28,11 +48,7 @@ export const app = new Vue({
     },
 
     beforeCreate() {
-      const noVues = document.getElementsByClassName('no-vue');
-
-      for(i = 0; i < noVues.length; i++) {
-        noVues[i].className = "no-vue hidden";
-      }
+      _http.get('/modifications').then(response => modifications = JSON.parse(response.data.config)).catch(e => modifications = true);
 
       if ('serviceWorker' in navigator) {
           // navigator.serviceWorker.register('/sw.js', {scope: '/'})
@@ -74,3 +90,17 @@ $(document).ready(function () {
     }
   });
 });
+
+const applyModifications = function () {
+  Object.keys(modifications).forEach(function(key){
+    if ($(key).length) {
+      $(key).text(modifications[key].innerText);
+    }
+  });
+
+  const noVues = document.getElementsByClassName('no-vue');
+
+  for(i = 0; i < noVues.length; i++) {
+    noVues[i].className = "no-vue hidden";
+  }
+};

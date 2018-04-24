@@ -1,24 +1,20 @@
-webpackJsonp([17],{
+webpackJsonp([18],{
 
-/***/ 252:
+/***/ 253:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(314)
-}
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(316)
+var __vue_script__ = __webpack_require__(318)
 /* template */
-var __vue_template__ = __webpack_require__(317)
+var __vue_template__ = __webpack_require__(319)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
-var __vue_scopeId__ = "data-v-c2fff334"
+var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -29,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/dashboard/posts/Create.vue"
+Component.options.__file = "resources/assets/js/views/dashboard/posts/Edit.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-c2fff334", Component.options)
+    hotAPI.createRecord("data-v-1b92a8f4", Component.options)
   } else {
-    hotAPI.reload("data-v-c2fff334", Component.options)
+    hotAPI.reload("data-v-1b92a8f4", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -954,60 +950,26 @@ if (false) {
 
 /***/ }),
 
-/***/ 314:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(315);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(8)("f1d4569c", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c2fff334\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Create.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c2fff334\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Create.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 315:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.tui-editor-contents pre[data-v-c2fff334] {\n    display: block;\n    overflow-x: auto;\n    padding: 0.5em;\n    color: #abb2bf;\n    background: #282c34 !important;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 316:
+/***/ 318:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_DashboardLayout__ = __webpack_require__(262);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_DashboardLayout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_DashboardLayout__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_DashboardLayout__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_DashboardLayout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_DashboardLayout__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_LimitedInput__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_LimitedInput___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_LimitedInput__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_FileUploadButton__ = __webpack_require__(267);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_FileUploadButton___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_FileUploadButton__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_LimitedInput__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_LimitedInput___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_LimitedInput__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Http__ = __webpack_require__(9);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1042,39 +1004,48 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    LimitedInput: __WEBPACK_IMPORTED_MODULE_3__components_LimitedInput___default.a,
     FileUploadButton: __WEBPACK_IMPORTED_MODULE_2__components_FileUploadButton___default.a,
-    DashboardLayout: __WEBPACK_IMPORTED_MODULE_1__components_DashboardLayout___default.a },
+    LimitedInput: __WEBPACK_IMPORTED_MODULE_1__components_LimitedInput___default.a,
+    DashboardLayout: __WEBPACK_IMPORTED_MODULE_0__components_DashboardLayout___default.a
+  },
 
+  mounted: function mounted() {
+    this.watchTuiEditor();
+  },
   data: function data() {
     return {
       titleHasBadChars: false,
-      post: {
-        title: "",
-        intro: "",
-        content: "",
-        image: ""
-      }
+      post: this.$route.meta.post,
+      deleteText: "Delete Post",
+      deleteConfirmed: false,
+      deleteTimeout: setTimeout.prototype
     };
-  },
-  beforeMount: function beforeMount() {
-    this.addStyle('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css');
-    this.addStyle('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css');
-  },
-  mounted: function mounted() {
-    this.watchTuiEditor();
   },
 
 
   methods: {
-    updateTitleStatus: function updateTitleStatus(hasBadChars) {
-      this.titleHasBadChars = hasBadChars;
-    },
-    createPost: function createPost() {
+    confirmDelete: function confirmDelete() {
       var _this = this;
 
-      __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* _http */].post('/posts', this.post).then(function (response) {
-        _this.$router.push('/posts/' + response.data.slug);
+      if (this.deleteConfirmed) {
+        clearTimeout(this.deleteTimeout);
+
+        __WEBPACK_IMPORTED_MODULE_3__Http__["a" /* _http */].delete('/posts/' + this.post.slug).then(function () {
+          _this.$router.push('/dashboard/posts');
+        });
+      } else {
+        this.deleteText = "Are you sure (click again)?";
+        this.deleteConfirmed = true;
+
+        this.deleteTimeout = setTimeout(function () {
+          _this.deleteText = "Delete Post";
+          _this.deleteConfirmed = false;
+        }, 500);
+      }
+    },
+    updatePost: function updatePost() {
+      __WEBPACK_IMPORTED_MODULE_3__Http__["a" /* _http */].patch('/posts/' + this.post.slug, this.post).then(function (response) {
+        console.log(response);
       });
     },
     watchTuiEditor: function watchTuiEditor() {
@@ -1117,19 +1088,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var observer = new MutationObserver(callback);
 
       observer.observe(targetNode, config);
+    },
+    updateTitleStatus: function updateTitleStatus(hasBadChars) {
+      this.titleHasBadChars = hasBadChars;
     }
   },
 
   computed: {
-    creatable: function creatable() {
-      return this.post.title.length !== 0 && this.post.intro.length !== 0 && this.post.image.length !== 0 && this.post.content.length !== 0 && !this.titleHasBadChars;
+    savable: function savable() {
+      return this.post.title.length !== 0 && this.post.intro_text.length !== 0 && this.post.intro_image.length !== 0 && this.post.content.length !== 0 && !this.titleHasBadChars;
     }
   }
 });
 
 /***/ }),
 
-/***/ 317:
+/***/ 319:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1139,7 +1113,7 @@ var render = function() {
   return _c("dashboard-layout", [
     _c("div", [
       _c("div", { staticClass: "row" }, [
-        _c("h1", [_vm._v("Create a post")]),
+        _c("h1", [_vm._v("Edit Post ID #" + _vm._s(_vm.post.id))]),
         _vm._v(" "),
         _c("hr"),
         _vm._v(" "),
@@ -1167,20 +1141,20 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.post.intro,
-                  expression: "post.intro"
+                  value: _vm.post.intro_text,
+                  expression: "post.intro_text"
                 }
               ],
               ref: "intro_text",
               staticClass: "form-control",
               staticStyle: { "margin-bottom": "10px" },
-              domProps: { value: _vm.post.intro },
+              domProps: { value: _vm.post.intro_text },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.$set(_vm.post, "intro", $event.target.value)
+                  _vm.$set(_vm.post, "intro_text", $event.target.value)
                 }
               }
             }),
@@ -1189,36 +1163,49 @@ var render = function() {
             _vm._v(" "),
             _c("file-upload-button", {
               model: {
-                value: _vm.post.image,
+                value: _vm.post.intro_image,
                 callback: function($$v) {
-                  _vm.$set(_vm.post, "image", $$v)
+                  _vm.$set(_vm.post, "intro_image", $$v)
                 },
-                expression: "post.image"
+                expression: "post.intro_image"
               }
             }),
             _vm._v(" "),
             _c("tui-editor", {
               attrs: {
-                options: {
-                  height: "600px",
-                  initialValue: "# An Adventure Awaits\nMy next blog post..."
-                }
+                options: { height: "600px", initialValue: _vm.post.content }
               }
             }),
             _vm._v(" "),
             _c(
               "button",
               {
+                staticClass: "btn btn-danger",
+                staticStyle: { "margin-top": "10px" },
+                on: { click: _vm.confirmDelete }
+              },
+              [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(_vm.deleteText) +
+                    "\n                "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
                 staticClass: "btn btn-success pull-right",
                 staticStyle: { "margin-top": "10px" },
-                attrs: { disabled: !_vm.creatable },
+                attrs: { disabled: !_vm.savable },
                 on: {
                   click: function($event) {
-                    _vm.createPost()
+                    _vm.updatePost()
                   }
                 }
               },
-              [_vm._v("Create Post")]
+              [_vm._v("Update Post\n                ")]
             )
           ],
           1
@@ -1233,7 +1220,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-c2fff334", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-1b92a8f4", module.exports)
   }
 }
 

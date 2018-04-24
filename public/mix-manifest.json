@@ -14,5 +14,6 @@
     "/DashboardFilesView.js": "/DashboardFilesView.js",
     "/DashboardEmailsView.js": "/DashboardEmailsView.js",
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/DashboardEditorView.js": "/DashboardEditorView.js"
 }

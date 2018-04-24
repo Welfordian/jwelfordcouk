@@ -17,6 +17,7 @@ Route::post('pusher/auth', 'AuthenticateController@pusher');
 Route::get('token/refresh', 'AuthenticateController@refreshToken');
 Route::get('/posts', 'PostsController@listAll');
 Route::get('/posts/{slug}', 'PostsController@get');
+Route::get('/modifications', 'ModificationsController@get');
 Route::post('/posts/image/verify_url', 'PostsController@verifyIntroImageUrl')->middleware('verify.request.origin');
 Route::post('contact', 'ContactController@create')->middleware('verify.request.origin');
 
@@ -41,6 +42,8 @@ Route::group(['middleware' => ['jwt.auth']], function(){
             'files' => 0
         ];
     });
+
+    Route::post('/modifications', 'ModificationsController@save');
 
     Route::get('/messages', 'MessagesController@listAll');
     Route::get('/messages/{id}', 'MessagesController@single');
