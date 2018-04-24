@@ -43,7 +43,7 @@ Route::group(['middleware' => ['jwt.auth']], function(){
         ];
     });
 
-    Route::post('/modifications', 'ModificationsController@save');
+    Route::post('/modifications/save', 'ModificationsController@save');
 
     Route::get('/messages', 'MessagesController@listAll');
     Route::get('/messages/{id}', 'MessagesController@single');

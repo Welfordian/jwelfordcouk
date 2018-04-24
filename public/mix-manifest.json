@@ -5,6 +5,7 @@
     "/BlogView.js": "/BlogView.js",
     "/DashboardUsersView.js": "/DashboardUsersView.js",
     "/DashboardPostsView.js": "/DashboardPostsView.js",
+    "/DashboardEditorView.js": "/DashboardEditorView.js",
     "/DashboardView.js": "/DashboardView.js",
     "/NotFoundView.js": "/NotFoundView.js",
     "/LoginView.js": "/LoginView.js",
@@ -14,6 +15,5 @@
     "/DashboardFilesView.js": "/DashboardFilesView.js",
     "/DashboardEmailsView.js": "/DashboardEmailsView.js",
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/DashboardEditorView.js": "/DashboardEditorView.js"
+    "/css/app.css": "/css/app.css"
 }

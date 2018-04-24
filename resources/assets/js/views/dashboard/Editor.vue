@@ -193,7 +193,7 @@
         return result;
       },
       saveModifications() {
-        _http.post('/modifications', {
+        _http.post('/modifications/save', {
           domain: this.splitHostname()['subdomain'],
           config: this.modifications
         });
