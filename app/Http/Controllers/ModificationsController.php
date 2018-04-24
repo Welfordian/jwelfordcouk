@@ -16,8 +16,6 @@ class ModificationsController extends Controller
             $subdomain = "/";
         }
 
-        return $subdomain;
-
         return Config::where('domain', '=', $subdomain)->firstOrFail();
     }
 
