@@ -62,10 +62,10 @@
         </noscript>
 
         <noscript id="deferred-styles">
-            <link rel="stylesheet" href="/css/app.css" async>
+            <link rel="stylesheet" href="/css/app.css">
         </noscript>
 
-        <script rel="preload" as="script" src="/js/app.js" async deferred></script>
+        <script rel="preload" as="script" src="/js/app.js" async defer></script>
         <script>
           (function() {
             const noVues = document.getElementsByClassName('no-vue');
