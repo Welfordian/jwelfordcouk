@@ -18,7 +18,7 @@ const DashboardMessages = () => import( /* webpackChunkName: "DashboardMessagesV
 const DashboardMessageSingle = () => import( /* webpackChunkName: "DashboardMessageSingle" */ './views/dashboard/messages/View');
 const DashboardPostsCreate = () => import( /* webpackChunkName: "DashboardPostsCreateView */ './views/dashboard/posts/Create');
 const DashboardPostEdit = () => import( /* webpackChunkName: "DashboardPostsEditView */ './views/dashboard/posts/Edit');
-const Files = () => import( /* webpackChunkName: "DashboardFilesView" */ './views/dashboard/Files');
+const DashboardFiles = () => import( /* webpackChunkName: "DashboardFilesView" */ './views/dashboard/Files');
 const Emails = () => import( /* webpackChunkName: "DashboardEmailsView" */ './views/dashboard/Emails');
 const NotFound = () => import( /* webpackChunkName: "NotFoundView" */ './views/NotFound');
 
@@ -75,6 +75,11 @@ const routes = [
     {
         path: '/dashboard/messages',
         component: DashboardMessages,
+        beforeEnter: isAuthenticated
+    },
+    {
+        path: '/dashboard/files',
+        component: DashboardFiles,
         beforeEnter: isAuthenticated
     },
     {

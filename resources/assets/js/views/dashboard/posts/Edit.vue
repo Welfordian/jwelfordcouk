@@ -15,7 +15,7 @@
                               v-model="post.intro_text"></textarea>
 
                     <label>Intro Image</label>
-                    <file-upload-button v-model="post.intro_image"></file-upload-button>
+                    <image-upload-button v-model="post.intro_image"></image-upload-button>
 
                     <tui-editor :options="{'height': '600px', 'initialValue': post.content}"></tui-editor>
 
@@ -35,12 +35,12 @@
 <script>
   import DashboardLayout from "../../../components/DashboardLayout";
   import LimitedInput from "../../../components/LimitedInput";
-  import FileUploadButton from "../../../components/FileUploadButton";
+  import ImageUploadButton from "../../../components/ImageUploadButton";
   import { _http } from "../../../Http";
 
   export default {
     components: {
-      FileUploadButton,
+      ImageUploadButton,
       LimitedInput,
       DashboardLayout
     },

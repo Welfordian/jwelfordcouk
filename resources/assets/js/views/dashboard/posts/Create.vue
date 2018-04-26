@@ -13,7 +13,7 @@
                     <textarea ref="intro_text" class="form-control" style="margin-bottom: 10px;" v-model="post.intro"></textarea>
 
                     <label>Intro Image</label>
-                    <file-upload-button v-model="post.image"></file-upload-button>
+                    <image-upload-button v-model="post.image"></image-upload-button>
 
                     <tui-editor :options="{'height': '600px', 'initialValue': `# An Adventure Awaits\nMy next blog post...`}"></tui-editor>
 
@@ -27,13 +27,13 @@
 <script>
     import { _http } from "../../../Http";
     import DashboardLayout from "../../../components/DashboardLayout";
-    import FileUploadButton from "../../../components/FileUploadButton";
+    import ImageUploadButton from "../../../components/ImageUploadButton";
     import LimitedInput from "../../../components/LimitedInput";
 
     export default {
       components: {
         LimitedInput,
-        FileUploadButton,
+        ImageUploadButton,
         DashboardLayout},
 
       data() {
