@@ -68,7 +68,7 @@
 
         </noscript>
 
-        <script src="/js/app.js" async deferred></script>
+        <script rel="preload" as="script" src="/js/app.js" async deferred></script>
         <script>
           (function() {
             const noVues = document.getElementsByClassName('no-vue');
