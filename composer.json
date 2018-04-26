@@ -5,9 +5,11 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.4",
+        "php": ">=7.1",
         "htmlmin/htmlmin": "^5.6",
-        "laravel/framework": "5.4.*",
+        "itsgoingd/clockwork": "^2.2",
+        "laravel/framework": "5.6.*",
+        "fideloper/proxy": "^4.0",
         "laravel/tinker": "~1.0",
         "pusher/pusher-php-server": "~2.6",
         "tymon/jwt-auth": "0.5.*"
@@ -15,7 +17,8 @@
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7"
+        "phpunit/phpunit": "~7.0",
+        "filp/whoops": "~2.0"
     },
     "autoload": {
         "classmap": [
@@ -39,12 +42,14 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize"
+            "Illuminate\\Foundation\\ComposerScripts::postInstall"
         ],
         "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize"
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover"
         ]
     },
     "config": {
@@ -52,7 +57,7 @@
         "sort-packages": true,
         "optimize-autoloader": true,
         "platform": {
-            "php": "5.6.4"
+            "php": "7.2"
         }
     }
 }

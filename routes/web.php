@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('{any?}', function () {
-    return view('app');
-})->where('any', '.*')->middleware('minhtml');
+Route::get('{any?}', 'ApiController@web')->where('any', '.*')->middleware('minhtml');

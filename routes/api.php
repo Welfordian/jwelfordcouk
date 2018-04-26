@@ -22,26 +22,11 @@ Route::post('/posts/image/verify_url', 'PostsController@verifyIntroImageUrl')->m
 Route::post('contact', 'ContactController@create')->middleware('verify.request.origin');
 
 Route::group(['middleware' => ['jwt.auth']], function(){
-    Route::get('/me', function (Request $request) {
-        // This needs moving to a controller
-        return $request->user();
-    });
+    Route::get('/me', 'ApiController@me');
 
-    Route::get('/users', function(Request $request) {
-        // This needs moving to a controller
-        return \App\User::all();
-    });
+    Route::get('/users', 'ApiController@users');
 
-    Route::get('/dashboard/stats', function(Request $request){
-        // You guessed it, this needs moving to a controller
-
-        return [
-            'users' => \App\User::count(),
-            'posts' => \App\Post::count(),
-            'messages' => \App\ContactMessage::count(),
-            'files' => 0
-        ];
-    });
+    Route::get('/dashboard/stats', 'ApiController@stats');
 
     Route::post('/modifications/save', 'ModificationsController@save');
 
