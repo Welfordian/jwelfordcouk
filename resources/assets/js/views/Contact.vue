@@ -30,9 +30,9 @@
                     </form>
                 </div>
                 <div class="col-md-3">
-                    <a href="https://twitter.com/welfordian" target="_blank" style="margin-top: 7px;" class="btn btn-block btn-social btn-twitter"><i style="margin-top: 3px;" class="fa fa-twitter"></i>{{ lang.get('find_me_on') }} Twitter</a>
-                    <a href="https://github.com/welfordian" target="_blank" style="margin-top: 7px;" class="btn btn-block btn-social btn-github"><i style="margin-top: 3px;" class="fa fa-github"></i>{{ lang.get('find_me_on') }} GitHub</a>
-                    <a href="https://www.linkedin.com/in/josh-welford-1432777a/" target="_blank" style="margin-top: 7px;" class="btn btn-block btn-social btn-linkedin"><i style="margin-top: 3px;" class="fa fa-linkedin"></i>{{ lang.get('find_me_on') }} LinkedIn</a>
+                    <a href="https://twitter.com/welfordian" target="_blank" style="margin-top: 7px;" class="btn btn-block btn-social btn-twitter"><i style="margin-top: 3px;" class="fab fa-twitter"></i>{{ lang.get('find_me_on') }} Twitter</a>
+                    <a href="https://github.com/welfordian" target="_blank" style="margin-top: 7px;" class="btn btn-block btn-social btn-github"><i style="margin-top: 3px;" class="fab fa-github"></i>{{ lang.get('find_me_on') }} GitHub</a>
+                    <a href="https://www.linkedin.com/in/josh-welford-1432777a/" target="_blank" style="margin-top: 7px;" class="btn btn-block btn-social btn-linkedin"><i style="margin-top: 3px;" class="fab fa-linkedin"></i>{{ lang.get('find_me_on') }} LinkedIn</a>
                 </div>
             </div>
 

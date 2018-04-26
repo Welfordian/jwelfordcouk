@@ -1,7 +1,7 @@
 <template>
     <default-layout>
         <div>
-            <header-image name="Joshua Welford" image="me-min.jpg" background="//cdn.jwelford.co.uk/images/cover.jpg"></header-image>
+            <header-image name="Joshua Welford" image="me-min.jpg" background="cover.jpg"></header-image>
 
             <about-summary title="Summary">
                 {{ lang.get('summary') }}

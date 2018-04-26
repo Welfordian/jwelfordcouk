@@ -13,7 +13,7 @@
         props: ['name', 'image', 'background'],
         methods: {
             backgroundStyle() {
-                return "width: 100%; margin: 0px auto; background: url(" + this.background + "); background-position: center center; background-size: cover; position: relative;";
+                return "width: 100%; margin: 0px auto; background: url(/images/" + this.background + "); background-position: center center; background-size: cover; position: relative;";
             },
             imageStyle() {
                 return "display: block; margin: 20px auto; width: 150px; height: 150px; box-shadow: 0px 0px 10px; background: url(/images/" + this.image + ") center center no-repeat; background-size: cover;";

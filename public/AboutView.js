@@ -1,4 +1,4 @@
-webpackJsonp([12],{
+webpackJsonp([13],{
 
 /***/ 241:
 /***/ (function(module, exports, __webpack_require__) {
@@ -401,7 +401,7 @@ var render = function() {
           attrs: {
             name: "Joshua Welford",
             image: "me-min.jpg",
-            background: "//cdn.jwelford.co.uk/images/cover.jpg"
+            background: "cover.jpg"
           }
         }),
         _vm._v(" "),

@@ -62,8 +62,6 @@
         </noscript>
 
         <noscript id="deferred-styles">
-            <link rel="stylesheet" href="https://cdn.rawgit.com/needim/noty/a6cccf80/lib/noty.css" async>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" async>
             <link rel="stylesheet" href="/css/app.css" async>
         </noscript>
 

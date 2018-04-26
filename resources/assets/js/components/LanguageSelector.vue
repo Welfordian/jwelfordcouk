@@ -1,15 +1,15 @@
 <template>
 <li class="dropdown">
     <a style="cursor: pointer;" class="dropdown-toggle" data-toggle="dropdown">
-        <i class="fa fa-language"></i> {{ currentLanguage }}
+        <i class="fal fa-globe"></i> {{ currentLanguage }}
         <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
         <li>
-            <a @click="changeLanguage('en')"><i class="fa fa-language"></i> &nbsp; {{ lang.get('en') }}</a>
+            <a @click="changeLanguage('en')"><i class="far fa-globe"></i> &nbsp; {{ lang.get('en') }}</a>
         </li>
         <li>
-            <a @click="changeLanguage('fr')"><i class="fa fa-language"></i> &nbsp; {{ lang.get('fr') }}</a>
+            <a @click="changeLanguage('fr')"><i class="far fa-globe"></i> &nbsp; {{ lang.get('fr') }}</a>
         </li>
     </ul>
 </li>

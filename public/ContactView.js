@@ -1064,7 +1064,7 @@ var render = function() {
             },
             [
               _c("i", {
-                staticClass: "fa fa-twitter",
+                staticClass: "fab fa-twitter",
                 staticStyle: { "margin-top": "3px" }
               }),
               _vm._v(_vm._s(_vm.lang.get("find_me_on")) + " Twitter")
@@ -1080,7 +1080,7 @@ var render = function() {
             },
             [
               _c("i", {
-                staticClass: "fa fa-github",
+                staticClass: "fab fa-github",
                 staticStyle: { "margin-top": "3px" }
               }),
               _vm._v(_vm._s(_vm.lang.get("find_me_on")) + " GitHub")
@@ -1099,7 +1099,7 @@ var render = function() {
             },
             [
               _c("i", {
-                staticClass: "fa fa-linkedin",
+                staticClass: "fab fa-linkedin",
                 staticStyle: { "margin-top": "3px" }
               }),
               _vm._v(_vm._s(_vm.lang.get("find_me_on")) + " LinkedIn")

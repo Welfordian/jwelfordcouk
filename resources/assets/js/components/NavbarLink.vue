@@ -6,18 +6,24 @@
 
 <script>
     export default {
-        props: ['href', 'icon'],
+        props: ['href', 'icon', 'iconPrefix'],
+
         mounted() {
-            this.isActive = window.location.hash == '#' + this.href;
+            this.isActive = window.location.hash === '#' + this.href;
+            this.faPrefix = this.iconPrefix == undefined ? "fas" : this.iconPrefix;
         },
+
         methods: {
             generateIcon() {
-                return "fa fa-" + this.icon;
+                console.log(this.faPrefix);
+                return this.faPrefix + " fa-" + this.icon;
             }
         },
+
         data() {
             return {
-                isActive: false
+                isActive: false,
+                faPrefix: ""
             }
         }
     }

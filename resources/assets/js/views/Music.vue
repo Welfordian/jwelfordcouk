@@ -1,7 +1,7 @@
 <template>
     <default-layout>
         <div>
-            <h1 id="tracks-title"><i title="via Spotify" class="fa fa-spotify"></i> {{ lang.get('music.title') }} <i @click="fetchTracks" class="fa fa-refresh" v-bind:class="{ 'fa-spin': !tracks.length }"></i></h1>
+            <h1 id="tracks-title"><i title="via Spotify" class="fab fa-spotify"></i> {{ lang.get('music.title') }} <i @click="fetchTracks" class="fal fa-sync" v-bind:class="{ 'fa-spin': !tracks.length }"></i></h1>
             <hr />
 
             <div id="tracks-container" class="row" v-if="tracks.length">
@@ -18,7 +18,7 @@
             </div>
 
             <div class="row loading-row" v-else>
-                <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></h1>
+                <i class="fal fa-circle-notch fa-spin" aria-hidden="true"></i></h1>
             </div>
         </div>
     </default-layout>
@@ -212,11 +212,11 @@
 	display: block;
 	margin: 2em auto;
 }
-#tracks-title .fa-refresh {
+#tracks-title .fa-sync {
 	float: right;
 	cursor: pointer;
 }
-#tracks-title .fa-refresh:hover {
+#tracks-title .fa-sync:hover {
 	color: var(--refresh-hover-color);
 }
 </style>
