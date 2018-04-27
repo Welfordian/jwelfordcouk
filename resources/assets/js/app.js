@@ -42,6 +42,7 @@ let noVues = document.getElementsByClassName('no-vue');
 
 for(let i = 0; i < noVues.length; i++) {
   noVues[i].className = "no-vue hidden";
+  noVues[i].remove();
 }
 
 export const app = new Vue({
@@ -58,6 +59,7 @@ export const app = new Vue({
 
       for(let i = 0; i < noVues.length; i++) {
         noVues[i].className = "no-vue hidden";
+        noVues[i].remove();
       }
       //_http.get('/modifications').then(response => modifications = JSON.parse(response.data.config)).catch(e => modifications = true);
 
