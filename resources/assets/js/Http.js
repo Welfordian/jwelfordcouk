@@ -4,13 +4,50 @@ import { Store } from './stores/SharedStore';
 import { Events } from './EventBus';
 import { PopupAuth } from './PopupAuth';
 
+const whitelist = {
+    '/api/login': '*',
+    '/api/contact': 'post',
+    '/api/posts': 'get',
+    '/api/modifications': 'get'
+};
+
+const whitelisted = (url, method) => {
+    if (whitelist.hasOwnProperty(url)) {
+        console.log('how', url);
+        if (Array.isArray(whitelist[url])) {
+            if (whitelist[url].includes[method]) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            if (whitelist[url] === '*') {
+                return true;
+            } else {
+                return whitelist[url] === method.toLowerCase();
+            }
+        }
+    } else {
+        let match = false;
+        Object.keys(whitelist).forEach((k) => {
+          if (!match) {
+            if (whitelist[k] === method.toLowerCase()) {
+              match = (new RegExp(k).test(url) === true ? true : false);
+            }
+          }
+        });
+
+        return match;
+    }
+};
+
 const Http = axios.create({
     baseURL: '/api'
 });
 
 Http.interceptors.request.use(async function (config) {
     // If we're hitting the API and we're not hitting the login route
-    if (/\/api\//.test(config.url) && /\/api\/login/.test(config.url) === false && /\api\/contact/.test(config.url) === false && /\api\/posts/.test(config.url) === false && /\api\/posts/.test(config.url) === false && /^(.*?)\/api\/modifications$/.test(config.url) === false) {
+    if (/\/api\//.test(config.url) && !whitelisted(config.url, config.method)) {
         // If the token isn't valid and we're not already refreshing the token
         if (! Store.auth.tokenValid() && ! Store.auth.refreshingToken)
         {

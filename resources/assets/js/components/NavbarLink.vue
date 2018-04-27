@@ -15,7 +15,6 @@
 
         methods: {
             generateIcon() {
-                console.log(this.faPrefix);
                 return this.faPrefix + " fa-" + this.icon;
             }
         },
