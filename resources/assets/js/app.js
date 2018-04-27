@@ -48,6 +48,11 @@ export const app = new Vue({
     },
 
     beforeCreate() {
+      const noVues = document.getElementsByClassName('no-vue');
+
+      for(let i = 0; i < noVues.length; i++) {
+        noVues[i].className = "no-vue hidden";
+      }
       //_http.get('/modifications').then(response => modifications = JSON.parse(response.data.config)).catch(e => modifications = true);
 
       if ('serviceWorker' in navigator) {
@@ -62,12 +67,6 @@ export const app = new Vue({
     },
 
     beforeMount() {
-      const noVues = document.getElementsByClassName('no-vue');
-
-      for(i = 0; i < noVues.length; i++) {
-        noVues[i].className = "no-vue hidden";
-      }
-
       Events.$on('showLoading', () => {
         this.toast = this.$toasted.show(`<i class="fa fa-spinner fa-spin"></i> Loading Post Details...`, {
           theme: "primary",

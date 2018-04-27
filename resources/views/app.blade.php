@@ -62,10 +62,10 @@
         </noscript>
 
         <noscript id="deferred-styles">
-            <link rel="stylesheet" href="/css/app.css">
+            <link rel="stylesheet" href="/css/app.css?v={{ env('ASSET_CACHE_VER') }}">
         </noscript>
 
-        <script rel="preload" as="script" src="/js/app.js" async defer></script>
+        <script rel="preload" as="script" src="/js/app.js?v={{ env('ASSET_CACHE_VER') }}" async defer></script>
         <script>
           (function() {
             const noVues = document.getElementsByClassName('no-vue');
