@@ -38,6 +38,12 @@ require('./mixins');
 //   }
 // });
 
+let noVues = document.getElementsByClassName('no-vue');
+
+for(let i = 0; i < noVues.length; i++) {
+  noVues[i].className = "no-vue hidden";
+}
+
 export const app = new Vue({
     el: '#app',
 
@@ -48,7 +54,7 @@ export const app = new Vue({
     },
 
     beforeCreate() {
-      const noVues = document.getElementsByClassName('no-vue');
+      let noVues = document.getElementsByClassName('no-vue');
 
       for(let i = 0; i < noVues.length; i++) {
         noVues[i].className = "no-vue hidden";
