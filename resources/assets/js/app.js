@@ -9,9 +9,13 @@ import router from './routes';
 import VueRouter from 'vue-router';
 import TuiEditor from 'vue-tui-editor';
 import Toasted from 'vue-toasted';
+import VuePhotoSwipe from 'vue-photoswipe'
+import {VueMasonryPlugin} from 'vue-masonry';
 
+Vue.use(VueMasonryPlugin)
 Vue.use(VueRouter);
 Vue.use(TuiEditor);
+Vue.use(VuePhotoSwipe);
 Vue.use(Toasted, {
   iconPack: 'fontawesome'
 });

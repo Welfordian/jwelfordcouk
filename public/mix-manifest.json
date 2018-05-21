@@ -2,6 +2,7 @@
     "/ContactView.js": "/ContactView.js",
     "/DashboardFilesView.js": "/DashboardFilesView.js",
     "/PostView.js": "/PostView.js",
+    "/PhotographyView.js": "/PhotographyView.js",
     "/MusicView.js": "/MusicView.js",
     "/BlogView.js": "/BlogView.js",
     "/DashboardUsersView.js": "/DashboardUsersView.js",

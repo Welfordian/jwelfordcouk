@@ -6,6 +6,7 @@ export const FR = {
     'navbar.blog': 'Blog',
     'navbar.videos': 'Vidéos',
     'navbar.music': 'La musique',
+    'navbar.music': 'Technologie',
     'navbar.contact': 'Contact',
     'email_address': 'adresse é-mail',
     'password': 'Mot de passe',
@@ -41,5 +42,6 @@ export const FR = {
     'message.placeholder': "Votre message ici...",
     'send_message': "Envoyer le message",
     'clear_form': "Forme claire",
-    'find_me_on': "Trouvez-moi sur"
+    'find_me_on': "Trouvez-moi sur",
+    'tech.whats_powering': 'Qu\'est-ce qui alimente ce site?',
 }

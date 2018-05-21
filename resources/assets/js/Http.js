@@ -13,7 +13,6 @@ const whitelist = {
 
 const whitelisted = (url, method) => {
     if (whitelist.hasOwnProperty(url)) {
-        console.log('how', url);
         if (Array.isArray(whitelist[url])) {
             if (whitelist[url].includes[method]) {
                 return true;

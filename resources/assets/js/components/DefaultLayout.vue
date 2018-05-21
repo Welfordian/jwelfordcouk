@@ -6,6 +6,7 @@
                     <navbar-link href="/about" icon="user">{{ lang.get('navbar.about') }}</navbar-link>
                     <navbar-link href="/posts" icon="pencil">{{ lang.get('navbar.blog') }}</navbar-link>
                     <navbar-link href="/music" icon="music">{{ lang.get('navbar.music') }}</navbar-link>
+                    <navbar-link href="/photography" icon="camera-retro">{{ lang.get('navbar.photography') }}</navbar-link>
                     <navbar-link href="/contact" icon="inbox">{{ lang.get('navbar.contact') }}</navbar-link>
                 </template>
 

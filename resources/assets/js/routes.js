@@ -8,6 +8,7 @@ const About = () => import( /* webpackChunkName: "AboutView" */ './views/About')
 const Blog = () => import(/* webpackChunkName: "BlogView" */ './views/Blog');
 const Post = () => import(/* webpackChunkName: "PostView" */ './views/Post');
 const Music = () => import( /* webpackChunkName: "MusicView" */ './views/Music');
+const Photography = () => import( /*  webpackChunkName: "PhotographyView" */ './views/Photography');
 const Contact = () => import( /* webpackChunkName: "ContactView" */ './views/Contact');
 const Login = () => import ( /* webpackChunkName: "LoginView" */ './views/Login');
 const Dashboard = () => import( /* webpackChunkName: "DashboardView" */ './views/Dashboard');
@@ -39,6 +40,10 @@ const routes = [
         path: '/posts/:slug',
         component: Post,
         beforeEnter: postExists
+    },
+    {
+        path: '/photography',
+        component: Photography
     },
     {
         path: '/music',

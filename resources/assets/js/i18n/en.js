@@ -7,6 +7,7 @@ export const EN = {
     'navbar.videos': 'Videos',
     'navbar.music': 'Music',
     'navbar.contact': 'Contact',
+    'navbar.photography': 'Photography',
     'email_address': 'E-mail Address',
     'password': 'Password',
     'remember_me': 'Remember Me',
@@ -44,5 +45,6 @@ export const EN = {
     'message.placeholder': "Your message here...",
     'send_message': "Send Message",
     'clear_form': "Clear Form",
-    'find_me_on': "Find me on"
+    'find_me_on': "Find me on",
+    'tech.whats_powering': 'What\'s powering this site?',
 };
