@@ -10,6 +10,9 @@
                 <div style="width: 100%; height: 20px;" v-if="index > 3"></div>
                 <img class="preview-img-item"
                      :src="item.msrc" @click="$photoswipe.open(index, items)">
+                <div class="buttons">
+                    <i class="fa "
+                </div>
             </div>
         </div>
     </default-layout>
