@@ -41,7 +41,7 @@
           }, {
             src: '/images/IMG_20180504_213955_736.jpg',
             msrc: '/images/IMG_20180504_213955_736_preview.jpg',
-            title: 'Walmgate Stray, York',
+            title: 'Rowntree Park, York',
             w: 4032,
             h: 2268
           }, {
@@ -53,46 +53,55 @@
           }, {
             src: '/images/IMG_20180518_152805_736.jpg',
             msrc: '/images/IMG_20180518_152805_736_preview.jpg',
+            title: 'Leeds',
             w: 3024,
             h: 3024
           }, {
             src: '/images/IMG_20180505_205746_162.jpg',
             msrc: '/images/IMG_20180505_205746_162_preview.jpg',
+            title: 'York',
             w: 3104,
             h: 3104
           }, {
             src: '/images/IMG_20180505_195839_201.jpg',
             msrc: '/images/IMG_20180505_195839_201_preview.jpg',
+            title: 'York',
             w: 2625,
             h: 1969
           }, {
             src: '/images/IMG_20180505_163759_824.jpg',
             msrc: '/images/IMG_20180505_163759_824_preview.jpg',
+            title: 'Walmgate Stray, York',
             w: 4032,
             h: 3024
           }, {
             src: '/images/IMG_20180507_193704_025.jpg',
             msrc: '/images/IMG_20180507_193704_025_preview.jpg',
+            title: 'National Railway Museum, York',
             w: 3672,
             h: 3672
           }, {
             src: '/images/IMG_20180504_211639_528.jpg',
             msrc: '/images/IMG_20180504_211639_528_preview.jpg',
+            title: 'Rowntree Park, York',
             w: 2268,
             h: 2268
           }, {
             src: '/images/IMG_20180418_202727_576.jpg',
             msrc: '/images/IMG_20180418_202727_576_preview.jpg',
+            title: 'York',
             w: 4032,
             h: 2268
           }, {
             src: '/images/IMG_20180504_213725_532.jpg',
             msrc: '/images/IMG_20180504_213725_532_preview.jpg',
+            title: 'Rowntree Park, York',
             w: 2268,
             h: 2716
           }, {
             src: '/images/IMG_20180514_195716_330.jpg',
             msrc: '/images/IMG_20180514_195716_330_preview.jpg',
+            title: 'Rowntree Park, York',
             w: 3024,
             h: 3024
           }]
