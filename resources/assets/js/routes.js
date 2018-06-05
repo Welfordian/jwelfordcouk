@@ -12,7 +12,7 @@ const Photography = () => import( /*  webpackChunkName: "PhotographyView" */ './
 const Contact = () => import( /* webpackChunkName: "ContactView" */ './views/Contact');
 const Login = () => import ( /* webpackChunkName: "LoginView" */ './views/Login');
 const Dashboard = () => import( /* webpackChunkName: "DashboardView" */ './views/Dashboard');
-const DashboardSettings = () => import( /* webpackChunkName: "DashboardSettingsView" */ './views/Dashboard/Settings');
+const DashboardSettings = () => import( /* webpackChunkName: "DashboardSettingsView" */ './views/dashboard/Settings');
 const DashboardEditor = () => import( /* webpackChunkName: "DashboardEditorView" */ './views/dashboard/Editor');
 const DashboardUsers = () => import( /* webpackChunkName: "DashboardUsersView" */ './views/dashboard/Users');
 const DashboardPosts = () => import( /* webpackChunkName: "DashboardPostsView" */ './views/dashboard/Posts');
