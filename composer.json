@@ -6,10 +6,11 @@
     "type": "project",
     "require": {
         "php": ">=7.1",
+        "fideloper/proxy": "^4.0",
+        "guzzlehttp/guzzle": "^6.3",
         "htmlmin/htmlmin": "^5.6",
         "itsgoingd/clockwork": "^2.2",
         "laravel/framework": "5.6.*",
-        "fideloper/proxy": "^4.0",
         "laravel/tinker": "~1.0",
         "pusher/pusher-php-server": "~2.6",
         "tymon/jwt-auth": "0.5.*"

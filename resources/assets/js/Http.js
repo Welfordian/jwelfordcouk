@@ -5,6 +5,9 @@ import { Events } from './EventBus';
 import { PopupAuth } from './PopupAuth';
 
 const whitelist = {
+    '/api/about/header': 'get',
+    '/api/about/summary': 'get',
+    '/api/about/knowledge': 'get',
     '/api/login': '*',
     '/api/contact': 'post',
     '/api/posts': 'get',
@@ -47,6 +50,7 @@ const Http = axios.create({
 Http.interceptors.request.use(async function (config) {
     // If we're hitting the API and we're not hitting the login route
     if (/\/api\//.test(config.url) && !whitelisted(config.url, config.method)) {
+        console.log(config);
         // If the token isn't valid and we're not already refreshing the token
         if (! Store.auth.tokenValid() && ! Store.auth.refreshingToken)
         {

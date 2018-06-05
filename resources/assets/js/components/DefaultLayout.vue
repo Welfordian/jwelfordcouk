@@ -14,6 +14,7 @@
                     <auth-button>
                         <li class="dropdown-submenu">
                             <router-link to="/dashboard"><i class="glyphicon glyphicon-flash"></i> Dashboard</router-link>
+                            <router-link to="/dashboard/settings"><i class="glyphicon glyphicon-cog"></i> Settings</router-link>
                         </li>
                     </auth-button>
                     <language-selector></language-selector>
@@ -23,15 +24,19 @@
             <transition name="fade">
                 <slot></slot>
             </transition>
+
+            <info-overlay></info-overlay>
         </div>
     </div>
 </template>
 
 <script>
   import { i18n } from '../i18n';
+  import InfoOverlay from "./InfoOverlay";
 
   export default {
-      name: 'default-layout',
+    components: {InfoOverlay},
+    name: 'default-layout',
       data() {
         return {
           lang: i18n

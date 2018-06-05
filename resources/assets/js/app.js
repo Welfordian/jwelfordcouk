@@ -11,6 +11,7 @@ import TuiEditor from 'vue-tui-editor';
 import Toasted from 'vue-toasted';
 import VuePhotoSwipe from 'vue-photoswipe'
 import {VueMasonryPlugin} from 'vue-masonry';
+import Settings from './views/Dashboard/Settings';
 
 Vue.use(VueMasonryPlugin)
 Vue.use(VueRouter);

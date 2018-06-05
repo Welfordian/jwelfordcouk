@@ -14,6 +14,7 @@
                     <auth-button>
                         <li class="dropdown-submenu">
                             <router-link to="/"><i class="glyphicon glyphicon-flash"></i> Home</router-link>
+                            <router-link to="/dashboard/settings"><i class="glyphicon glyphicon-cog"></i> Settings</router-link>
                         </li>
                     </auth-button>
                     <language-selector></language-selector>

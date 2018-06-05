@@ -1,50 +1,23 @@
 <template>
-    <default-layout>
-        <div class="row">
-            <h1>{{ lang.get('navbar.blog') }}</h1>
-            <hr/>
-
-            <div class="row loading-row" v-if="posts.length === 0">
-                <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></h1>
-            </div>
-
-            <div id="tracks-container" class="row" v-if="posts.length">
-                <div class="col-md-4" v-for="post in posts">
-                    <blog-post-card :post="post"></blog-post-card>
+    <div>
+        <router-link :to="'posts/' + post.slug" class="tutorial-link">
+            <div class="well well-custom tutorial">
+                <h4 class="title" id="title">{{ post.title }}</h4>
+                <div class="intro-image-container">
+                    <img class="tutorial-intro-image image" id="track-image" v-bind:src="'/storage/' + post.intro_image" alt="Post intro image">
                 </div>
+                <p class="intro-text">{{ post.intro_text }}</p>
+                <button class="read-more btn btn-success">Read More</button>
             </div>
-        </div>
-    </default-layout>
+        </router-link>
+    </div>
 </template>
 
 <script>
-
-  import { i18n } from '../i18n';
-  import { _http } from '../Http';
-  import DefaultLayout from "../components/DefaultLayout";
-  import BlogPostCard from "../components/BlogPostCard";
-
-  export default {
-    components: {
-      BlogPostCard,
-      DefaultLayout},
-    data() {
-      return {
-        lang: i18n,
-        posts: []
-      }
-    },
-
-    mounted() {
-      this.getPosts().then(response => this.posts = response.data.reverse());
-    },
-
-    methods: {
-      getPosts() {
-        return _http.get('/posts');
-      }
+    export default {
+      name: 'blog-post-card',
+      props: ['post'],
     }
-  }
 </script>
 
 <style scoped>

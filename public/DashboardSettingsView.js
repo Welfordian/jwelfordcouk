@@ -1,14 +1,14 @@
-webpackJsonp([10],{
+webpackJsonp([17],{
 
-/***/ 286:
+/***/ 278:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(370)
+var __vue_script__ = __webpack_require__(350)
 /* template */
-var __vue_template__ = __webpack_require__(374)
+var __vue_template__ = __webpack_require__(351)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/dashboard/Files.vue"
+Component.options.__file = "resources/assets/js/views/Dashboard/Settings.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-decddd8e", Component.options)
+    hotAPI.createRecord("data-v-b0c8fd1e", Component.options)
   } else {
-    hotAPI.reload("data-v-decddd8e", Component.options)
+    hotAPI.reload("data-v-b0c8fd1e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -314,15 +314,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 370:
+/***/ 350:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_DashboardLayout__ = __webpack_require__(289);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_DashboardLayout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_DashboardLayout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_FileUploadButton__ = __webpack_require__(371);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_FileUploadButton___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_FileUploadButton__);
 //
 //
 //
@@ -334,140 +332,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    FileUploadButton: __WEBPACK_IMPORTED_MODULE_1__components_FileUploadButton___default.a,
-    DashboardLayout: __WEBPACK_IMPORTED_MODULE_0__components_DashboardLayout___default.a }
+  components: { DashboardLayout: __WEBPACK_IMPORTED_MODULE_0__components_DashboardLayout___default.a }
 
 });
 
 /***/ }),
 
-/***/ 371:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(372)
-/* template */
-var __vue_template__ = __webpack_require__(373)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/FileUploadButton.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-787186e6", Component.options)
-  } else {
-    hotAPI.reload("data-v-787186e6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 372:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'file-upload-button',
-
-  props: ['type'],
-
-  data: function data() {
-    return {
-      uploadType: 0
-    };
-  },
-  mounted: function mounted() {
-    this.uploadType = this.type || 0;
-  },
-
-
-  methods: {
-    selectAndUpload: function selectAndUpload() {
-      this.$refs.fileInput.click();
-    }
-  }
-});
-
-/***/ }),
-
-/***/ 373:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "button",
-      { staticClass: "btn btn-success", on: { click: _vm.selectAndUpload } },
-      [_vm._v("Upload")]
-    ),
-    _vm._v(" "),
-    _c("input", {
-      attrs: { type: "hidden", name: "_upload_type" },
-      domProps: { value: _vm.uploadType }
-    })
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-787186e6", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 374:
+/***/ 351:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -476,13 +351,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("dashboard-layout", [
     _c("div", [
-      _c(
-        "h1",
-        [_vm._v("Files "), _c("file-upload-button", { attrs: { type: 1 } })],
-        1
-      ),
+      _c("h1", [_vm._v("Settings")]),
       _vm._v(" "),
-      _c("div", { staticClass: "row" })
+      _c("hr"),
+      _vm._v(" "),
+      _c("h2", [_vm._v("Spotify")])
     ])
   ])
 }
@@ -492,7 +365,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-decddd8e", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-b0c8fd1e", module.exports)
   }
 }
 
