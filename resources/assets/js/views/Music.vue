@@ -7,7 +7,7 @@
             <div id="tracks-container" class="row" v-if="tracks.length">
                 <div class="col-md-3" v-if="current">
                     <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="current.item.external_urls.spotify">
-                        <div class="well well-custom tutorial" :class="{'show-overlay': playing === current.item.id}" @mouseenter="showOverlay($event)" @mouseleave="hideOverlay($event, current.item)">
+                        <div class="well well-custom tutorial" :class="{'show-overlay': playing === current.item.id}" @mouseenter="showOverlay($event)" @mousemove="showOverlay($event)" @mouseleave="hideOverlay($event, current.item)">
                             <h4 class="title"><span v-bind:title="current.item.name + ' - ' + current.item.artists[0].name">{{ current.item.name + ' - ' + current.item.artists[0].name }}</span></h4>
                             <div class="intro-image-container" style="position: relative;">
                                 <div class="tutorial-overlay">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-md-3" v-for="track in tracks">
                     <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="track.track.external_urls.spotify">
-                        <div class="well well-custom tutorial" :class="{'show-overlay': (playing === track.track.id)}" @mouseenter="showOverlay($event)" @mouseleave="hideOverlay($event, track.track)">
+                        <div class="well well-custom tutorial" :class="{'show-overlay': (playing === track.track.id)}" @mouseenter="showOverlay($event)" @mousemove="showOverlay($event)" @mouseleave="hideOverlay($event, track.track)">
                             <h4 class="title"><span v-bind:title="track.name + ' - ' + track.track.artists[0].name">{{ track.track.name + ' - ' + track.track.artists[0].name }}</span></h4>
                             <div class="intro-image-container" style="position: relative;">
                                 <div class="tutorial-overlay">
