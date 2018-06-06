@@ -5,7 +5,7 @@
             <hr />
 
             <div id="tracks-container" class="row" v-if="tracks.length">
-                <div class="col-md-3">
+                <div class="col-md-3" v-if="current">
                     <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="current.item.external_urls.spotify">
                         <div class="well well-custom tutorial">
                             <h4 class="title"><span v-bind:title="current.item.name + ' - ' + current.item.artists[0].name">{{ current.item.name + ' - ' + current.item.artists[0].name }}</span></h4>
@@ -25,6 +25,7 @@
                             <div class="intro-image-container" style="position: relative;">
                                 <div class="tutorial-overlay">
                                     <i class="fas fa-play"></i>
+                                    <span class="preview-link" @click.prevent="previewTrack(track.track.preview_url)">Preview Track</span>
                                 </div>
                                 <img class="tutorial-intro-image image" v-bind:src="track.track.album.images[0].url" alt="Album Art">
                             </div>
@@ -51,7 +52,8 @@
             return {
 				lang: i18n,
                 tracks: [],
-                current: false
+                current: false,
+                preview_player: false
             }
         },
         
@@ -60,6 +62,16 @@
         },
 
         methods: {
+            previewTrack(preview_url) {
+                if (!this.preview_player) {
+                  this.preview_player = new Audio(preview_url);
+                  this.preview_player.play();
+                } else {
+                  this.preview_player.src = preview_url;
+                  this.preview_player.load();
+                  this.preview_player.play();
+                }
+            },
             fetchTracks() {
                 this.tracks = [];
 
@@ -68,14 +80,6 @@
                     this.tracks = data.data.tracks.recent;
                     this.current = data.data.tracks.now;
                 }.bind(this));
-            },
-
-            getTrackTitle(track) {
-                return track['artist']['#text'] + ' - ' + track['name'];
-            },
-
-            getLargestAlbumImage(track) {
-
             }
         }
     }
@@ -131,6 +135,7 @@
     align-items: center;
     justify-content: center;
     font-size: 4em;
+    flex-direction: column;
 }
 .tutorial:hover .tutorial-overlay {
     opacity: 1;
@@ -225,6 +230,11 @@
 .toggle {
 	display: block;
 	margin: 2em auto;
+}
+.preview-link {
+    font-size: 15px;
+    display: block;
+    margin-top: 18px;
 }
 #tracks-title .fa-sync {
 	float: right;

@@ -104,6 +104,11 @@ class AuthStore {
 
     tokenValid() {
         let token = localStorage.getItem("auth_token") || false;
+
+        if (!token) {
+            return false;
+        }
+
         let base64Url = token.split('.')[1];
         let base64 = base64Url.replace('-', '+').replace('_', '/');
         let decodedToken = JSON.parse(window.atob(base64));

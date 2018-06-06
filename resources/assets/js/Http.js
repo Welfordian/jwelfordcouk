@@ -11,7 +11,8 @@ const whitelist = {
     '/api/login': '*',
     '/api/contact': 'post',
     '/api/posts': 'get',
-    '/api/modifications': 'get'
+    '/api/modifications': 'get',
+    '/api/spotify/tracks': 'get'
 };
 
 const whitelisted = (url, method) => {
