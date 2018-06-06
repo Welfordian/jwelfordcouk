@@ -9,7 +9,10 @@
                     <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="current.item.external_urls.spotify">
                         <div class="well well-custom tutorial">
                             <h4 class="title"><span v-bind:title="current.item.name + ' - ' + current.item.artists[0].name">{{ current.item.name + ' - ' + current.item.artists[0].name }}</span></h4>
-                            <div class="intro-image-container">
+                            <div class="intro-image-container" style="position: relative;">
+                                <div class="tutorial-overlay">
+                                    <i class="fas fa-play"></i>
+                                </div>
                                 <img class="tutorial-intro-image image" v-bind:src="current.item.album.images[0].url" alt="Album Art">
                             </div>
                         </div>
@@ -19,7 +22,10 @@
                     <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="track.track.external_urls.spotify">
                         <div class="well well-custom tutorial">
                             <h4 class="title"><span v-bind:title="track.name + ' - ' + track.track.artists[0].name">{{ track.track.name + ' - ' + track.track.artists[0].name }}</span></h4>
-                            <div class="intro-image-container">
+                            <div class="intro-image-container" style="position: relative;">
+                                <div class="tutorial-overlay">
+                                    <i class="fas fa-play"></i>
+                                </div>
                                 <img class="tutorial-intro-image image" v-bind:src="track.track.album.images[0].url" alt="Album Art">
                             </div>
                         </div>
@@ -92,13 +98,6 @@
 .tutorial-link:active {
 	text-decoration: none;
 }
-.tutorial:hover {
-	-webkit-transform: scale(1.03);
-	-ms-transform: scale(1.03);
-	transform: scale(1.03);
-	box-shadow: 0 0 13px #CCC;
-	z-index: 3;
-}
 .tutorial .title {
 	padding: 0 0 4px 8px;
 	font-weight: bold;
@@ -117,6 +116,25 @@
 	-webkit-transform: scale(1.3);
 	-ms-transform: scale(1.3);
 	transform: scale(1.3);
+}
+.tutorial-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    background: transparent;
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4em;
+}
+.tutorial:hover .tutorial-overlay {
+    opacity: 1;
+    background: #2b3e50bd;
 }
 .tutorial-intro-image,
 .intro-image-container {
