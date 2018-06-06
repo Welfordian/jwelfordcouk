@@ -56,7 +56,7 @@ class ApiController extends Controller
         return ['connected' => false, 'authUrl' => 'https://accounts.spotify.com/authorize?response_type=code' .
             '&client_id=' . env('SPOTIFY_CLIENT_ID') .
             '&scope=' . urlencode('user-read-recently-played user-read-private user-read-currently-playing user-read-playback-state') .
-            '&redirect_uri=https://jwelford.dev/api/spotify' .
+            '&redirect_uri=' . env('APP_URL') . '/api/spotify' .
             '&state=' . base64_encode($request->bearerToken())];
     }
 
@@ -74,7 +74,7 @@ class ApiController extends Controller
             'form_params' => [
                 'grant_type' => 'authorization_code',
                 'code' => $code,
-                'redirect_uri' => 'https://jwelford.dev/api/spotify'
+                'redirect_uri' => env('APP_URL') . '/api/spotify'
             ]
         ]);
 
