@@ -7,11 +7,12 @@
             <div id="tracks-container" class="row" v-if="tracks.length">
                 <div class="col-md-3" v-if="current">
                     <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="current.item.external_urls.spotify">
-                        <div class="well well-custom tutorial">
+                        <div class="well well-custom tutorial" :class="{'show-overlay': playing === current.item.id}" @mouseenter="showOverlay($event)" @mouseleave="hideOverlay($event, current.item)">
                             <h4 class="title"><span v-bind:title="current.item.name + ' - ' + current.item.artists[0].name">{{ current.item.name + ' - ' + current.item.artists[0].name }}</span></h4>
                             <div class="intro-image-container" style="position: relative;">
                                 <div class="tutorial-overlay">
-                                    <i class="fas fa-play"></i>
+                                    <i class="fal fa-play" @click.prevent="previewTrack(current.item)" v-if="playing !== current.item.id"></i>
+                                    <i class="fal fa-stop" @click.prevent="stopTrack()" v-else></i>
                                 </div>
                                 <img class="tutorial-intro-image image" v-bind:src="current.item.album.images[0].url" alt="Album Art">
                             </div>
@@ -20,12 +21,12 @@
                 </div>
                 <div class="col-md-3" v-for="track in tracks">
                     <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="track.track.external_urls.spotify">
-                        <div class="well well-custom tutorial">
+                        <div class="well well-custom tutorial" :class="{'show-overlay': (playing === track.track.id)}" @mouseenter="showOverlay($event)" @mouseleave="hideOverlay($event, track.track)">
                             <h4 class="title"><span v-bind:title="track.name + ' - ' + track.track.artists[0].name">{{ track.track.name + ' - ' + track.track.artists[0].name }}</span></h4>
                             <div class="intro-image-container" style="position: relative;">
                                 <div class="tutorial-overlay">
-                                    <i class="fas fa-play"></i>
-                                    <span class="preview-link" @click.prevent="previewTrack(track.track.preview_url)">Preview Track</span>
+                                    <i class="fal fa-play" @click.prevent="previewTrack(track.track)" v-if="playing !== track.track.id"></i>
+                                    <i class="fal fa-stop" @click.prevent="stopTrack()" v-else></i>
                                 </div>
                                 <img class="tutorial-intro-image image" v-bind:src="track.track.album.images[0].url" alt="Album Art">
                             </div>
@@ -53,24 +54,53 @@
 				lang: i18n,
                 tracks: [],
                 current: false,
-                preview_player: false
+                preview_player: new Audio(),
+                currentTrackEl: false,
+                playing: false
             }
         },
-        
+
+        beforeMount() {
+            this.setPlayerEvents();
+        },
+
         mounted() {
             this.fetchTracks();
         },
 
         methods: {
-            previewTrack(preview_url) {
-                if (!this.preview_player) {
-                  this.preview_player = new Audio(preview_url);
-                  this.preview_player.play();
-                } else {
-                  this.preview_player.src = preview_url;
-                  this.preview_player.load();
-                  this.preview_player.play();
-                }
+            showOverlay(e) {
+              $(e.currentTarget).addClass('show-overlay');
+            },
+
+            hideOverlay(e, track) {
+              if(this.playing !== track.id) {
+                $(e.currentTarget).removeClass('show-overlay');
+              }
+            },
+
+            stopTrack() {
+              this.playing = false;
+              this.preview_player.pause();
+              this.preview_player.currentTime = 0;
+            },
+
+            setPlayerEvents() {
+              this.preview_player.onplay = () => {
+                this.playing = this.currentTrackId;
+              };
+
+              this.preview_player.onstop = () => {
+                this.playing = false;
+              };
+            },
+
+            previewTrack(track) {
+              this.preview_player.src = track.preview_url;
+              this.preview_player.load();
+              this.preview_player.play();
+
+              this.currentTrackId = track.id;
             },
             fetchTracks() {
                 this.tracks = [];
@@ -137,7 +167,7 @@
     font-size: 4em;
     flex-direction: column;
 }
-.tutorial:hover .tutorial-overlay {
+.tutorial.show-overlay .tutorial-overlay {
     opacity: 1;
     background: #2b3e50bd;
 }

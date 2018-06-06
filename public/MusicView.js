@@ -608,7 +608,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n[data-v-9e472c3c]:root {\n\t--refresh-hover-color: #586b7d;\n}\n.loading-row[data-v-9e472c3c] {\n    text-align: center;\n    font-size: 5em;\n    color: #2c3e50;\n}\n.tutorial[data-v-9e472c3c] {\n\t-webkit-transition: all .3s;\n\ttransition: all .3s;\n}\n.tutorial-link[data-v-9e472c3c],\n.tutorial-link[data-v-9e472c3c]:hover,\n.tutorial-link[data-v-9e472c3c]:active {\n\ttext-decoration: none;\n}\n.tutorial .title[data-v-9e472c3c] {\n\tpadding: 0 0 4px 8px;\n\tfont-weight: bold;\n\ttext-align: left;\n\tmax-width: 98%;\n\twidth: 98%;\n\toverflow: hidden;\n\twhite-space: nowrap;\n}\n.intro-image-container[data-v-9e472c3c] {\n\toverflow: hidden;\n}\n.tutorial-intro-image[data-v-9e472c3c] {\n\t-webkit-transition: -webkit-transform .3s;\n\ttransition: -webkit-transform .3s;\n\ttransition: transform .3s;\n\ttransition: transform .3s, -webkit-transform .3s;\n\t-webkit-transform: scale(1.3);\n\ttransform: scale(1.3);\n}\n.tutorial-overlay[data-v-9e472c3c] {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    height: 100%;\n    z-index: 2;\n    opacity: 0;\n    background: transparent;\n    -webkit-transition: all .3s;\n    transition: all .3s;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    font-size: 4em;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n}\n.tutorial:hover .tutorial-overlay[data-v-9e472c3c] {\n    opacity: 1;\n    background: #2b3e50bd;\n}\n.tutorial-intro-image[data-v-9e472c3c],\n.intro-image-container[data-v-9e472c3c] {\n\twidth: 100%;\n\tmin-width: 100%;\n\tmax-width: 100%;\n}\n.tutorial:hover .tutorial-intro-image[data-v-9e472c3c] {\n\t-webkit-transform: scale(1);\n\ttransform: scale(1)\n}\n.well-custom[data-v-9e472c3c] {\n\tpadding: 0;\n\tbackground-color: #2c3e50;\n\tcolor: #ffffff;\n}\n#tracks-title .fa-spotify[data-v-9e472c3c] {\n\tcolor: #1DB954;\n}\n.marquee[data-v-9e472c3c] {\n\twidth: 450px;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\t-webkit-box-sizing: border-box;\n\t        box-sizing: border-box;\n}\n.marquee span[data-v-9e472c3c] {\n\tdisplay: inline-block;\n\tpadding-left: 100%;\n\ttext-indent: 0;\n\t-webkit-animation: marquee-data-v-9e472c3c 5s linear infinite;\n\t        animation: marquee-data-v-9e472c3c 5s linear infinite;\n}\n.marquee span[data-v-9e472c3c]:hover {\n\t-webkit-animation-play-state: paused;\n\t        animation-play-state: paused\n}\n@-webkit-keyframes marquee-data-v-9e472c3c {\n0% {\n\t\t-webkit-transform: translate(0, 0);\n\t\t        transform: translate(0, 0);\n}\n100% {\n\t\t-webkit-transform: translate(-100%, 0);\n\t\t        transform: translate(-100%, 0);\n}\n}\n@keyframes marquee-data-v-9e472c3c {\n0% {\n\t\t-webkit-transform: translate(0, 0);\n\t\t        transform: translate(0, 0);\n}\n100% {\n\t\t-webkit-transform: translate(-100%, 0);\n\t\t        transform: translate(-100%, 0);\n}\n}\n.microsoft[data-v-9e472c3c] {\n\tpadding-left: 1.5em;\n\tposition: relative;\n}\n.microsoft[data-v-9e472c3c]:before,\n.microsoft[data-v-9e472c3c]::before {\n\tz-index: 2;\n\tcontent: '';\n\tposition: absolute;\n\ttop: -1em;\n\tleft: -1em;\n\twidth: .5em;\n\theight: .5em;\n\t-webkit-box-shadow: 1.0em 1.25em 0 #F65314, 1.6em 1.25em 0 #7CBB00, 1.0em 1.85em 0 #00A1F1, 1.6em 1.85em 0 #FFBB00;\n\t        box-shadow: 1.0em 1.25em 0 #F65314, 1.6em 1.25em 0 #7CBB00, 1.0em 1.85em 0 #00A1F1, 1.6em 1.85em 0 #FFBB00;\n}\n.microsoft[data-v-9e472c3c]:after,\n.microsoft[data-v-9e472c3c]::after {\n\tz-index: 1;\n\tcontent: '';\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\twidth: 2em;\n\theight: 2em;\n\tbackground-image: -webkit-gradient(linear, left top, right top, color-stop(70%, white), to(rgba(255, 255, 255, 0)));\n\tbackground-image: linear-gradient(90deg, white 70%, rgba(255, 255, 255, 0));\n}\n.vanity[data-v-9e472c3c] {\n\tcolor: #333;\n\ttext-align: center;\n}\n.vanity a[data-v-9e472c3c],\n.microsoft a[data-v-9e472c3c] {\n\tcolor: #1570A6;\n\t-webkit-transition: color .5s;\n\ttransition: color .5s;\n\ttext-decoration: none;\n}\n.vanity a[data-v-9e472c3c]:hover,\n.microsoft a[data-v-9e472c3c]:hover {\n\tcolor: #F65314;\n}\n/* Style toggle button */\n.toggle[data-v-9e472c3c] {\n\tdisplay: block;\n\tmargin: 2em auto;\n}\n.preview-link[data-v-9e472c3c] {\n    font-size: 15px;\n    display: block;\n    margin-top: 18px;\n}\n#tracks-title .fa-sync[data-v-9e472c3c] {\n\tfloat: right;\n\tcursor: pointer;\n}\n#tracks-title .fa-sync[data-v-9e472c3c]:hover {\n\tcolor: var(--refresh-hover-color);\n}\n", ""]);
+exports.push([module.i, "\n[data-v-9e472c3c]:root {\n\t--refresh-hover-color: #586b7d;\n}\n.loading-row[data-v-9e472c3c] {\n    text-align: center;\n    font-size: 5em;\n    color: #2c3e50;\n}\n.tutorial[data-v-9e472c3c] {\n\t-webkit-transition: all .3s;\n\ttransition: all .3s;\n}\n.tutorial-link[data-v-9e472c3c],\n.tutorial-link[data-v-9e472c3c]:hover,\n.tutorial-link[data-v-9e472c3c]:active {\n\ttext-decoration: none;\n}\n.tutorial .title[data-v-9e472c3c] {\n\tpadding: 0 0 4px 8px;\n\tfont-weight: bold;\n\ttext-align: left;\n\tmax-width: 98%;\n\twidth: 98%;\n\toverflow: hidden;\n\twhite-space: nowrap;\n}\n.intro-image-container[data-v-9e472c3c] {\n\toverflow: hidden;\n}\n.tutorial-intro-image[data-v-9e472c3c] {\n\t-webkit-transition: -webkit-transform .3s;\n\ttransition: -webkit-transform .3s;\n\ttransition: transform .3s;\n\ttransition: transform .3s, -webkit-transform .3s;\n\t-webkit-transform: scale(1.3);\n\ttransform: scale(1.3);\n}\n.tutorial-overlay[data-v-9e472c3c] {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    height: 100%;\n    z-index: 2;\n    opacity: 0;\n    background: transparent;\n    -webkit-transition: all .3s;\n    transition: all .3s;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    font-size: 4em;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n}\n.tutorial.show-overlay .tutorial-overlay[data-v-9e472c3c] {\n    opacity: 1;\n    background: #2b3e50bd;\n}\n.tutorial-intro-image[data-v-9e472c3c],\n.intro-image-container[data-v-9e472c3c] {\n\twidth: 100%;\n\tmin-width: 100%;\n\tmax-width: 100%;\n}\n.tutorial:hover .tutorial-intro-image[data-v-9e472c3c] {\n\t-webkit-transform: scale(1);\n\ttransform: scale(1)\n}\n.well-custom[data-v-9e472c3c] {\n\tpadding: 0;\n\tbackground-color: #2c3e50;\n\tcolor: #ffffff;\n}\n#tracks-title .fa-spotify[data-v-9e472c3c] {\n\tcolor: #1DB954;\n}\n.marquee[data-v-9e472c3c] {\n\twidth: 450px;\n\twhite-space: nowrap;\n\toverflow: hidden;\n\t-webkit-box-sizing: border-box;\n\t        box-sizing: border-box;\n}\n.marquee span[data-v-9e472c3c] {\n\tdisplay: inline-block;\n\tpadding-left: 100%;\n\ttext-indent: 0;\n\t-webkit-animation: marquee-data-v-9e472c3c 5s linear infinite;\n\t        animation: marquee-data-v-9e472c3c 5s linear infinite;\n}\n.marquee span[data-v-9e472c3c]:hover {\n\t-webkit-animation-play-state: paused;\n\t        animation-play-state: paused\n}\n@-webkit-keyframes marquee-data-v-9e472c3c {\n0% {\n\t\t-webkit-transform: translate(0, 0);\n\t\t        transform: translate(0, 0);\n}\n100% {\n\t\t-webkit-transform: translate(-100%, 0);\n\t\t        transform: translate(-100%, 0);\n}\n}\n@keyframes marquee-data-v-9e472c3c {\n0% {\n\t\t-webkit-transform: translate(0, 0);\n\t\t        transform: translate(0, 0);\n}\n100% {\n\t\t-webkit-transform: translate(-100%, 0);\n\t\t        transform: translate(-100%, 0);\n}\n}\n.microsoft[data-v-9e472c3c] {\n\tpadding-left: 1.5em;\n\tposition: relative;\n}\n.microsoft[data-v-9e472c3c]:before,\n.microsoft[data-v-9e472c3c]::before {\n\tz-index: 2;\n\tcontent: '';\n\tposition: absolute;\n\ttop: -1em;\n\tleft: -1em;\n\twidth: .5em;\n\theight: .5em;\n\t-webkit-box-shadow: 1.0em 1.25em 0 #F65314, 1.6em 1.25em 0 #7CBB00, 1.0em 1.85em 0 #00A1F1, 1.6em 1.85em 0 #FFBB00;\n\t        box-shadow: 1.0em 1.25em 0 #F65314, 1.6em 1.25em 0 #7CBB00, 1.0em 1.85em 0 #00A1F1, 1.6em 1.85em 0 #FFBB00;\n}\n.microsoft[data-v-9e472c3c]:after,\n.microsoft[data-v-9e472c3c]::after {\n\tz-index: 1;\n\tcontent: '';\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\twidth: 2em;\n\theight: 2em;\n\tbackground-image: -webkit-gradient(linear, left top, right top, color-stop(70%, white), to(rgba(255, 255, 255, 0)));\n\tbackground-image: linear-gradient(90deg, white 70%, rgba(255, 255, 255, 0));\n}\n.vanity[data-v-9e472c3c] {\n\tcolor: #333;\n\ttext-align: center;\n}\n.vanity a[data-v-9e472c3c],\n.microsoft a[data-v-9e472c3c] {\n\tcolor: #1570A6;\n\t-webkit-transition: color .5s;\n\ttransition: color .5s;\n\ttext-decoration: none;\n}\n.vanity a[data-v-9e472c3c]:hover,\n.microsoft a[data-v-9e472c3c]:hover {\n\tcolor: #F65314;\n}\n/* Style toggle button */\n.toggle[data-v-9e472c3c] {\n\tdisplay: block;\n\tmargin: 2em auto;\n}\n.preview-link[data-v-9e472c3c] {\n    font-size: 15px;\n    display: block;\n    margin-top: 18px;\n}\n#tracks-title .fa-sync[data-v-9e472c3c] {\n\tfloat: right;\n\tcursor: pointer;\n}\n#tracks-title .fa-sync[data-v-9e472c3c]:hover {\n\tcolor: var(--refresh-hover-color);\n}\n", ""]);
 
 // exports
 
@@ -667,46 +667,73 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    components: { DefaultLayout: __WEBPACK_IMPORTED_MODULE_2__components_DefaultLayout___default.a },
-    data: function data() {
-        return {
-            lang: __WEBPACK_IMPORTED_MODULE_0__i18n__["a" /* i18n */],
-            tracks: [],
-            current: false,
-            preview_player: false
-        };
+  components: { DefaultLayout: __WEBPACK_IMPORTED_MODULE_2__components_DefaultLayout___default.a },
+  data: function data() {
+    return {
+      lang: __WEBPACK_IMPORTED_MODULE_0__i18n__["a" /* i18n */],
+      tracks: [],
+      current: false,
+      preview_player: new Audio(),
+      currentTrackEl: false,
+      playing: false
+    };
+  },
+  beforeMount: function beforeMount() {
+    this.setPlayerEvents();
+  },
+  mounted: function mounted() {
+    this.fetchTracks();
+  },
+
+
+  methods: {
+    showOverlay: function showOverlay(e) {
+      $(e.currentTarget).addClass('show-overlay');
     },
-    mounted: function mounted() {
-        this.fetchTracks();
+    hideOverlay: function hideOverlay(e, track) {
+      if (this.playing !== track.id) {
+        $(e.currentTarget).removeClass('show-overlay');
+      }
     },
+    stopTrack: function stopTrack() {
+      this.playing = false;
+      this.preview_player.pause();
+      this.preview_player.currentTime = 0;
+    },
+    setPlayerEvents: function setPlayerEvents() {
+      var _this = this;
 
+      this.preview_player.onplay = function () {
+        _this.playing = _this.currentTrackId;
+      };
 
-    methods: {
-        previewTrack: function previewTrack(preview_url) {
-            if (!this.preview_player) {
-                this.preview_player = new Audio(preview_url);
-                this.preview_player.play();
-            } else {
-                this.preview_player.src = preview_url;
-                this.preview_player.load();
-                this.preview_player.play();
-            }
-        },
-        fetchTracks: function fetchTracks() {
-            this.tracks = [];
+      this.preview_player.onstop = function () {
+        _this.playing = false;
+      };
+    },
+    previewTrack: function previewTrack(track) {
+      this.preview_player.src = track.preview_url;
+      this.preview_player.load();
+      this.preview_player.play();
 
-            __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* _http */].get('/spotify/tracks').then(function (data) {
-                this.tracks = data.data.tracks.recent;
-                this.current = data.data.tracks.now;
-            }.bind(this));
-        }
+      this.currentTrackId = track.id;
+    },
+    fetchTracks: function fetchTracks() {
+      this.tracks = [];
+
+      __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* _http */].get('/spotify/tracks').then(function (data) {
+        this.tracks = data.data.tracks.recent;
+        this.current = data.data.tracks.now;
+      }.bind(this));
     }
+  }
 });
 
 /***/ }),
@@ -755,7 +782,21 @@ var render = function() {
                       [
                         _c(
                           "div",
-                          { staticClass: "well well-custom tutorial" },
+                          {
+                            staticClass: "well well-custom tutorial",
+                            class: {
+                              "show-overlay":
+                                _vm.playing === _vm.current.item.id
+                            },
+                            on: {
+                              mouseenter: function($event) {
+                                _vm.showOverlay($event)
+                              },
+                              mouseleave: function($event) {
+                                _vm.hideOverlay($event, _vm.current.item)
+                              }
+                            }
+                          },
                           [
                             _c("h4", { staticClass: "title" }, [
                               _c(
@@ -788,7 +829,25 @@ var render = function() {
                               },
                               [
                                 _c("div", { staticClass: "tutorial-overlay" }, [
-                                  _c("i", { staticClass: "fas fa-play" })
+                                  _vm.playing !== _vm.current.item.id
+                                    ? _c("i", {
+                                        staticClass: "fal fa-play",
+                                        on: {
+                                          click: function($event) {
+                                            $event.preventDefault()
+                                            _vm.previewTrack(_vm.current.item)
+                                          }
+                                        }
+                                      })
+                                    : _c("i", {
+                                        staticClass: "fal fa-stop",
+                                        on: {
+                                          click: function($event) {
+                                            $event.preventDefault()
+                                            _vm.stopTrack()
+                                          }
+                                        }
+                                      })
                                 ]),
                                 _vm._v(" "),
                                 _c("img", {
@@ -820,65 +879,86 @@ var render = function() {
                       }
                     },
                     [
-                      _c("div", { staticClass: "well well-custom tutorial" }, [
-                        _c("h4", { staticClass: "title" }, [
-                          _c(
-                            "span",
-                            {
-                              attrs: {
-                                title:
-                                  track.name +
-                                  " - " +
-                                  track.track.artists[0].name
-                              }
+                      _c(
+                        "div",
+                        {
+                          staticClass: "well well-custom tutorial",
+                          class: {
+                            "show-overlay": _vm.playing === track.track.id
+                          },
+                          on: {
+                            mouseenter: function($event) {
+                              _vm.showOverlay($event)
                             },
-                            [
-                              _vm._v(
-                                _vm._s(
-                                  track.track.name +
+                            mouseleave: function($event) {
+                              _vm.hideOverlay($event, track.track)
+                            }
+                          }
+                        },
+                        [
+                          _c("h4", { staticClass: "title" }, [
+                            _c(
+                              "span",
+                              {
+                                attrs: {
+                                  title:
+                                    track.name +
                                     " - " +
                                     track.track.artists[0].name
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    track.track.name +
+                                      " - " +
+                                      track.track.artists[0].name
+                                  )
                                 )
-                              )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "intro-image-container",
+                              staticStyle: { position: "relative" }
+                            },
+                            [
+                              _c("div", { staticClass: "tutorial-overlay" }, [
+                                _vm.playing !== track.track.id
+                                  ? _c("i", {
+                                      staticClass: "fal fa-play",
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          _vm.previewTrack(track.track)
+                                        }
+                                      }
+                                    })
+                                  : _c("i", {
+                                      staticClass: "fal fa-stop",
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          _vm.stopTrack()
+                                        }
+                                      }
+                                    })
+                              ]),
+                              _vm._v(" "),
+                              _c("img", {
+                                staticClass: "tutorial-intro-image image",
+                                attrs: {
+                                  src: track.track.album.images[0].url,
+                                  alt: "Album Art"
+                                }
+                              })
                             ]
                           )
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "intro-image-container",
-                            staticStyle: { position: "relative" }
-                          },
-                          [
-                            _c("div", { staticClass: "tutorial-overlay" }, [
-                              _c("i", { staticClass: "fas fa-play" }),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                {
-                                  staticClass: "preview-link",
-                                  on: {
-                                    click: function($event) {
-                                      $event.preventDefault()
-                                      _vm.previewTrack(track.track.preview_url)
-                                    }
-                                  }
-                                },
-                                [_vm._v("Preview Track")]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("img", {
-                              staticClass: "tutorial-intro-image image",
-                              attrs: {
-                                src: track.track.album.images[0].url,
-                                alt: "Album Art"
-                              }
-                            })
-                          ]
-                        )
-                      ])
+                        ]
+                      )
                     ]
                   )
                 ])
