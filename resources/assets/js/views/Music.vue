@@ -5,12 +5,22 @@
             <hr />
 
             <div id="tracks-container" class="row" v-if="tracks.length">
-                <div class="col-md-3" v-for="track in tracks">
-                    <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="track.url">
+                <div class="col-md-3">
+                    <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="current.item.external_urls.spotify">
                         <div class="well well-custom tutorial">
-                            <h4 class="title" id="title"><span v-bind:title="getTrackTitle(track)">{{ getTrackTitle(track) }}</span></h4>
+                            <h4 class="title"><span v-bind:title="current.item.name + ' - ' + current.item.artists[0].name">{{ current.item.name + ' - ' + current.item.artists[0].name }}</span></h4>
                             <div class="intro-image-container">
-                                <img class="tutorial-intro-image image" id="track-image" v-bind:src="getLargestAlbumImage(track)" alt="Album Art">
+                                <img class="tutorial-intro-image image" v-bind:src="current.item.album.images[0].url" alt="Album Art">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3" v-for="track in tracks">
+                    <a class="tutorial-link" target="_blank" rel="noreferrer noopener" v-bind:href="track.track.external_urls.spotify">
+                        <div class="well well-custom tutorial">
+                            <h4 class="title"><span v-bind:title="track.name + ' - ' + track.track.artists[0].name">{{ track.track.name + ' - ' + track.track.artists[0].name }}</span></h4>
+                            <div class="intro-image-container">
+                                <img class="tutorial-intro-image image" v-bind:src="track.track.album.images[0].url" alt="Album Art">
                             </div>
                         </div>
                     </a>
@@ -34,7 +44,8 @@
       data() {
             return {
 				lang: i18n,
-                tracks: []
+                tracks: [],
+                current: false
             }
         },
         
@@ -46,9 +57,11 @@
             fetchTracks() {
                 this.tracks = [];
 
-                _http.get('https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=welfordian&api_key=6136000ba0899c52db5ebcee77d4be15&format=json')
+                _http.get('/spotify/tracks')
                 .then(function(data) {
-                    this.tracks = data.data.recenttracks.track;
+                  console.log(data.data);
+                    this.tracks = data.data.tracks.recent;
+                    this.current = data.data.tracks.now;
                 }.bind(this));
             },
 
@@ -57,23 +70,7 @@
             },
 
             getLargestAlbumImage(track) {
-                var sizes = [];
-                
-                track.image.forEach(function (image) {
-                        sizes[image['size']] = image['#text'];
-                });
 
-                if (sizes['extralarge'].length !== 0) {
-                    return sizes['extralarge'];
-                } else if (sizes['large'].length !== 0) {
-                    return sizes['large'];
-                } else if (sizes['medium'].length !== 0) {
-                    return sizes['medium'];
-                } else if (sizes['small'].length !== 0) {
-                    return sizes['small'];
-                } else {
-                    return "";
-                }
             }
         }
     }
