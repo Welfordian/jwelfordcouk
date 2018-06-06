@@ -11,10 +11,10 @@
     "/DashboardUsersView.js": "/DashboardUsersView.js",
     "/DashboardPostsView.js": "/DashboardPostsView.js",
     "/DashboardEditorView.js": "/DashboardEditorView.js",
-    "/DashboardMessageSingle.js": "/DashboardMessageSingle.js",
-    "/DashboardMessagesView.js": "/DashboardMessagesView.js",
     "/DashboardView.js": "/DashboardView.js",
+    "/DashboardMessageSingle.js": "/DashboardMessageSingle.js",
     "/DashboardSettingsView.js": "/DashboardSettingsView.js",
+    "/DashboardMessagesView.js": "/DashboardMessagesView.js",
     "/DashboardEmailsView.js": "/DashboardEmailsView.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css"
