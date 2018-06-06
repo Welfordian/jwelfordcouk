@@ -59,7 +59,6 @@
 
                 _http.get('/spotify/tracks')
                 .then(function(data) {
-                  console.log(data.data);
                     this.tracks = data.data.tracks.recent;
                     this.current = data.data.tracks.now;
                 }.bind(this));
