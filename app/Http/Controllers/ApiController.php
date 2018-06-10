@@ -55,7 +55,7 @@ class ApiController extends Controller
     {
         return ['connected' => false, 'authUrl' => 'https://accounts.spotify.com/authorize?response_type=code' .
             '&client_id=' . env('SPOTIFY_CLIENT_ID') .
-            '&scope=' . urlencode('user-read-recently-played user-read-private user-read-currently-playing user-read-playback-state') .
+            '&scope=' . urlencode('user-read-recently-played user-read-private user-read-currently-playing user-top-read user-read-playback-state streaming user-read-birthdate user-read-email user-read-private') .
             '&redirect_uri=' . env('APP_URL') . '/api/spotify' .
             '&state=' . base64_encode($request->bearerToken())];
     }
@@ -137,7 +137,7 @@ class ApiController extends Controller
 
     public function getSpotifyRecentTracks($access_token)
     {
-        $response = $this->http->get('https://api.spotify.com/v1/me/player/recently-played', [
+        $response = $this->http->get('https://api.spotify.com/v1/me/player/recently-played?limit=27', [
             'headers' => [
                 'Authorization' => 'Bearer ' . $access_token
             ]
@@ -146,6 +146,14 @@ class ApiController extends Controller
         $data = json_decode($response->getBody()->getContents(), true)['items'];
 
         return $data;
+    }
+
+    public function spotifyToken()
+    {
+        $spotify = Integration::where('name', '=', 'spotify')->first();
+        $integration = json_decode($spotify->data, true);
+
+        return ['token' => $integration['access_token']];
     }
 
     public function AboutSummary()

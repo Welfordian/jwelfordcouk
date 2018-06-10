@@ -38,6 +38,8 @@
             <div class="row loading-row" v-else>
                 <i class="fal fa-circle-notch fa-spin" aria-hidden="true"></i></h1>
             </div>
+
+            <audio ref="preview_player"></audio>
         </div>
     </default-layout>
 </template>
@@ -54,18 +56,14 @@
 				lang: i18n,
                 tracks: [],
                 current: false,
-                preview_player: new Audio(),
                 currentTrackEl: false,
                 playing: false
             }
         },
 
-        beforeMount() {
-            this.setPlayerEvents();
-        },
-
         mounted() {
             this.fetchTracks();
+            this.setPlayerEvents();
         },
 
         methods: {
@@ -81,24 +79,32 @@
 
             stopTrack() {
               this.playing = false;
-              this.preview_player.pause();
-              this.preview_player.currentTime = 0;
+              this.$refs.preview_player.pause();
+              this.$refs.preview_player.currentTime = 0;
             },
 
             setPlayerEvents() {
-              this.preview_player.onplay = () => {
+              this.$refs.preview_player.onplay = () => {
                 this.playing = this.currentTrackId;
               };
 
-              this.preview_player.onstop = () => {
+              this.$refs.preview_player.onstop = () => {
                 this.playing = false;
+              };
+
+              this.$refs.preview_player.onended = () => {
+                this.playing = false;
+              };
+
+              this.$refs.preview_player.ontimeupdate = () => {
+                console.log('hi');
               };
             },
 
             previewTrack(track) {
-              this.preview_player.src = track.preview_url;
-              this.preview_player.load();
-              this.preview_player.play();
+              this.$refs.preview_player.src = track.preview_url;
+              this.$refs.preview_player.load();
+              this.$refs.preview_player.play();
 
               this.currentTrackId = track.id;
             },

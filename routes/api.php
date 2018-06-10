@@ -29,6 +29,8 @@ Route::group(['middleware' => ['jwt.auth']], function(){
     Route::get('/me', 'ApiController@me');
     Route::get('/settings', 'ApiController@settings');
 
+    Route::get('/spotify_token', 'ApiController@spotifyToken');
+
     Route::get('/users', 'ApiController@users');
 
     Route::get('/dashboard/stats', 'ApiController@stats');

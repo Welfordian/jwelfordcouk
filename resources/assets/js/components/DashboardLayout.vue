@@ -7,6 +7,7 @@
                     <navbar-link href="/dashboard/users" icon="users">Users</navbar-link>
                     <navbar-link href="/dashboard/posts" icon="newspaper-o">Posts</navbar-link>
                     <navbar-link href="/dashboard/files" icon="file">Files</navbar-link>
+                    <navbar-link href="/dashboard/player" icon="play">Player</navbar-link>
                     <navbar-link href="/dashboard/messages" icon="envelope">Messages</navbar-link>
                 </template>
 
