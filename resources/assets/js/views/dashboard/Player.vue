@@ -7,15 +7,19 @@
                         <div class="box-top">
                             <a href="javascript:void(0);" class="back-button"><i class="fa fa-search"></i></a>
                             <a href="javascript:void(0);" class="fav-button"><i class="fa fa-heart"></i></a>
-                            <div class="status-box">NOW PLAYING</div>
+                            <div class="status-box">{{ meta.contextDescription }}</div>
                         </div>
                         <div class="box-snapshot">
                             <img :src="meta.imageSrc" />
                         </div>
                         <div class="box-control">
-                            <div class="progress-bar"><span data-percent="40"></span></div>
-                            <a href="javascript:void(0);" class="shuffle-bt"><i class="fa fa-random"></i></a>
-                            <a href="javascript:void(0);" class="loop-bt"><i class="fa fa-exchange"></i></a>
+                            <div class="progress-bar" @click.prevent="setPosition($event)"><span data-percent="40" :style="{ width: progressPercentage }"></span></div>
+                            <a @click.prevent="toggleShuffle()" class="shuffle-bt" :class="{'shuffle-loop-on': meta.shuffle === true}"><i class="fa fa-random"></i></a>
+                            <a @click.prevent="toggleRepeat()" class="loop-bt" :class="{'shuffle-loop-on': meta.repeat_mode !== 0}">
+                                <span class="repeat-ctx" v-if="meta.repeat_mode === 1"></span>
+                                <span class="repeat-track" v-if="meta.repeat_mode === 2">1</span>
+                                <i class="fa fa-exchange"></i>
+                            </a>
                             <span class="current-time">{{ millisToMinutesAndSeconds(meta.position) }}</span>
                             <span class="total-time">{{ millisToMinutesAndSeconds(meta.duration) }}</span>
                         </div>
@@ -24,12 +28,12 @@
                                 <span class="artist-name">{{ meta.artistName }}</span>
                             </h1>
                             <div class="control">
-                                <a @click.prevent="nextTrack" ><i class="fa fa-backward"></i></a>
+                                <a @click.prevent="previousTrack()" ><i class="fa fa-backward"></i></a>
                                 <a @click.prevent="togglePlay" class="play-bt" >
                                     <i class="fa fa-play-circle" v-if="!meta.playing"></i>
                                     <i class="fa fa-pause-circle" v-else></i>
                                 </a>
-                                <a @click.prevent="previousTrack()"><i class="fa fa-forward"></i></a>
+                                <a @click.prevent="nextTrack()"><i class="fa fa-forward"></i></a>
                             </div>
                         </div>
                     </div>
@@ -62,7 +66,10 @@
             duration: 0,
             playing: false,
             imageSrc: false,
+            shuffle: false,
+            repeat_mode: 0,
             trackName: "",
+            contextDescription: ""
           }
         }
       },
@@ -100,6 +107,9 @@
                 this.meta.duration = state.duration;
                 this.meta.position = state.position;
                 this.meta.artistName = state.track_window.current_track.artists.map(function(artist) { return artist.name; }).join(', ');
+                this.meta.contextDescription = state.context.metadata.context_description;
+                this.meta.shuffle = state.shuffle;
+                this.meta.repeat_mode = state.repeat_mode;
               });
 
               // Ready
@@ -209,8 +219,44 @@
 
         setStatePosition(ms) {
             return this.millisToMinutesAndSeconds(ms);
+        },
+
+        setPosition(e) {
+          var parentOffset = $(e.target).parent().offset();
+          var relX = e.pageX - parentOffset.left;
+          var perc = relX / $(e.target).width() * 100;
+          var position = (perc / 100) * this.meta.duration;
+
+          this.spotifyApi.put('/me/player/seek?position_ms=' + Math.ceil(position))
+        },
+
+        toggleRepeat() {
+            let states = [
+              'off',
+              'context',
+              'track'
+            ];
+
+          if (this.meta.repeat_mode === 2) {
+            this.meta.repeat_mode = 0;
+          } else {
+            this.meta.repeat_mode++;
+          }
+
+          this.spotifyApi.put('/me/player/repeat?state=' + states[this.meta.repeat_mode]);
+
+        },
+
+        toggleShuffle() {
+
         }
       },
+
+      computed: {
+        progressPercentage() {
+            return this.meta.position / this.meta.duration * 100 + '%';
+        }
+      }
     }
 </script>
 
@@ -316,17 +362,17 @@
         position: relative;
     }
     .card-wrapper .box-control .progress-bar {
-        height: 2px;
+        height: 6px;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.17);
         position: relative;
     }
     .card-wrapper .box-control .progress-bar span {
         display: block;
         position: absolute;
-        background-color: #ff5917;
-        height: 2px;
-        width: 50%;
+        background-color: #18bc9c;
+        height: 6px;
+        pointer-events: none;
     }
     .card-wrapper .box-control .shuffle-bt {
         position: absolute;
@@ -334,9 +380,11 @@
         left: 0;
     }
     .card-wrapper .box-control .loop-bt {
-        position: absolute;
         right: 0;
         top: 0;
+        position: relative;
+        float: right;
+        margin-top: -35px;
     }
     .card-wrapper .box-control > span {
         color: rgba(255, 255, 255, 0.5);
@@ -345,12 +393,12 @@
     .card-wrapper .box-control .current-time {
         position: absolute;
         left: 0;
-        bottom: 10px;
+        bottom: 5px;
     }
     .card-wrapper .box-control .total-time {
         position: absolute;
         right: 0;
-        bottom: 10px;
+        bottom: 5px;
     }
     .card-wrapper .box-player {
         text-align: center;
@@ -383,6 +431,28 @@
 
     .box-snapshot img {
         width: 100%;
+    }
+
+    span.repeat-ctx {
+        width: 5px;
+        height: 5px;
+        background: #18bc9c;
+        position: absolute;
+        border-radius: 100%;
+        right: 6px;
+        top: -3px;
+    }
+
+    span.repeat-track {
+        position: absolute;
+        top: -9px;
+        font-size: 10px;
+        left: 4px;
+        color: #18bc9c;
+    }
+
+    .shuffle-loop-on {
+       color: #18bc9c !important;
     }
 
 </style>
