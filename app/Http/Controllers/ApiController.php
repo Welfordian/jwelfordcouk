@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Integration;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use App\User;
 use App\Post;
@@ -51,21 +52,18 @@ class ApiController extends Controller
         ];
     }
 
-    public function authUrl(Request $request)
+    public function authUrl()
     {
         return ['connected' => false, 'authUrl' => 'https://accounts.spotify.com/authorize?response_type=code' .
             '&client_id=' . env('SPOTIFY_CLIENT_ID') .
-            '&scope=' . urlencode('user-read-recently-played user-read-private user-read-currently-playing user-top-read user-read-playback-state streaming user-read-birthdate user-read-email user-read-private') .
-            '&redirect_uri=' . env('APP_URL') . '/api/spotify' .
-            '&state=' . base64_encode($request->bearerToken())];
+            '&scope=' . urlencode('user-read-recently-played user-read-private user-read-currently-playing user-modify-playback-state user-library-read user-top-read user-read-playback-state streaming user-read-birthdate user-read-email user-read-private') .
+            '&redirect_uri=' . env('APP_URL') . '/spotify'];
     }
 
     public function spotify(Request $request)
     {
         $code = $request->get('code');
         $state = $request->get('state');
-
-        JWTAuth::setToken(base64_decode($state))->authenticate();
 
         $response = $this->http->post('https://accounts.spotify.com/api/token', [
             'headers' => [
@@ -74,7 +72,7 @@ class ApiController extends Controller
             'form_params' => [
                 'grant_type' => 'authorization_code',
                 'code' => $code,
-                'redirect_uri' => env('APP_URL') . '/api/spotify'
+                'redirect_uri' => env('APP_URL') . '/spotify'
             ]
         ]);
 
@@ -83,12 +81,13 @@ class ApiController extends Controller
         $data['connected'] = true;
 
         $integration = new Integration();
+        $integration->session_id = session()->getId();
         $integration->name = 'spotify';
         $integration->data = json_encode($data);
 
         $integration->save();
 
-        return redirect()->to('/dashboard');
+        return redirect()->to('/experiments/player');
     }
 
     public function getSpotifyUsername($token)
@@ -150,7 +149,12 @@ class ApiController extends Controller
 
     public function spotifyToken()
     {
-        $spotify = Integration::where('name', '=', 'spotify')->first();
+        $spotify = Integration::where('name', '=', 'spotify')->where('session_id', '=', session()->getId())->first();
+
+        if (!$spotify) {
+            return $this->authUrl();
+        }
+
         $integration = json_decode($spotify->data, true);
 
         return ['token' => $integration['access_token']];

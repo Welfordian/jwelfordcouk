@@ -5,15 +5,29 @@
                 <div class="inner">
                     <div class="card-wrapper">
                         <div class="box-top">
-                            <a href="javascript:void(0);" class="back-button"><i class="fa fa-search"></i></a>
-                            <a href="javascript:void(0);" class="fav-button"><i class="fa fa-heart"></i></a>
-                            <div class="status-box">{{ meta.contextDescription }}</div>
+                            <a @click.prevent="searchToggle = !searchToggle" class="back-button">
+                                <i class="fa fa-search" v-if="!searchToggle"></i>
+                                <i class="fa fa-times" v-else></i>
+                            </a>
+                            <a href="javascript:void(0);" class="fav-button" v-if="!searchToggle">
+                                <i class="fa fa-check" v-if="meta.trackSaved"></i>
+                                <i class="fa fa-plus" v-else></i>
+                            </a>
+                            <div class="status-box">
+                                <span v-if="!searchToggle">{{ meta.contextDescription }}</span>
+                                <input class="searchInput" type="text" v-else @keyup.prevent="searchSpotify($event)"/>
+                            </div>
                         </div>
                         <div class="box-snapshot">
-                            <img :src="meta.imageSrc" />
+                            <div class="searchResults" v-if="searchToggle">
+                                <p class="search--result-track" v-for="track in search.tracks.items" @click.prevent="playTrack(track.uri)">
+                                    {{ track.name }} - {{ trackArtists(track) }}
+                                </p>
+                            </div>
+                            <img :src="meta.imageSrc" v-else/>
                         </div>
                         <div class="box-control">
-                            <div class="progress-bar" @click.prevent="setPosition($event)"><span data-percent="40" :style="{ width: progressPercentage }"></span></div>
+                            <div class="progress-bar" @click.prevent="setPosition($event)"><span :data-percent="progressPercentage" :style="{ width: progressPercentage }"></span></div>
                             <a @click.prevent="toggleShuffle()" class="shuffle-bt" :class="{'shuffle-loop-on': meta.shuffle === true}"><i class="fa fa-random"></i></a>
                             <a @click.prevent="toggleRepeat()" class="loop-bt" :class="{'shuffle-loop-on': meta.repeat_mode !== 0}">
                                 <span class="repeat-ctx" v-if="meta.repeat_mode === 1"></span>
@@ -58,10 +72,17 @@
       data() {
         return {
           player: false,
+          search: {
+            tracks: [],
+            albums: [],
+            artists: []
+          },
+          searchToggle: false,
           spotify_token: false,
           devices: false,
           playlists: false,
           meta: {
+            trackId: false,
             position: 0,
             duration: 0,
             playing: false,
@@ -103,13 +124,16 @@
                 window.state = state;
                 this.meta.playing = !state.paused;
                 this.meta.imageSrc = state.track_window.current_track.album.images[state.track_window.current_track.album.images.length - 1].url;
+                this.meta.trackId = state.track_window.current_track.id;
                 this.meta.trackName = state.track_window.current_track.name;
                 this.meta.duration = state.duration;
                 this.meta.position = state.position;
-                this.meta.artistName = state.track_window.current_track.artists.map(function(artist) { return artist.name; }).join(', ');
+                this.meta.artistName = this.trackArtists(state.track_window.current_track);
                 this.meta.contextDescription = state.context.metadata.context_description;
                 this.meta.shuffle = state.shuffle;
                 this.meta.repeat_mode = state.repeat_mode;
+
+                this.stateChanged();
               });
 
               // Ready
@@ -142,6 +166,18 @@
       },
 
       methods: {
+        trackArtists(track) {
+        return track.artists.map(function(artist) { return artist.name; }).join(', ');
+        },
+
+        async searchSpotify(e) {
+            this.search = (await this.spotifyApi.get('/search?q=' + e.target.value + "&type=track&market=from_token")).data;
+        },
+
+        toggleSearch() {
+          this.searchToggle = !this.searchToggle;
+        },
+
         async fetchToken() {
           return new Promise(async (resolve) => {
             this.spotify_token = (await _http.get('/spotify_token')).data.token;
@@ -162,6 +198,12 @@
 
         async play() {
           this.spotifyApi.put('/me/player/play?device_id=' + this.deviceId);
+        },
+
+        async playTrack(trackId) {
+          this.spotifyApi.put('/me/player/play?device_id=' + this.deviceId, {
+            'uris': [trackId]
+          });
         },
 
         async playPlaylist(playlist) {
@@ -248,7 +290,15 @@
         },
 
         toggleShuffle() {
+            this.spotifyApi.put('/me/player/shuffle?state=' + !this.meta.shuffle);
+        },
 
+        async checkSaved() {
+          this.meta.trackSaved = (await this.spotifyApi.get('/me/tracks/contains?ids=' + this.meta.trackId)).data[0];
+        },
+
+        stateChanged() {
+          this.checkSaved();
         }
       },
 
@@ -356,6 +406,7 @@
         margin-bottom: 10px;
         margin-left: -15px;
         width: 111%;
+        height: 260px;
     }
     .card-wrapper .box-control {
         padding: 1.875em 0;
@@ -453,6 +504,32 @@
 
     .shuffle-loop-on {
        color: #18bc9c !important;
+    }
+
+    .searchInput {
+        width: 90%;
+        display: inline-block;
+        color: black;
+        border-radius: 13px;
+        border: none;
+        height: 25px;
+        padding: 0px 10px;
+    }
+
+    .searchResults {
+        max-height: 100%;
+        overflow: auto;
+        z-index: 12;
+    }
+
+    .search--result-track {
+        font-size: 13px;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .back-button, .fav-button, .status-box {
+        margin-top: -5px;
     }
 
 </style>

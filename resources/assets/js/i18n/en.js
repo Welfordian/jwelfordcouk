@@ -7,6 +7,7 @@ export const EN = {
     'navbar.videos': 'Videos',
     'navbar.music': 'Music',
     'navbar.contact': 'Contact',
+    'navbar.experiments': 'Experiments',
     'navbar.photography': 'Photography',
     'email_address': 'E-mail Address',
     'password': 'Password',

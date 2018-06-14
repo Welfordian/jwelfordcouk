@@ -1,24 +1,24 @@
-webpackJsonp([9],{
+webpackJsonp([8],{
 
-/***/ 270:
+/***/ 275:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(317)
+  __webpack_require__(342)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(319)
+var __vue_script__ = __webpack_require__(344)
 /* template */
-var __vue_template__ = __webpack_require__(320)
+var __vue_template__ = __webpack_require__(345)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-b7b2a0da"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/About.vue"
+Component.options.__file = "resources/assets/js/views/Experiments.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-49c1ab4a", Component.options)
+    hotAPI.createRecord("data-v-b7b2a0da", Component.options)
   } else {
-    hotAPI.reload("data-v-49c1ab4a", Component.options)
+    hotAPI.reload("data-v-b7b2a0da", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -580,23 +580,23 @@ if (false) {
 
 /***/ }),
 
-/***/ 317:
+/***/ 342:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(318);
+var content = __webpack_require__(343);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("7240d990", content, false, {});
+var update = __webpack_require__(5)("52e54f5d", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-49c1ab4a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./About.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-49c1ab4a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./About.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b7b2a0da\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Experiments.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b7b2a0da\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Experiments.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -607,7 +607,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 318:
+/***/ 343:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -615,29 +615,20 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.placeholder-row {\n    margin-left: 0 !important;\n    margin-right: 0 !important;\n}\n", ""]);
+exports.push([module.i, "\n.loading-row[data-v-b7b2a0da] {\n    text-align: center;\n    font-size: 5em;\n    color: #2c3e50;\n}\nli .fa[data-v-b7b2a0da] {\n    margin-left: -5px;\n    margin-right: 5px;\n}\na.primary[data-v-b7b2a0da] {\n    color: #2c3e50;\n}\nli a.danger[data-v-b7b2a0da]{\n    color: #e74c3c;\n}\nli a.danger[data-v-b7b2a0da]:hover, li a.danger[data-v-b7b2a0da]:focus, li a.danger[data-v-b7b2a0da]:active {\n    background-color: #e74c3c;\n    color: #fff;\n}\n[data-v-b7b2a0da]:root {\n    --refresh-hover-color: #586b7d;\n}\n.loading-row[data-v-b7b2a0da] {\n    text-align: center;\n    font-size: 5em;\n    color: #2c3e50;\n}\n.tutorial[data-v-b7b2a0da] {\n    -webkit-transition: all .3s;\n    transition: all .3s;\n}\n.tutorial-link[data-v-b7b2a0da],\n.tutorial-link[data-v-b7b2a0da]:hover,\n.tutorial-link[data-v-b7b2a0da]:active {\n    text-decoration: none;\n}\n.tutorial[data-v-b7b2a0da]:hover {\n    -webkit-transform: scale(1.03);\n    transform: scale(1.03);\n    -webkit-box-shadow: 0 0 13px #CCC;\n            box-shadow: 0 0 13px #CCC;\n    z-index: 3;\n}\n.tutorial .title[data-v-b7b2a0da] {\n    padding: 0 0 4px 8px;\n    font-weight: bold;\n    text-align: left;\n    max-width: 98%;\n    width: 98%;\n    overflow: hidden;\n    white-space: nowrap;\n}\n.intro-image-container[data-v-b7b2a0da] {\n    overflow: hidden;\n}\n.tutorial-intro-image[data-v-b7b2a0da] {\n    -webkit-transition: -webkit-transform .3s;\n    transition: -webkit-transform .3s;\n    transition: transform .3s;\n    transition: transform .3s, -webkit-transform .3s;\n    -webkit-transform: scale(1.3);\n    transform: scale(1.3);\n}\n.tutorial-intro-image[data-v-b7b2a0da],\n.intro-image-container[data-v-b7b2a0da] {\n    width: 100%;\n    min-width: 100%;\n    max-width: 100%;\n}\n.tutorial:hover .tutorial-intro-image[data-v-b7b2a0da] {\n    -webkit-transform: scale(1);\n    transform: scale(1)\n}\n.well-custom[data-v-b7b2a0da] {\n    padding: 0;\n    background-color: #2c3e50;\n    color: #ffffff;\n}\n#tracks-title .fa-spotify[data-v-b7b2a0da] {\n    color: #1DB954;\n}\n.marquee[data-v-b7b2a0da] {\n    width: 450px;\n    white-space: nowrap;\n    overflow: hidden;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n}\n.marquee span[data-v-b7b2a0da] {\n    display: inline-block;\n    padding-left: 100%;\n    text-indent: 0;\n    -webkit-animation: marquee-data-v-b7b2a0da 5s linear infinite;\n            animation: marquee-data-v-b7b2a0da 5s linear infinite;\n}\n.marquee span[data-v-b7b2a0da]:hover {\n    -webkit-animation-play-state: paused;\n            animation-play-state: paused\n}\n@-webkit-keyframes marquee-data-v-b7b2a0da {\n0% {\n        -webkit-transform: translate(0, 0);\n                transform: translate(0, 0);\n}\n100% {\n        -webkit-transform: translate(-100%, 0);\n                transform: translate(-100%, 0);\n}\n}\n@keyframes marquee-data-v-b7b2a0da {\n0% {\n        -webkit-transform: translate(0, 0);\n                transform: translate(0, 0);\n}\n100% {\n        -webkit-transform: translate(-100%, 0);\n                transform: translate(-100%, 0);\n}\n}\n.microsoft[data-v-b7b2a0da] {\n    padding-left: 1.5em;\n    position: relative;\n}\n.microsoft[data-v-b7b2a0da]:before,\n.microsoft[data-v-b7b2a0da]::before {\n    z-index: 2;\n    content: '';\n    position: absolute;\n    top: -1em;\n    left: -1em;\n    width: .5em;\n    height: .5em;\n    -webkit-box-shadow: 1.0em 1.25em 0 #F65314, 1.6em 1.25em 0 #7CBB00, 1.0em 1.85em 0 #00A1F1, 1.6em 1.85em 0 #FFBB00;\n            box-shadow: 1.0em 1.25em 0 #F65314, 1.6em 1.25em 0 #7CBB00, 1.0em 1.85em 0 #00A1F1, 1.6em 1.85em 0 #FFBB00;\n}\n.microsoft[data-v-b7b2a0da]:after,\n.microsoft[data-v-b7b2a0da]::after {\n    z-index: 1;\n    content: '';\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 2em;\n    height: 2em;\n    background-image: -webkit-gradient(linear, left top, right top, color-stop(70%, white), to(rgba(255, 255, 255, 0)));\n    background-image: linear-gradient(90deg, white 70%, rgba(255, 255, 255, 0));\n}\n.vanity[data-v-b7b2a0da] {\n    color: #333;\n    text-align: center;\n}\n.vanity a[data-v-b7b2a0da],\n.microsoft a[data-v-b7b2a0da] {\n    color: #1570A6;\n    -webkit-transition: color .5s;\n    transition: color .5s;\n    text-decoration: none;\n}\n.vanity a[data-v-b7b2a0da]:hover,\n.microsoft a[data-v-b7b2a0da]:hover {\n    color: #F65314;\n}\n/* Style toggle button */\n.toggle[data-v-b7b2a0da] {\n    display: block;\n    margin: 2em auto;\n}\n#tracks-title .fa-refresh[data-v-b7b2a0da] {\n    float: right;\n    cursor: pointer;\n}\n#tracks-title .fa-refresh[data-v-b7b2a0da]:hover {\n    color: var(--refresh-hover-color);\n}\n.intro-text[data-v-b7b2a0da] {\n    margin: 5px !important;\n}\n.read-more[data-v-b7b2a0da] {\n    width: 95% !important;\n    margin-top: 10px;\n    margin-left: 2.5%;\n    margin-bottom: 10px;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 319:
+/***/ 344:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__i18n__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_DefaultLayout__ = __webpack_require__(297);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_DefaultLayout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_DefaultLayout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Http__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__stores_SharedStore__ = __webpack_require__(7);
-
-
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_DefaultLayout__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_DefaultLayout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_DefaultLayout__);
 //
 //
 //
@@ -660,160 +651,17 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: { DefaultLayout: __WEBPACK_IMPORTED_MODULE_2__components_DefaultLayout___default.a },
+  components: { DefaultLayout: __WEBPACK_IMPORTED_MODULE_0__components_DefaultLayout___default.a }
 
-  beforeMount: function beforeMount() {
-    this.load();
-  },
-  data: function data() {
-    return {
-      Store: __WEBPACK_IMPORTED_MODULE_4__stores_SharedStore__["a" /* Store */],
-      lang: __WEBPACK_IMPORTED_MODULE_1__i18n__["a" /* i18n */]
-    };
-  },
-
-
-  methods: {
-    load: function load() {
-      this.header();
-      this.summary();
-      this.knowledge();
-      // this.experience();
-      // this.education();
-      // this.interests();
-    },
-    header: function () {
-      var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
-        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return __WEBPACK_IMPORTED_MODULE_3__Http__["a" /* _http */].get('/about/header');
-
-              case 2:
-                this.Store.content.header = _context.sent.data;
-
-              case 3:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function header() {
-        return _ref.apply(this, arguments);
-      }
-
-      return header;
-    }(),
-    summary: function () {
-      var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
-        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return __WEBPACK_IMPORTED_MODULE_3__Http__["a" /* _http */].get('/about/summary');
-
-              case 2:
-                this.Store.content.summary = _context2.sent.data;
-
-              case 3:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2, this);
-      }));
-
-      function summary() {
-        return _ref2.apply(this, arguments);
-      }
-
-      return summary;
-    }(),
-    knowledge: function () {
-      var _ref3 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee3() {
-        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                _context3.next = 2;
-                return __WEBPACK_IMPORTED_MODULE_3__Http__["a" /* _http */].get('/about/knowledge');
-
-              case 2:
-                this.Store.content.knowledge = _context3.sent.data;
-
-              case 3:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3, this);
-      }));
-
-      function knowledge() {
-        return _ref3.apply(this, arguments);
-      }
-
-      return knowledge;
-    }()
-  }
 });
 
 /***/ }),
 
-/***/ 320:
+/***/ 345:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -821,199 +669,59 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("default-layout", [
-    _c(
-      "div",
-      [
-        _c("header-image", {
-          attrs: {
-            name: "Joshua Welford",
-            image: "me-min.jpg",
-            background: "cover.jpg"
-          }
-        }),
-        _vm._v(" "),
-        _c("about-summary", {
-          attrs: {
-            title: "Summary",
-            content: _vm.Store.content.summary.content
-          }
-        }),
-        _vm._v(" "),
-        _c(
-          "div",
-          { attrs: { id: "knowledge" } },
-          [
-            _c(
-              "about-languages",
-              { attrs: { "show-title": "" } },
-              _vm._l(_vm.Store.content.knowledge, function(knowledge) {
-                return _c("about-language", {
-                  attrs: {
-                    language: knowledge.language,
-                    years: knowledge.years,
-                    content: knowledge.content
-                  }
-                })
-              })
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "experience-set",
-          [
-            _c(
-              "experience",
-              {
-                attrs: {
-                  from: "Mar 2018",
-                  to: "Present",
-                  role: "Web Developer",
-                  location: "RightMessage—Remote",
-                  link: "https://rightmessage.com"
-                }
-              },
-              [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.lang.get("experience.rm")) +
-                    "\n                "
-                ),
-                _c("hr")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "experience",
-              {
-                attrs: {
-                  from: "Feb 2018",
-                  to: "Mar 2018",
-                  role: "PHP Developer",
-                  location: "Netsells—York",
-                  link: "https://netsells.co.uk"
-                }
-              },
-              [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.lang.get("experience.netsells")) +
-                    "\n                "
-                ),
-                _c("hr")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "experience",
-              {
-                attrs: {
-                  from: "Oct 2017",
-                  to: "Feb 2018",
-                  role: "Web Developer",
-                  location: "VIA Creative—Middlesbrough",
-                  link: "https://viacreative.co.uk"
-                }
-              },
-              [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.lang.get("experience.via")) +
-                    "\n                "
-                ),
-                _c("hr")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "experience",
-              {
-                attrs: {
-                  from: "Mar 2017",
-                  to: "Jul 2017",
-                  role: "PHP Developer",
-                  location: "Leadbyte—Middlesbrough",
-                  link: "https://leadbyte.co.uk"
-                }
-              },
-              [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.lang.get("experiences.leadbyte")) +
-                    "\n                "
-                ),
-                _c("hr")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "experience",
-              {
-                attrs: {
-                  from: "Aug 2016",
-                  to: "Feb 2017",
-                  role: "PHP Developer",
-                  location: "Better Brand Agency—Middlesbrough",
-                  link: "https://www.betterbrandagency.com/"
-                }
-              },
-              [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.lang.get("experiences.better")) +
-                    "\n                "
-                ),
-                _c("hr")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "experience",
-              {
-                attrs: {
-                  from: "Sept 2013",
-                  to: "June 2016",
-                  role: "Web Developer",
-                  location: "Gbiz IT Ltd—Marske-By-The-Sea",
-                  link: "https://gbizit.co.uk"
-                }
-              },
-              [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.lang.get("experiences.gbizit")) +
-                    "\n            "
-                )
-              ]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c("education-set", [_c("education")], 1),
-        _vm._v(" "),
-        _c("div", { staticClass: "row", attrs: { id: "interests" } }, [
-          _c("a", { attrs: { name: "interests" } }),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("h2", { staticClass: "noselect" }, [
-              _vm._v(_vm._s(_vm.lang.get("interests.title")) + " "),
-              _c(
-                "a",
-                { staticClass: "part-link", attrs: { href: "#interests" } },
-                [_c("i", { staticClass: "glyphicon glyphicon-link" })]
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", { staticStyle: { "text-align": "justify" } }, [
-              _vm._v(_vm._s(_vm.lang.get("interests")))
-            ])
-          ])
-        ])
-      ],
-      1
-    )
+    _c("div", [
+      _c("h1", [_vm._v("Web Experiments")]),
+      _vm._v(" "),
+      _c("p", [
+        _c("strong", [_vm._v("Note: ")]),
+        _vm._v(
+          " most of these experiments have only been tested in Google Chrome."
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-md-4" },
+        [
+          _c(
+            "router-link",
+            {
+              staticClass: "tutorial-link",
+              attrs: { to: "/experiments/player" }
+            },
+            [
+              _c("div", { staticClass: "well well-custom tutorial" }, [
+                _c("h4", { staticClass: "title", attrs: { id: "title" } }, [
+                  _vm._v("Spotify Web Player")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "intro-image-container" }, [
+                  _c("img", {
+                    staticClass: "tutorial-intro-image image",
+                    attrs: {
+                      src:
+                        "https://s3.eu-west-2.amazonaws.com/jwelford/Screen+Shot+2018-06-13+at+23.42.00.png",
+                      alt: "Spotify Web Player"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "intro-text" }, [
+                  _vm._v(
+                    "A web player built using the Spotify Web Playback SDK & Web API"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("button", { staticClass: "read-more btn btn-success" }, [
+                  _vm._v("Demo")
+                ])
+              ])
+            ]
+          )
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -1022,7 +730,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-49c1ab4a", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-b7b2a0da", module.exports)
   }
 }
 

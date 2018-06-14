@@ -1,9 +1,11 @@
 {
+    "/ExperimentPlayer.js": "/ExperimentPlayer.js",
     "/BlogView.js": "/BlogView.js",
     "/ContactView.js": "/ContactView.js",
     "/PostView.js": "/PostView.js",
     "/PhotographyView.js": "/PhotographyView.js",
     "/MusicView.js": "/MusicView.js",
+    "/ExperimentsView.js": "/ExperimentsView.js",
     "/AboutView.js": "/AboutView.js",
     "/NotFoundView.js": "/NotFoundView.js",
     "/LoginView.js": "/LoginView.js",

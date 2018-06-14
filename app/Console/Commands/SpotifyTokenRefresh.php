@@ -42,26 +42,29 @@ class SpotifyTokenRefresh extends Command
      */
     public function handle()
     {
-        $spotify = Integration::where('name', '=', 'spotify')->first();
-        $integration = json_decode($spotify->data, true);
-        $refresh_token = $integration['refresh_token'];
+        $spotifys = Integration::where('name', '=', 'spotify')->get();
 
-        $response = $this->http->post('https://accounts.spotify.com/api/token', [
-            'headers' => [
-                'Authorization' => 'Basic ' . base64_encode(env('SPOTIFY_CLIENT_ID') . ':' . env('SPOTIFY_CLIENT_SECRET'))
-            ],
-            'form_params' => [
-                'grant_type' => 'refresh_token',
-                'refresh_token' => $refresh_token,
-            ]
-        ]);
+        $spotifys->each(function($spotify) {
+            $integration = json_decode($spotify->data, true);
+            $refresh_token = $integration['refresh_token'];
 
-        $data = json_decode($response->getBody()->getContents(), true);
+            $response = $this->http->post('https://accounts.spotify.com/api/token', [
+                'headers' => [
+                    'Authorization' => 'Basic ' . base64_encode(env('SPOTIFY_CLIENT_ID') . ':' . env('SPOTIFY_CLIENT_SECRET'))
+                ],
+                'form_params' => [
+                    'grant_type' => 'refresh_token',
+                    'refresh_token' => $refresh_token,
+                ]
+            ]);
 
-        $integration['access_token'] = $data['access_token'];
+            $data = json_decode($response->getBody()->getContents(), true);
 
-        $spotify->data = json_encode($integration);
-        $spotify->save();
+            $integration['access_token'] = $data['access_token'];
+
+            $spotify->data = json_encode($integration);
+            $spotify->save();
+        });
 
         $this->info('Token refreshed!');
     }

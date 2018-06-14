@@ -4,6 +4,7 @@
             <navbar>
                 <template slot="left-links">
                     <navbar-link href="/about" icon="user">{{ lang.get('navbar.about') }}</navbar-link>
+                    <navbar-link href="/experiments" icon="flask">{{ lang.get('navbar.experiments') }}</navbar-link>
                     <navbar-link href="/posts" icon="pencil">{{ lang.get('navbar.blog') }}</navbar-link>
                     <navbar-link href="/music" icon="music">{{ lang.get('navbar.music') }}</navbar-link>
                     <navbar-link href="/photography" icon="camera-retro">{{ lang.get('navbar.photography') }}</navbar-link>

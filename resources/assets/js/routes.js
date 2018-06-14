@@ -9,6 +9,8 @@ const Blog = () => import(/* webpackChunkName: "BlogView" */ './views/Blog');
 const Post = () => import(/* webpackChunkName: "PostView" */ './views/Post');
 const Music = () => import( /* webpackChunkName: "MusicView" */ './views/Music');
 const Photography = () => import( /*  webpackChunkName: "PhotographyView" */ './views/Photography');
+const Experiments = () => import( /* webpackChunkName: "ExperimentsView" */ './views/Experiments');
+const ExperimentPlayer = () => import( /* webpackChunkName: "ExperimentPlayer" */ './views/Experiments/Player');
 const Contact = () => import( /* webpackChunkName: "ContactView" */ './views/Contact');
 const Login = () => import ( /* webpackChunkName: "LoginView" */ './views/Login');
 const Dashboard = () => import( /* webpackChunkName: "DashboardView" */ './views/Dashboard');
@@ -33,6 +35,14 @@ const routes = [
     {
         path: '/about',
         component: About
+    },
+    {
+        path: '/experiments',
+        component: Experiments
+    },
+    {
+        path: '/experiments/player',
+        component: ExperimentPlayer
     },
     {
         path: '/posts',

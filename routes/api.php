@@ -23,13 +23,10 @@ Route::post('contact', 'ContactController@create')->middleware('verify.request.o
 Route::get('about/summary', 'ApiController@AboutSummary');
 Route::get('/about/knowledge', 'ApiController@AboutKnowledge');
 Route::get('/spotify/tracks', 'ApiController@spotifyTracks');
-Route::get('/spotify', 'ApiController@spotify');
 
 Route::group(['middleware' => ['jwt.auth']], function(){
     Route::get('/me', 'ApiController@me');
     Route::get('/settings', 'ApiController@settings');
-
-    Route::get('/spotify_token', 'ApiController@spotifyToken');
 
     Route::get('/users', 'ApiController@users');
 
