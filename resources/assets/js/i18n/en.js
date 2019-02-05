@@ -36,7 +36,7 @@ export const EN = {
     'interests': "All types of music has always been an interest of mine. Though I don't play an instrument, I'm an avid listener. Programming, of course, is a large interest, which is why my chosen career is such a joy.",
     'interests.title': "Interests",
     'videos.title': "What I've been watching lately...",
-    'music.title': "What I'm listening to these days...",
+    'music.title': "Spotify Activity...",
     'contact.title': "Get in touch with me",
     'full_name': "Full Name",
     'subject': "Subject",
