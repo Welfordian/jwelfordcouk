@@ -11,15 +11,13 @@
         <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/icon-144x144.png" async deferred>
         <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/icon-152x152.png" async deferred>
         <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192x192.png" async deferred>
-        <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jwelford.co.uk/icons/favicon-32x32.png" async deferred>
-        <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.jwelford.co.uk/icons/favicon-96x96.png" async deferred>
-        <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jwelford.co.uk/icons/favicon-16x16.png" async deferred>
-        <meta name="msapplication-TileImage" content="https://cdn.jwelford.co.uk/icons/ms-icon-144x144.png" async deferred>
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png" async deferred>
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png" async deferred>
         <meta name="apple-mobile-web-app-title" content="JW">
         <meta name="msapplication-starturl" content="/">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="og:title" content="Joshua Welford" />
-        <meta name="og:image" content="https://cdn.jwelford.co.uk/images/me-min.jpg" async deferred />
+        <meta name="og:image" content="/images/me-min.jpg" async deferred />
         <meta name="description" content="The Home of Joshua Welford" />
         <meta name="keywords" content="Joshua Welford, joshua welford, Josh Welford, josh welford, Redcar, redcar, web developer, Web Developer" />
         <meta name="og:description" content="The Home of Joshua Welford" />
