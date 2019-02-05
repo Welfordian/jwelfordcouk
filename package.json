@@ -10,7 +10,9 @@
     "postinstall": "npm run prod",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cross-env": "^5.2.0"
+  },
   "dependencies": {
     "@types/node": "^8.0.20",
     "axios": "^0.16.2",
@@ -38,7 +40,7 @@
     "sw-toolbox": "^3.6.0",
     "ts-loader": "^2.3.2",
     "typescript": "^2.4.2",
-    "vue": "^2.4.2",
+    "vue": "^2.5",
     "vue-masonry": "^0.11.1",
     "vue-photoswipe": "^1.0.3",
     "vue-pusher": "^0.2.1",
