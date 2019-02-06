@@ -15,7 +15,7 @@ class RemoveTitleFieldFromPosts extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
            $table->text('intro_text');
-           $table->string('intro_image');
+           $table->text('intro_image');
         });
     }
 

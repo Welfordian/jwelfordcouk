@@ -70,10 +70,12 @@ class PostsController extends Controller
         return $post;
     }
 
-    public function storeImage(Request $request)
+    public function storeImage(Request $request, ApiController $apiController)
     {
-        $path = $request->file('intro_image')->store('post_intro_images', 'public');
+        $uri = $request->file('intro_image')->storeAs(
+            'post_intro_images', $request->file('intro_image')->getClientOriginalName(), 'spaces'
+        );
 
-        return ['path' => $path];
+        return ['path' => $uri];
     }
 }

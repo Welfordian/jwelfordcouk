@@ -24,6 +24,9 @@ Route::post('contact', 'ContactController@create')->middleware('verify.request.o
 Route::group(['middleware' => ['jwt.auth']], function(){
     Route::get('/me', 'ApiController@me');
 
+    Route::get('/files', 'ApiController@listFiles');
+    Route::post('/files', 'ApiController@storeFile');
+
     Route::get('/users', 'ApiController@users');
 
     Route::get('/dashboard/stats', 'ApiController@stats');

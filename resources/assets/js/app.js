@@ -23,24 +23,24 @@ Vue.use(Toasted, {
 require('./components');
 require('./mixins');
 
-// let modifications = false;
-// let waitTimeout = setInterval.prototype;
-//
-// router.afterEach((to, from) => {
-//   if (!modifications) {
-//     waitTimeout = setInterval(() => {
-//       if (modifications) {
-//         applyModifications();
-//
-//         clearInterval(waitTimeout);
-//       }
-//     });
-//   } else {
-//     setTimeout(() => {
-//       applyModifications();
-//     }, 50);
-//   }
-// });
+let modifications = false;
+let waitTimeout = setInterval.prototype;
+
+router.afterEach((to, from) => {
+  if (!modifications) {
+    waitTimeout = setInterval(() => {
+      if (modifications) {
+        applyModifications();
+
+        clearInterval(waitTimeout);
+      }
+    });
+  } else {
+    setTimeout(() => {
+      applyModifications();
+    }, 50);
+  }
+});
 
 let noVues = document.getElementsByClassName('no-vue');
 
@@ -65,7 +65,8 @@ export const app = new Vue({
         noVues[i].className = "no-vue hidden";
         noVues[i].remove();
       }
-      //_http.get('/modifications').then(response => modifications = JSON.parse(response.data.config)).catch(e => modifications = true);
+
+      _http.get('/modifications').then(response => modifications = JSON.parse(response.data.config)).catch(e => modifications = true);
 
       if ('serviceWorker' in navigator) {
           navigator.serviceWorker.register('/sw.js', {scope: '/'})
@@ -108,16 +109,16 @@ $(document).ready(function () {
   });
 });
 
-// const applyModifications = function () {
-//   Object.keys(modifications).forEach(function(key){
-//     if ($(key).length) {
-//       $(key).text(modifications[key].innerText);
-//     }
-//   });
-//
-//   const noVues = document.getElementsByClassName('no-vue');
-//
-//   for(i = 0; i < noVues.length; i++) {
-//     noVues[i].className = "no-vue hidden";
-//   }
-// };
+const applyModifications = function () {
+  Object.keys(modifications).forEach(function(key){
+    if ($(key).length) {
+      $(key).text(modifications[key].innerText);
+    }
+  });
+
+  const noVues = document.getElementsByClassName('no-vue');
+
+  for(i = 0; i < noVues.length; i++) {
+    noVues[i].className = "no-vue hidden";
+  }
+};

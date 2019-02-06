@@ -30,3 +30,15 @@
 body, button, input, select, textarea, .dropdown-menu {
   font-size: 16px !important;
 }
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}

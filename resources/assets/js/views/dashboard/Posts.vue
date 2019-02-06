@@ -14,7 +14,7 @@
                         <div class="well well-custom tutorial">
                             <h4 class="title" id="title">{{ post.title }}</h4>
                             <div class="intro-image-container">
-                                <img class="tutorial-intro-image image" id="track-image" v-bind:src="'/storage/' + post.intro_image" alt="Post intro image">
+                                <img class="tutorial-intro-image image" id="track-image" v-bind:src="post.intro_image" alt="Post intro image">
                             </div>
                             <p class="intro-text">{{ post.intro_text }}</p>
                             <button class="read-more btn btn-success">Edit Post</button>

@@ -1,13 +1,14 @@
 <template>
     <div>
-        <button class="btn btn-success" @click="selectAndUpload">Upload</button>
+        <button class="btn btn-success" @click="$refs.fileInput.click()">Upload New File</button>
 
-        <!--<input type="file" class="hidden" ref="fileInput" />-->
-        <input type="hidden" name="_upload_type" :value="uploadType" />
+        <input type="file" class="hidden" v-on:change="startUpload()" ref="fileInput" />
     </div>
 </template>
 
 <script>
+    import {_http} from "../Http";
+
     export default {
       name: 'file-upload-button',
 
@@ -24,8 +25,18 @@
       },
 
       methods: {
-        selectAndUpload() {
-            this.$refs.fileInput.click();
+        startUpload() {
+            var formData = new FormData();
+
+            formData.append("file", this.$refs.fileInput.files[0]);
+
+            _http.post('files', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            }).then((r) => {
+                this.$emit('fileUploaded', r.data);
+            });
         }
       }
     }
