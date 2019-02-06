@@ -70,7 +70,9 @@ class ApiController extends Controller
 
             $files[] = [
                 'type' => str_replace('.', '', $fileType)[0],
-                'uri' => $this->generateSignedSpacesUrl($file)
+                'uri' => $this->generateSignedSpacesUrl($file),
+                'name' => $file,
+                'size' => \Storage::disk('spaces')->size($file)
             ];
         }
 

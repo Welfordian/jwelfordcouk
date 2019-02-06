@@ -338,6 +338,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -351,6 +364,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     data: function data() {
         return {
+            gotFiles: false,
             files: []
         };
     },
@@ -359,6 +373,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this = this;
 
         __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* _http */].get('/files').then(function (r) {
+            _this.gotFiles = true;
             _this.files = r.data;
         });
     },
@@ -374,6 +389,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             } else {
                 return 'https://cdn2.iconfinder.com/data/icons/text-file-essential/48/v-04-512.png';
             }
+        },
+        bytesToSize: function bytesToSize(bytes) {
+            var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+
+            if (bytes == 0) return '0 Byte';
+
+            var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+
+            return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
         }
     }
 });
@@ -547,22 +571,38 @@ var render = function() {
       _vm._v(" "),
       _c("hr"),
       _vm._v(" "),
-      _vm.files.length
-        ? _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.files, function(file) {
-              return _c("div", { staticClass: "col-md-2" }, [
-                _c("a", { attrs: { href: file.uri, target: "_blank" } }, [
-                  _c("img", {
-                    staticStyle: { width: "100%" },
-                    attrs: { src: _vm.determineIcon(file) }
-                  })
+      _vm.gotFiles
+        ? _c("div", [
+            _vm.files.length
+              ? _c("table", { staticClass: "table table-bordered" }, [
+                  _c("thead", [
+                    _c("tr", [
+                      _c("td", [_vm._v("Name")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("Size")])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.files, function(file) {
+                      return _c("tr", [
+                        _c("td", [
+                          _c(
+                            "a",
+                            { attrs: { href: file.uri, target: "_blank" } },
+                            [_vm._v(_vm._s(file.name.replace("files/1/", "")))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(_vm.bytesToSize(file.size)))])
+                      ])
+                    }),
+                    0
+                  )
                 ])
-              ])
-            }),
-            0
-          )
+              : _c("div", [_c("p", [_vm._v("No files.")])])
+          ])
         : _c("div", [_vm._v("\n            Loading...\n        ")])
     ])
   ])

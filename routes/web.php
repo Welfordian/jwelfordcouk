@@ -11,4 +11,8 @@
 |
 */
 
+Route::get('/test', function () {
+    return \Storage::disk('spaces')->files('files/1');
+});
+
 Route::get('{any?}', 'ApiController@web')->where('any', '.*')->middleware('minhtml');
