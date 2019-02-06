@@ -27,13 +27,15 @@
 </template>
 
 <script>
-  import { _http } from '../../Http';
+    import {Store} from "../../stores/SharedStore";
+    import { _http } from '../../Http';
   import DashboardLayout from "../../components/DashboardLayout";
 
   export default {
     components: {DashboardLayout},
     data() {
       return {
+          store: Store,
         confirmsDelete: false,
         posts: []
       }

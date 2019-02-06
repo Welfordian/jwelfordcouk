@@ -26,6 +26,7 @@ Route::group(['middleware' => ['jwt.auth']], function(){
 
     Route::get('/files', 'ApiController@listFiles');
     Route::post('/files', 'ApiController@storeFile');
+    Route::post('/files/visibility', 'ApiController@toggleVisibility');
 
     Route::get('/users', 'ApiController@users');
 

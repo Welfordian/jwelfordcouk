@@ -5,7 +5,7 @@
                 <template slot="left-links">
                     <navbar-link href="/dashboard/editor" icon="paint-brush">Editor</navbar-link>
                     <navbar-link href="/dashboard/users" icon="users">Users</navbar-link>
-                    <navbar-link href="/dashboard/posts" icon="newspaper-o">Posts</navbar-link>
+                    <navbar-link href="/dashboard/posts" icon="pencil">Posts</navbar-link>
                     <navbar-link href="/dashboard/files" icon="file">Files</navbar-link>
                     <navbar-link href="/dashboard/messages" icon="envelope">Messages</navbar-link>
                 </template>

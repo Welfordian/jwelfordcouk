@@ -47,17 +47,35 @@ class ApiController extends Controller
         return (string) $request->getUri();
     }
 
+    public function generateUnsignedSpacesUrl($file)
+    {
+        return \Storage::disk('spaces')->url($file);
+    }
+
+    public function transformCdnUri($uri)
+    {
+        return preg_replace('/welford.sfo2.digitaloceanspaces.com/', 'cdn.welford.me', $uri);
+    }
+
     public function storeFile(Request $request)
     {
-        $uri = $this->generateSignedSpacesUrl($request->file('file')->storeAs(
+        $file = $request->file('file')->storeAs(
             'files/'.auth()->user()->id, $request->file('file')->getClientOriginalName(), 'spaces'
-        ));
+        );
+
+        $visibility = \Storage::disk('spaces')->getVisibility($file);
+
+        $uri = ($visibility === "private" ? $this->generateSignedSpacesUrl($file) : "");
 
         preg_match('/\.[0-9a-z]+$/', $request->file('file')->getClientOriginalName(), $fileType);
 
         return [
             'type' => str_replace('.', '', $fileType)[0],
-            'uri' => $uri
+            'uri' => $this->transformCdnUri($uri),
+            'name' => $file,
+            'meta' => \Storage::disk('spaces')->getMetadata($file),
+            'visibility' => $visibility,
+            'updating' => false,
         ];
     }
 
@@ -68,14 +86,33 @@ class ApiController extends Controller
         foreach( \Storage::disk('spaces')->files('files/' . auth()->user()->id) as $file ) {
             preg_match('/\.[0-9a-z]+$/', $file, $fileType);
 
+            $visibility = \Storage::disk('spaces')->getVisibility($file);
+
             $files[] = [
                 'type' => str_replace('.', '', $fileType)[0],
-                'uri' => $this->generateSignedSpacesUrl($file),
+                'uri' => ($visibility === "private" ? $this->transformCdnUri($this->generateSignedSpacesUrl($file)) : $this->transformCdnUri($this->generateUnsignedSpacesUrl($file))),
                 'name' => $file,
-                'size' => \Storage::disk('spaces')->size($file)
+                'meta' => \Storage::disk('spaces')->getMetadata($file),
+                'visibility' => $visibility,
+                'updating' => false,
             ];
         }
 
         return $files;
+    }
+
+    public function toggleVisibility(Request $request)
+    {
+        $file = $request->get('file');
+        $visibility = $file['visibility'] === "public" ? "private" : "public";
+
+        \Storage::disk('spaces')->setVisibility($file['name'], $visibility);
+
+        $uri = ($visibility === "private" ? $this->transformCdnUri($this->generateSignedSpacesUrl($file['name'])) : $this->transformCdnUri($this->generateUnsignedSpacesUrl($file['name'])));
+
+        $file['uri'] = $uri;
+        $file['visibility'] = $visibility;
+
+        return $file;
     }
 }

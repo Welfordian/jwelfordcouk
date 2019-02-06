@@ -245,7 +245,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "navbar-link",
-                  { attrs: { href: "/dashboard/posts", icon: "newspaper-o" } },
+                  { attrs: { href: "/dashboard/posts", icon: "pencil" } },
                   [_vm._v("Posts")]
                 ),
                 _vm._v(" "),

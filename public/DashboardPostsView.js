@@ -245,7 +245,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "navbar-link",
-                  { attrs: { href: "/dashboard/posts", icon: "newspaper-o" } },
+                  { attrs: { href: "/dashboard/posts", icon: "pencil" } },
                   [_vm._v("Posts")]
                 ),
                 _vm._v(" "),
@@ -355,9 +355,10 @@ exports.push([module.i, "\n.loading-row[data-v-5670c495] {\n    text-align: cent
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_DashboardLayout__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_DashboardLayout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_DashboardLayout__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__stores_SharedStore__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Http__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_DashboardLayout__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_DashboardLayout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_DashboardLayout__);
 //
 //
 //
@@ -386,14 +387,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: { DashboardLayout: __WEBPACK_IMPORTED_MODULE_1__components_DashboardLayout___default.a },
+  components: { DashboardLayout: __WEBPACK_IMPORTED_MODULE_2__components_DashboardLayout___default.a },
   data: function data() {
     return {
+      store: __WEBPACK_IMPORTED_MODULE_0__stores_SharedStore__["a" /* Store */],
       confirmsDelete: false,
       posts: []
     };
@@ -409,7 +412,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     getPosts: function getPosts() {
-      return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* _http */].get('/posts');
+      return __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* _http */].get('/posts');
     }
   }
 });

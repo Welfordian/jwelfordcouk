@@ -245,7 +245,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "navbar-link",
-                  { attrs: { href: "/dashboard/posts", icon: "newspaper-o" } },
+                  { attrs: { href: "/dashboard/posts", icon: "pencil" } },
                   [_vm._v("Posts")]
                 ),
                 _vm._v(" "),
@@ -431,7 +431,7 @@ var render = function() {
             data: _vm.stats.posts,
             link: "/dashboard/posts",
             title: "Posts",
-            icon: "newspaper-o",
+            icon: "pencil",
             size: "4"
           }
         }),

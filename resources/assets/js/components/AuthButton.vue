@@ -26,7 +26,7 @@
             handleLogout() {
                 this.store.auth.logout()
                 .then(function(){
-                    router.push("login");
+                    router.push("/login");
                 });
             }
         }

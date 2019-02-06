@@ -3,7 +3,7 @@
         <div class="row">
             <h1 class="title">Welcome {{ store.user.get('name') }}</h1>
             <dashboard-stat v-bind:data="stats.users" link="/dashboard/users" title="Users" icon="users" size="4"></dashboard-stat>
-            <dashboard-stat v-bind:data="stats.posts" link="/dashboard/posts" title="Posts" icon="newspaper-o" size="4"></dashboard-stat>
+            <dashboard-stat v-bind:data="stats.posts" link="/dashboard/posts" title="Posts" icon="pencil" size="4"></dashboard-stat>
             <dashboard-stat v-bind:data="stats.files" link="/dashboard/files" title="Files" icon="file" size="4"></dashboard-stat>
             <dashboard-stat v-bind:data="stats.messages" link="/dashboard/messages" title="Messages" icon="envelope" size="12"></dashboard-stat>
         </div>
