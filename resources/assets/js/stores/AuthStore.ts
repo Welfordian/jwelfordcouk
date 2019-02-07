@@ -78,8 +78,19 @@ class AuthStore {
                 }.bind(this));
         }
         else {
-            this.authenticated = false      
+            this.checkAuth()
+                .then((r) => {
+                    localStorage.setItem('auth_token', r.data.token);
+
+                    this.check();
+                }).catch(() => {
+                    this.authenticated = false;
+                });
         }
+    }
+
+    checkAuth() {
+        return _http.get('/auth');
     }
 
     getUser() {

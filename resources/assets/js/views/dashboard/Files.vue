@@ -36,6 +36,7 @@
 
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <li><a href="#">Share</a></li>
+                                    <li><a href="#">Share Privately</a></li>
                                     <li><a href="#" @click.prevent="toggleVisibility(file)">Make {{ visibility(file) }}</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="#">Delete</a></li>
@@ -192,7 +193,7 @@
             searchFiles(evt) {
                 if (evt.target.value.length) {
                     let searchResults = this.files.filter((file) => {
-                        return file.name.search(evt.target.value) !== -1;
+                        return file.name.toLowerCase().search(evt.target.value.toLowerCase()) !== -1;
                     });
 
 

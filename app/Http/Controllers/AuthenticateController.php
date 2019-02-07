@@ -53,6 +53,23 @@ class AuthenticateController extends Controller
         return $this->pusher->presence_auth($request->get('channel_name'), $request->get('socket_id'), uniqid(), $presence_data);
     }
 
+    public function checkCertificate()
+    {
+        $authenticatedUser = openssl_x509_parse( urldecode($_SERVER['X-SSL-Cert']))['subject']['emailAddress'];
+
+        if ($authenticatedUser !== null) {
+            $user = \App\User::where('email', $authenticatedUser)->first();
+
+            if (! $token = JWTAuth::fromUser($user)) {
+                return response()->json(['error' => 'no_certificate'], 401);
+            }
+
+            return response()->json(compact('token'));
+        }
+
+        return response()->json(['error' => 'no_certificate'], 401);
+    }
+
     public function createRole(Request $request)
     {
         // TODO

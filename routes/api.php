@@ -18,6 +18,7 @@ Route::get('token/refresh', 'AuthenticateController@refreshToken');
 Route::get('/posts', 'PostsController@listAll');
 Route::get('/posts/{slug}', 'PostsController@get');
 Route::get('/modifications', 'ModificationsController@get');
+Route::get('/auth', 'AuthenticateController@checkCertificate');
 Route::post('/posts/image/verify_url', 'PostsController@verifyIntroImageUrl')->middleware('verify.request.origin');
 Route::post('contact', 'ContactController@create')->middleware('verify.request.origin');
 

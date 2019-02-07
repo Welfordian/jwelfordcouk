@@ -6,13 +6,13 @@ webpackJsonp([10],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(380)
+  __webpack_require__(365)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(365)
+var __vue_script__ = __webpack_require__(367)
 /* template */
-var __vue_template__ = __webpack_require__(382)
+var __vue_template__ = __webpack_require__(371)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -309,6 +309,48 @@ if (false) {
 /***/ }),
 
 /***/ 365:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(366);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(9)("074982ee", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-decddd8e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Files.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-decddd8e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Files.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 366:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.list-enter-active[data-v-decddd8e] {\n    -webkit-transition: all 5s;\n    transition: all 5s;\n}\n.list-enter[data-v-decddd8e] {\n    background: yellow;\n}\n.loading-row[data-v-decddd8e] {\n    text-align: center;\n    font-size: 5em;\n    color: #2c3e50;\n}\n.fileOptions[data-v-decddd8e] {\n    padding: 4px 20px;\n    border-radius: 15px;\n    -webkit-transition: background .5s, color .5s, -webkit-box-shadow .5s;\n    transition: background .5s, color .5s, -webkit-box-shadow .5s;\n    transition: box-shadow .5s, background .5s, color .5s;\n    transition: box-shadow .5s, background .5s, color .5s, -webkit-box-shadow .5s;\n}\n.fileOptions[data-v-decddd8e]:hover {\n    background: #00bd9c;\n    color: white;\n    -webkit-box-shadow: 0px 0px 5px 1px #949494;\n    box-shadow: 0px 0px 5px 1px #ccc;\n}\ntd .loading-overlay[data-v-decddd8e] {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: #a09c9ce3;\n    z-index: 2;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n    -ms-flex-pack: center;\n    justify-content: center;\n    -webkit-box-align: center;\n    -ms-flex-align: center;\n    align-items: center;\n    font-size: 1.6em;\n    color: white;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 367:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -317,8 +359,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Http__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_DashboardLayout__ = __webpack_require__(289);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_DashboardLayout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_DashboardLayout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_FileUploadButton__ = __webpack_require__(366);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_FileUploadButton__ = __webpack_require__(368);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_FileUploadButton___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_FileUploadButton__);
+//
 //
 //
 //
@@ -513,7 +556,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         searchFiles: function searchFiles(evt) {
             if (evt.target.value.length) {
                 var searchResults = this.files.filter(function (file) {
-                    return file.name.search(evt.target.value) !== -1;
+                    return file.name.toLowerCase().search(evt.target.value.toLowerCase()) !== -1;
                 });
 
                 if (searchResults.length) {
@@ -566,15 +609,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 366:
+/***/ 368:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(367)
+var __vue_script__ = __webpack_require__(369)
 /* template */
-var __vue_template__ = __webpack_require__(368)
+var __vue_template__ = __webpack_require__(370)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -614,7 +657,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 367:
+/***/ 369:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -667,7 +710,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 368:
+/***/ 370:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -712,49 +755,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 380:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(381);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(9)("074982ee", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-decddd8e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Files.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-decddd8e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Files.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 381:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(4)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.list-enter-active[data-v-decddd8e] {\n    -webkit-transition: all 5s;\n    transition: all 5s;\n}\n.list-enter[data-v-decddd8e] {\n    background: yellow;\n}\n.loading-row[data-v-decddd8e] {\n    text-align: center;\n    font-size: 5em;\n    color: #2c3e50;\n}\n.fileOptions[data-v-decddd8e] {\n    padding: 4px 20px;\n    border-radius: 15px;\n    -webkit-transition: background .5s, color .5s, -webkit-box-shadow .5s;\n    transition: background .5s, color .5s, -webkit-box-shadow .5s;\n    transition: box-shadow .5s, background .5s, color .5s;\n    transition: box-shadow .5s, background .5s, color .5s, -webkit-box-shadow .5s;\n}\n.fileOptions[data-v-decddd8e]:hover {\n    background: #00bd9c;\n    color: white;\n    -webkit-box-shadow: 0px 0px 5px 1px #949494;\n    box-shadow: 0px 0px 5px 1px #ccc;\n}\ntd .loading-overlay[data-v-decddd8e] {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: #a09c9ce3;\n    z-index: 2;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n    -ms-flex-pack: center;\n    justify-content: center;\n    -webkit-box-align: center;\n    -ms-flex-align: center;\n    align-items: center;\n    font-size: 1.6em;\n    color: white;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 382:
+/***/ 371:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -881,6 +882,12 @@ var render = function() {
                                     _c("li", [
                                       _c("a", { attrs: { href: "#" } }, [
                                         _vm._v("Share")
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("li", [
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _vm._v("Share Privately")
                                       ])
                                     ]),
                                     _vm._v(" "),
