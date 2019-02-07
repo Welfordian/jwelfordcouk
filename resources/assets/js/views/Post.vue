@@ -1,6 +1,6 @@
 <template>
     <default-layout>
-        <div>
+        <div class="blog-post">
             <h1>
                 <router-link to="/posts">
                     <i class="fa fa-long-arrow-left" style="margin-right: 10px;"></i>
@@ -156,7 +156,7 @@
         color: white !important;
     }
 
-    img {
+    .blog-post img {
         max-width: 50%;
         display: flex;
         margin: 0 auto;

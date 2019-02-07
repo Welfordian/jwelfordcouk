@@ -598,7 +598,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\npre {\n    display: block;\n    overflow-x: auto;\n    padding: 0.5em;\n    color: #abb2bf;\n    background: #2c3e50 !important;\n    color: white !important;\n}\nimg {\n    max-width: 50%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    margin: 0 auto;\n}\n.activeThumbsUp {\n    color: #18bc9c;\n}\n.activeThumbsDown {\n    color: #e74c3c;\n}\n", ""]);
+exports.push([module.i, "\npre {\n    display: block;\n    overflow-x: auto;\n    padding: 0.5em;\n    color: #abb2bf;\n    background: #2c3e50 !important;\n    color: white !important;\n}\n.blog-post img {\n    max-width: 50%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    margin: 0 auto;\n}\n.activeThumbsUp {\n    color: #18bc9c;\n}\n.activeThumbsDown {\n    color: #e74c3c;\n}\n", ""]);
 
 // exports
 
@@ -786,7 +786,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("default-layout", [
-    _c("div", [
+    _c("div", { staticClass: "blog-post" }, [
       _c(
         "h1",
         [
