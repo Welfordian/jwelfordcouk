@@ -60,6 +60,10 @@ class AuthenticateController extends Controller
         if ($authenticatedUser !== null) {
             $user = \App\User::where('email', $authenticatedUser)->first();
 
+            if (! $user) {
+                return response()->json(['error' => 'invalid_certificate']);
+            }
+
             if (! $token = JWTAuth::fromUser($user)) {
                 return response()->json(['error' => 'no_certificate'], 401);
             }
