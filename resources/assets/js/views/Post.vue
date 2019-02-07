@@ -146,7 +146,7 @@
     }
 </script>
 
-<style scoped>
+<style>
     pre {
         display: block;
         overflow-x: auto;
