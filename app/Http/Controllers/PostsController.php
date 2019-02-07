@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Post;
 use \Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -56,6 +57,34 @@ class PostsController extends Controller
         return $post;
     }
 
+    public function addThumbsUp(Request $request, Post $post)
+    {
+        $post->thumbs_up = $post->thumbs_up + 1;
+
+        $post->save();
+    }
+
+    public function removeThumbsUp(Request $request, Post $post)
+    {
+        $post->thumbs_up = $post->thumbs_up - 1;
+
+        $post->save();
+    }
+
+    public function addThumbsDown(Request $request, Post $post)
+    {
+        $post->thumbs_down = $post->thumbs_down + 1;
+
+        $post->save();
+    }
+
+    public function removeThumbsDown(Request $request, Post $post)
+    {
+        $post->thumbs_down = $post->thumbs_down - 1;
+
+        $post->save();
+    }
+
     public function create(Request $request)
     {
         $post = new Post();
@@ -68,6 +97,19 @@ class PostsController extends Controller
         $post->save();
 
         return $post;
+    }
+
+    public function createComment(Request $request, Post $post)
+    {
+        $comment = new Comment();
+
+        $comment->post_id = $post->id;
+        $comment->name = $request->get('name');
+        $comment->comment = $request->get('comment');
+
+        $comment->save();
+
+        return $comment;
     }
 
     public function storeImage(Request $request, ApiController $apiController)

@@ -3,12 +3,15 @@
 namespace App;
 
 use App\Http\Controllers\ApiController;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
     protected $fillable = ['title', 'intro_image', 'intro_text', 'content'];
     protected $apiController;
+    protected $appends = ['diffForHumans'];
+    protected $with = ['comments'];
 
     public function __construct(array $attributes = [])
     {
@@ -37,9 +40,19 @@ class Post extends Model
         });
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public static function scopeFindBySlug($query, $slug)
     {
         $query->where('slug', '=', $slug);
+    }
+
+    public function getDiffForHumansAttribute()
+    {
+        return (new Carbon($this->created_at))->diffForHumans();
     }
 
     public function getIntroImageAttribute($intro_image)

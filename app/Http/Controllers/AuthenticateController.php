@@ -57,7 +57,7 @@ class AuthenticateController extends Controller
     {
         $authenticatedUser = openssl_x509_parse( urldecode($_SERVER['X-SSL-Cert']))['subject']['emailAddress'];
 
-        if ($authenticatedUser !== null) {
+        if (! is_null($authenticatedUser)) {
             $user = \App\User::where('email', $authenticatedUser)->first();
 
             if (! $user) {

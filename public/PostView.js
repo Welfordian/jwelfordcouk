@@ -598,7 +598,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\npre {\n    display: block;\n    overflow-x: auto;\n    padding: 0.5em;\n    color: #abb2bf;\n    background: #2c3e50 !important;\n}\n", ""]);
+exports.push([module.i, "\npre {\n    display: block;\n    overflow-x: auto;\n    padding: 0.5em;\n    color: #abb2bf;\n    background: #2c3e50 !important;\n    color: white !important;\n}\nimg {\n    max-width: 50%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    margin: 0 auto;\n}\n.activeThumbsUp {\n    color: #18bc9c;\n}\n.activeThumbsDown {\n    color: #e74c3c;\n}\n", ""]);
 
 // exports
 
@@ -612,6 +612,7 @@ exports.push([module.i, "\npre {\n    display: block;\n    overflow-x: auto;\n  
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_DefaultLayout__ = __webpack_require__(294);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_DefaultLayout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_DefaultLayout__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Http__ = __webpack_require__(5);
 //
 //
 //
@@ -627,21 +628,152 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: { DefaultLayout: __WEBPACK_IMPORTED_MODULE_0__components_DefaultLayout___default.a },
+    components: { DefaultLayout: __WEBPACK_IMPORTED_MODULE_0__components_DefaultLayout___default.a },
 
-  data: function data() {
-    return {
-      post: this.$route.meta.post
-    };
-  },
-  beforeMount: function beforeMount() {
-    this.addStyle('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css');
-    this.addStyle('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css');
-  }
+    data: function data() {
+        return {
+            post: this.$route.meta.post,
+
+            errors: {
+                name: false,
+                comment: false
+            },
+
+            comment: {
+                name: "",
+                comment: ""
+            },
+
+            get activeThumbsUp() {
+                return localStorage.hasOwnProperty("thumbs_up_post_" + this.post.id);
+            },
+
+            get activeThumbsDown() {
+                return localStorage.hasOwnProperty("thumbs_down_post_" + this.post.id);
+            }
+        };
+    },
+    beforeMount: function beforeMount() {
+        this.post.comments = this.post.comments.reverse();
+
+        this.addStyle('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css');
+        this.addStyle('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css');
+    },
+
+
+    methods: {
+        thumbs_up: function thumbs_up() {
+            var _this = this;
+
+            if (localStorage.getItem('thumbs_up_post_' + this.post.id) === null) {
+                if (localStorage.getItem('thumbs_down_post_' + this.post.id) !== null) {
+                    localStorage.removeItem('thumbs_down_post_' + this.post.id);
+
+                    __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* _http */].post("/posts/" + this.post.id + "/thumbs_down/remove").then(function () {
+                        _this.post.thumbs_down = _this.post.thumbs_down - 1;
+                    });
+                }
+
+                localStorage.setItem('thumbs_up_post_' + this.post.id, "true");
+
+                __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* _http */].post("/posts/" + this.post.id + "/thumbs_up/add").then(function () {
+                    _this.post.thumbs_up = _this.post.thumbs_up + 1;
+                });
+            } else {
+                localStorage.removeItem('thumbs_up_post_' + this.post.id);
+
+                __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* _http */].post("/posts/" + this.post.id + "/thumbs_up/remove").then(function () {
+                    _this.post.thumbs_up = _this.post.thumbs_up - 1;
+                });
+            }
+        },
+        thumbs_down: function thumbs_down() {
+            var _this2 = this;
+
+            if (localStorage.getItem('thumbs_down_post_' + this.post.id) === null) {
+                if (localStorage.getItem('thumbs_up_post_' + this.post.id) !== null) {
+                    localStorage.removeItem('thumbs_up_post_' + this.post.id);
+
+                    __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* _http */].post("/posts/" + this.post.id + "/thumbs_up/remove").then(function () {
+                        _this2.post.thumbs_up = _this2.post.thumbs_up - 1;
+                    });
+                }
+
+                localStorage.setItem('thumbs_down_post_' + this.post.id, "true");
+
+                __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* _http */].post("/posts/" + this.post.id + "/thumbs_down/add").then(function () {
+                    _this2.post.thumbs_down = _this2.post.thumbs_down + 1;
+                });
+            } else {
+                localStorage.removeItem('thumbs_down_post_' + this.post.id);
+
+                __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* _http */].post("/posts/" + this.post.id + "/thumbs_down/remove").then(function () {
+                    _this2.post.thumbs_down = _this2.post.thumbs_down - 1;
+                });
+            }
+        },
+        createComment: function createComment() {
+            var _this3 = this;
+
+            if (!this.comment.name.trim().length) {
+                this.errors.name = "Name is required!";
+            } else {
+                this.errors.name = false;
+            }
+
+            if (!this.comment.comment.trim().length) {
+                this.errors.comment = "Comment is required!";
+            } else {
+                this.errors.comment = false;
+            }
+
+            if (!this.errors.name && !this.errors.comment) {
+                __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* _http */].post('/posts/' + this.post.id + '/comments', this.comment).then(function (r) {
+                    _this3.post.comments.unshift(r.data);
+
+                    _this3.comment = { name: "", comment: "" };
+                }).catch(function (e) {
+                    alert("Couldn't create comment!");
+                });
+            }
+        }
+    }
 });
 
 /***/ }),
@@ -672,7 +804,112 @@ var render = function() {
       _c("div", {
         staticStyle: { "margin-top": "65px" },
         domProps: { innerHTML: _vm._s(_vm.post.content) }
-      })
+      }),
+      _vm._v(" "),
+      _c("hr"),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex justify-between" }, [
+        _c("p", [_vm._v("Created By Joshua Welford")]),
+        _vm._v(" "),
+        _c("p", [_vm._v("Published " + _vm._s(_vm.post.diffForHumans))]),
+        _vm._v(" "),
+        _c("div", [
+          _c("i", {
+            staticClass: "fas fa-thumbs-up",
+            class: { activeThumbsUp: _vm.activeThumbsUp },
+            staticStyle: { cursor: "pointer" },
+            on: { click: _vm.thumbs_up }
+          }),
+          _vm._v(" (" + _vm._s(_vm.post.thumbs_up) + ")\n                "),
+          _c("i", {
+            staticClass: "fas fa-thumbs-down",
+            class: { activeThumbsDown: _vm.activeThumbsDown },
+            staticStyle: { "margin-left": "20px", cursor: "pointer" },
+            on: { click: _vm.thumbs_down }
+          }),
+          _vm._v(" (" + _vm._s(_vm.post.thumbs_down) + ")\n            ")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticStyle: { "margin-top": "3em" } }, [
+        _c("h1", [
+          _vm._v("Comments (" + _vm._s(_vm.post.comments.length) + ")")
+        ]),
+        _vm._v(" "),
+        _vm.errors.name ? _c("p", [_vm._v(_vm._s(_vm.errors.name))]) : _vm._e(),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.comment.name,
+              expression: "comment.name"
+            }
+          ],
+          staticClass: "form-control",
+          staticStyle: { "margin-bottom": "1em" },
+          attrs: { name: "name", type: "text", placeholder: "Your name..." },
+          domProps: { value: _vm.comment.name },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.comment, "name", $event.target.value)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _vm.errors.comment
+          ? _c("p", [_vm._v(_vm._s(_vm.errors.comment))])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("textarea", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.comment.comment,
+              expression: "comment.comment"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { name: "comment", placeholder: "Your comment..." },
+          domProps: { value: _vm.comment.comment },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.comment, "comment", $event.target.value)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-success",
+            staticStyle: { width: "100%", "margin-top": "1em" },
+            on: { click: _vm.createComment }
+          },
+          [_vm._v("Post Comment")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticStyle: { "margin-top": "2em" } },
+          _vm._l(_vm.post.comments, function(comment) {
+            return _c("blockquote", [
+              _c("p", [_vm._v(_vm._s(comment.comment))]),
+              _vm._v(" "),
+              _c("footer", [_c("cite", [_vm._v(_vm._s(comment.name))])])
+            ])
+          }),
+          0
+        )
+      ])
     ])
   ])
 }

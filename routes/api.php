@@ -19,6 +19,11 @@ Route::get('/posts', 'PostsController@listAll');
 Route::get('/posts/{slug}', 'PostsController@get');
 Route::get('/modifications', 'ModificationsController@get');
 Route::get('/auth', 'AuthenticateController@checkCertificate');
+Route::post('/posts/{post}/comments', 'PostsController@createComment');
+Route::post('/posts/{post}/thumbs_up/add', 'PostsController@addThumbsUp');
+Route::post('/posts/{post}/thumbs_up/remove', 'PostsController@removeThumbsUp');
+Route::post('/posts/{post}/thumbs_down/add', 'PostsController@addThumbsDown');
+Route::post('/posts/{post}/thumbs_down/remove', 'PostsController@removeThumbsDown');
 Route::post('/posts/image/verify_url', 'PostsController@verifyIntroImageUrl')->middleware('verify.request.origin');
 Route::post('contact', 'ContactController@create')->middleware('verify.request.origin');
 
