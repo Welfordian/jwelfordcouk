@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ContactMessage;
+use App\Mail\NewMessage;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -21,6 +22,8 @@ class ContactController extends Controller
         ]));
 
         $contactMessage->save();
+
+        \Mail::to('josh@welford.me')->send(new NewMessage($contactMessage));
 
         return $contactMessage;
     }
