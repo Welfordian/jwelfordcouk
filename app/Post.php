@@ -57,7 +57,8 @@ class Post extends Model
 
     public function getIntroImageAttribute($intro_image)
     {
+      return $intro_image;
         //return $this->apiController->generateSignedSpacesUrl($intro_image, '+5 seconds');
-        return $this->apiController->transformCdnUri($this->apiController->generateSignedSpacesUrl($intro_image, '+5 seconds'));
+        //return $this->apiController->transformCdnUri($this->apiController->generateSignedSpacesUrl($intro_image, '+5 seconds'));
     }
 }
