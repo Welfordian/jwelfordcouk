@@ -10,16 +10,11 @@ class ContactController extends Controller
 {
     public function create(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required',
-            'subject' => 'required',
-            'message' => 'required'
-        ]);
-        
-        $contactMessage = new ContactMessage($request->only([
-            'name', 'email', 'subject', 'message'
-        ]));
+        $request = json_decode($request->getContent(), true);
+
+        $request['enquiry_types'] = json_encode($request['enquiry_types']);
+
+        $contactMessage = new ContactMessage($request);
 
         $contactMessage->save();
 

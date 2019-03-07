@@ -25,6 +25,6 @@ class CheckForMaintenanceMode
             return response('errors.503', 503);
         }
 
-        return $next($request);
+        return $next($request)->header('Access-Control-Allow-Origin', '*');
     }
 }

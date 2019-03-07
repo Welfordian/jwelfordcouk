@@ -19,7 +19,7 @@ class VerifyRequestOrigin
             'https://imadev.site',
             'https://jwelford.co.uk',
             'https://laravel-freelancer.com',
-            'https://welford.test'
+            'https://welford.test',
         ];
 
         if (! in_array($request->header("Origin"), $whitelist_domains))
