@@ -12,8 +12,6 @@ class ContactController extends Controller
     {
         $request = json_decode($request->getContent(), true);
 
-        $request['enquiry_types'] = json_encode($request['enquiry_types']);
-
         $contactMessage = new ContactMessage($request);
 
         $contactMessage->save();
