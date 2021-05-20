@@ -44,6 +44,14 @@
             </div>
 
             <experience-set>
+                <experience from="May 2021" to="Present" role="PHP Developer" location="Mercutio—Remote" link="https://getmercutio.com">
+                    {{ lang.get('experience.mercutio') }}
+                    <hr>
+                </experience>
+                <experience from="Jan 2019" to="Present" role="Lead Developer" location="EMR4DW—Remote" link="https://emr4dw.org">
+                    {{ lang.get('experience.emr4dw') }}
+                    <hr>
+                </experience>
                 <experience from="Mar 2018" to="Present" role="Web Developer" location="RightMessage—Remote" link="https://rightmessage.com">
                     {{ lang.get('experience.rm') }}
                     <hr>

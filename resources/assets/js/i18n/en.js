@@ -27,6 +27,8 @@ export const EN = {
     'languages.debian': "As most of the sites I build use DigitalOcean knowledge of how to use Debian/Ubuntu has come to me as I built most of my apps.",
     'languages.laravel': "Laravel is my go-to framework for building new PHP applications. It's simplicity and structure is unbeaten.",
     "experience.rm": "N/A",
+    "experience.emr4dw": "Coming Soon",
+    "experience.mercutio": "Coming Soon",
     "experience.netsells": "N/A",
     "experience.via": "N/A",
     'experiences.leadbyte': "While working at LeadByte (lead management software) I worked with many different integrations as clients would often export leads from our software to their own CRM. During my time here I also revamped their dashboard bringing it into the modern day. This was a fully Javascript frontend which would request data via the LeadByte API as opposed to the backend which increased loading times for users and we saw a spike of good client feedback due to this. I also implemented 2FA due to GDPR compliance.",
