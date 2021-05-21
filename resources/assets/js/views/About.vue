@@ -7,8 +7,8 @@
                 {{ lang.get('summary') }}
             </about-summary>
 
-            <div id="knowledge">
-                <about-languages show-title>
+            <div id="knowledge" class="d-relative">
+                <about-languages show-title outdated>
                     <about-language language="HTML(5)" years="6">
                         {{ lang.get('languages.html') }}
                     </about-language>
@@ -26,8 +26,8 @@
                     <about-language language="jQuery" years="5">
                         {{ lang.get('languages.jquery') }}
                     </about-language>
-                    <about-language language="Angular(2)" years="2">
-                        {{ lang.get('languages.angular') }}
+                    <about-language language="Docker" years="1">
+                        {{ lang.get('languages.docker') }}
                     </about-language>
                 </about-languages>
                 <about-languages>

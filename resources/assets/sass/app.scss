@@ -42,3 +42,25 @@ body, button, input, select, textarea, .dropdown-menu {
 .justify-between {
   justify-content: space-between;
 }
+
+.d-relative {
+  position: relative !important;
+}
+
+.outdated-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: #a7a3a37d;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
+}
+
+.outdated-content {
+  transform: rotate(16deg);
+}

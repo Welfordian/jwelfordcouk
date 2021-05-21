@@ -702,11 +702,11 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { attrs: { id: "knowledge" } },
+          { staticClass: "d-relative", attrs: { id: "knowledge" } },
           [
             _c(
               "about-languages",
-              { attrs: { "show-title": "" } },
+              { attrs: { "show-title": "", outdated: "" } },
               [
                 _c(
                   "about-language",
@@ -776,11 +776,11 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "about-language",
-                  { attrs: { language: "Angular(2)", years: "2" } },
+                  { attrs: { language: "Docker", years: "1" } },
                   [
                     _vm._v(
                       "\n                    " +
-                        _vm._s(_vm.lang.get("languages.angular")) +
+                        _vm._s(_vm.lang.get("languages.docker")) +
                         "\n                "
                     )
                   ]

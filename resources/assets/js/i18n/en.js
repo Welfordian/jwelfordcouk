@@ -22,7 +22,7 @@ export const EN = {
     'languages.javascript': "I consider my knowledge of Javascript to be up to the current required standards of Web Development.",
     'languages.css': "Not my favourite languages, but it's crucial to Web Development. I can easily and proficiently use CSS.",
     'languages.jquery': "I like to have fun with jQuery. It gives such ease to manipulating DOM elements.",
-    'languages.angular': "AngularJS is a fantastic framework. It makes creating SPA's as easy as 1-2-3.",
+    'languages.docker': "Working with Docker for EMR4DW allowed me to maintain one code-base across different platforms and it worked extremely well.",
     'languages.nodejs': "Perfect for builing real-time applications among other utilities such as minifying and package requirement. I enjoy using NodeJS.",
     'languages.debian': "As most of the sites I build use DigitalOcean knowledge of how to use Debian/Ubuntu has come to me as I built most of my apps.",
     'languages.laravel': "Laravel is my go-to framework for building new PHP applications. It's simplicity and structure is unbeaten.",
