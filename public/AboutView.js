@@ -656,10 +656,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -706,11 +702,11 @@ var render = function() {
           [
             _c(
               "about-languages",
-              { attrs: { "show-title": "", outdated: "" } },
+              { attrs: { "show-title": "" } },
               [
                 _c(
                   "about-language",
-                  { attrs: { language: "HTML(5)", years: "6" } },
+                  { attrs: { language: "HTML(5)", years: "8" } },
                   [
                     _vm._v(
                       "\n                    " +
@@ -722,7 +718,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "about-language",
-                  { attrs: { language: "PHP", years: "5" } },
+                  { attrs: { language: "PHP", years: "7" } },
                   [
                     _vm._v(
                       "\n                    " +
@@ -734,7 +730,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "about-language",
-                  { attrs: { language: "Javascript", years: "6" } },
+                  { attrs: { language: "Javascript", years: "7" } },
                   [
                     _vm._v(
                       "\n                    " +
@@ -752,7 +748,7 @@ var render = function() {
               [
                 _c(
                   "about-language",
-                  { attrs: { language: "CSS", years: "6" } },
+                  { attrs: { language: "CSS", years: "7" } },
                   [
                     _vm._v(
                       "\n                    " +
@@ -764,11 +760,11 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "about-language",
-                  { attrs: { language: "jQuery", years: "5" } },
+                  { attrs: { language: "Vue", years: "1.5" } },
                   [
                     _vm._v(
                       "\n                    " +
-                        _vm._s(_vm.lang.get("languages.jquery")) +
+                        _vm._s(_vm.lang.get("languages.vue")) +
                         "\n                "
                     )
                   ]
@@ -794,7 +790,7 @@ var render = function() {
               [
                 _c(
                   "about-language",
-                  { attrs: { language: "NodeJS", years: "3" } },
+                  { attrs: { language: "NodeJS", years: "2" } },
                   [
                     _vm._v(
                       "\n                    " +
@@ -818,7 +814,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "about-language",
-                  { attrs: { language: "Laravel", years: "3" } },
+                  { attrs: { language: "Laravel", years: "4" } },
                   [
                     _vm._v(
                       "\n                    " +
@@ -841,30 +837,9 @@ var render = function() {
               "experience",
               {
                 attrs: {
-                  from: "May 2021",
-                  to: "Present",
-                  role: "PHP Developer",
-                  location: "Mercutio—Remote",
-                  link: "https://getmercutio.com"
-                }
-              },
-              [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.lang.get("experience.mercutio")) +
-                    "\n                "
-                ),
-                _c("hr")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "experience",
-              {
-                attrs: {
                   from: "Jan 2019",
                   to: "Present",
-                  role: "Lead Developer",
+                  role: "Lead Technical Engineer",
                   location: "EMR4DW—Remote",
                   link: "https://emr4dw.org"
                 }

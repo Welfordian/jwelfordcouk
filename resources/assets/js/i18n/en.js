@@ -21,7 +21,7 @@ export const EN = {
     'languages.php': "I can easily create interactive and dynamic websites using PHP alongside MySQL(i). I prefer the OOP aspect of PHP.",
     'languages.javascript': "I consider my knowledge of Javascript to be up to the current required standards of Web Development.",
     'languages.css': "Not my favourite languages, but it's crucial to Web Development. I can easily and proficiently use CSS.",
-    'languages.jquery': "I like to have fun with jQuery. It gives such ease to manipulating DOM elements.",
+    'languages.vue': "Vue is crucial in all applications that I create.",
     'languages.docker': "Working with Docker for EMR4DW allowed me to maintain one code-base across different platforms and it worked extremely well.",
     'languages.nodejs': "Perfect for builing real-time applications among other utilities such as minifying and package requirement. I enjoy using NodeJS.",
     'languages.debian': "As most of the sites I build use DigitalOcean knowledge of how to use Debian/Ubuntu has come to me as I built most of my apps.",

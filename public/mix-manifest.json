@@ -15,6 +15,5 @@
     "/DashboardMessageSingle.js": "/DashboardMessageSingle.js",
     "/DashboardMessagesView.js": "/DashboardMessagesView.js",
     "/DashboardEmailsView.js": "/DashboardEmailsView.js",
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/js/app.js": "/js/app.js"
 }
